@@ -1,0 +1,100 @@
+.sa-carbon-key {
+  background: #e3d5b9;
+  color: #464746;
+}
+.sa-carbon-key input, .sa-carbon-key .key-contents {
+  background: #f2ebdd;
+  color: #464746;
+  border-color: #958e80;
+}
+.sa-carbon-mod {
+  background: #464746;
+  color: #e86700;
+}
+.sa-carbon-mod input, .sa-carbon-mod .key-contents {
+  background: #282828;
+  color: #ff9a4a;
+  border-color: #a37148;
+}
+.sa-carbon-accent {
+  background: #e86700;
+  color: #464746;
+}
+
+.gmk-8008-key {
+  background: #8d98a7;
+  color: #313943;
+}
+
+.gmk-8008-mod {
+  background: #313943;
+  color: #fe5487;
+}
+
+.gmk-8008-accent {
+  background: #fe5487;
+  color: #313943;
+}
+
+.gmk-bento-key {
+  background: #fff3ef;
+  color: #3e728f;
+}
+.gmk-bento-key input, .gmk-bento-key .key-contents {
+  background: #fff3ef;
+  color: #30586f;
+  border-color: #98a6af;
+}
+.gmk-bento-mod {
+  background: #3e728f;
+  color: #fb7279;
+}
+.gmk-bento-mod input, .gmk-bento-mod .key-contents {
+  background: #244253;
+  color: #fdc6c9;
+  border-color: #9e9cac;
+}
+.gmk-bento-accent {
+  background: #fb7279;
+  color: #fff3ef;
+}
+
+.sa-vilebloom-key {
+  background: #34657f;
+  color: #e5e4df;
+}
+.sa-vilebloom-key input, .sa-vilebloom-key .key-contents {
+  background: #25485b;
+  color: #e5e4df;
+  border-color: #8da5af;
+}
+.sa-vilebloom-mod {
+  background: #34657f;
+  color: #e5e4df;
+}
+.sa-vilebloom-mod input, .sa-vilebloom-mod .key-contents {
+  background: #25485b;
+  color: #e5e4df;
+  border-color: #8da5af;
+}
+.sa-vilebloom-accent1 {
+  background: #f6bd9d;
+  color: #34657f;
+}
+.sa-vilebloom-accent1 input {
+  background: #fff;
+}
+.sa-vilebloom-accent2 {
+  background: #ff808b;
+  color: #e5e4df;
+}
+.sa-vilebloom-accent2 input {
+  background: #fff;
+}
+.sa-vilebloom-accent3 {
+  background: #cd6c8f;
+  color: #e5e4df;
+}
+.sa-vilebloom-accent3 input {
+  background: #fff;
+}
