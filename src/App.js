@@ -128,7 +128,8 @@ function App() {
                   height: `${(k.h || 1) * 55}px`,
                   position: `absolute`,
                   marginRight: `5px`,
-                  marginBottom: `5px`
+                  marginBottom: `5px`,
+                  transform: `rotateZ(${k.z || 0}deg)`
               }}
               >
               {keycodeMap[k.code] && keycodeMap[k.code].name}
