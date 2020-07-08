@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import * as fetch from 'node-fetch';
-import { Select, Checkbox } from 'antd';
+import { Select } from 'antd';
+import keyBy from 'lodash.keyby';
+import keycodes from './keycodes';
 
 import 'antd/dist/antd.css';
 import './colorway.css';
-import alphaCodes from './key_alpha.json';
+// import alphaCodes from './key_alpha.json';
 import modCodes from './key_mod.json';
-import layer from './layer.json';
 import override from './override.json';
+
+const keycodeMap = keyBy(keycodes, 'code')
 
 const { Option } = Select
 
@@ -23,19 +26,18 @@ function App() {
   const [modClw, setModClw] = useState("")
 
   useEffect(() => {
-    fetch('https://api.qmk.fm/v1/keyboards')
+    fetch('http://localhost:3000/keyboards.json')
       .then(res => res.json())
       .then(res => {
-        res = res.filter(r => r.startsWith("percent") || r.startsWith("exclusive") || r.startsWith("duck"))
         setKeyboardNames(res)
       })
   }, [])
 
   const selectBoard = (keyboard_name) => {
-    fetch(`https://api.qmk.fm/v1/keyboards/${keyboard_name}`)
+    fetch(`http://localhost:3000/keyboards/${keyboard_name.replace(/\//g, "_")}.json`)
       .then(res => res.json())
       .then(res => {
-        setKeyboard(res.keyboards[keyboard_name])
+        setKeyboard(res)
       })
   }
 
@@ -90,29 +92,29 @@ function App() {
           position: 'relative',
           width: 60 * (keyboard.width + 1),
           height: 60 * (keyboard.height - 1),
+          whiteSpace: 'pre-line',
           // border: '1px solid white'
         }}>
           {keymaps.map((k, idx) => {
-            const keyCode = layer[keyboard.keyboard_folder] ? layer[keyboard.keyboard_folder][idx] : k.label
             let suffix
-            if (override[clw] && override[clw][keyCode]) {
-              suffix = override[clw][keyCode]
-            } else if (modCodes.includes(keyCode)) {
+            if (override[clw] && override[clw][k.code]) {
+              suffix = override[clw][k.code]
+            } else if (modCodes.includes(k.code)) {
               suffix = 'mod'
             } else {
               suffix = 'key'
             }
 
-            let className = modCodes.includes(keyCode)
+            let className = modCodes.includes(k.code)
               ? `${modClw}-${suffix}`
               : `${clw}-${suffix}`
 
             return <div
               key={idx}
               id={idx}
-              title={k.label}
+              title={k.code}
               className={className}
-              key-code={keyCode}
+              key-code={k.code}
               style={{
                   borderRadius: `6px`,
                   boxShadow: `inset 0 -1px 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.3)`,
@@ -129,7 +131,7 @@ function App() {
                   marginBottom: `5px`
               }}
               >
-              {k.label}
+              {keycodeMap[k.code] && keycodeMap[k.code].name}
             </div>
           })}
           {/* <Image /> */}
