@@ -1,0 +1,328 @@
+{
+    "keyboard_name": "Atlas",
+    "keyboard_folder": "cannonkeys/atlas",
+    "keymaps": [],
+    "layouts": {
+        "default": {
+            "key_count": 60,
+            "layout": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "code": "KC_GRV"
+                },
+                {
+                    "x": 1,
+                    "y": 0,
+                    "code": "KC_1"
+                },
+                {
+                    "x": 2,
+                    "y": 0,
+                    "code": "KC_2"
+                },
+                {
+                    "x": 3,
+                    "y": 0,
+                    "code": "KC_3"
+                },
+                {
+                    "x": 4,
+                    "y": 0,
+                    "code": "KC_4"
+                },
+                {
+                    "x": 5,
+                    "y": 0,
+                    "code": "KC_5"
+                },
+                {
+                    "x": 6,
+                    "y": 0,
+                    "code": "KC_6"
+                },
+                {
+                    "x": 7,
+                    "y": 0,
+                    "code": "KC_7"
+                },
+                {
+                    "x": 8,
+                    "y": 0,
+                    "code": "KC_8"
+                },
+                {
+                    "x": 9,
+                    "y": 0,
+                    "code": "KC_9"
+                },
+                {
+                    "x": 10,
+                    "y": 0,
+                    "code": "KC_0"
+                },
+                {
+                    "x": 11,
+                    "y": 0,
+                    "code": "KC_BSPC"
+                },
+                {
+                    "x": 0,
+                    "y": 1,
+                    "code": "KC_TAB"
+                },
+                {
+                    "x": 1,
+                    "y": 1,
+                    "code": "KC_Q"
+                },
+                {
+                    "x": 2,
+                    "y": 1,
+                    "code": "KC_W"
+                },
+                {
+                    "x": 3,
+                    "y": 1,
+                    "code": "KC_E"
+                },
+                {
+                    "x": 4,
+                    "y": 1,
+                    "code": "KC_R"
+                },
+                {
+                    "x": 5,
+                    "y": 1,
+                    "code": "KC_T"
+                },
+                {
+                    "x": 6,
+                    "y": 1,
+                    "code": "KC_Y"
+                },
+                {
+                    "x": 7,
+                    "y": 1,
+                    "code": "KC_U"
+                },
+                {
+                    "x": 8,
+                    "y": 1,
+                    "code": "KC_I"
+                },
+                {
+                    "x": 9,
+                    "y": 1,
+                    "code": "KC_O"
+                },
+                {
+                    "x": 10,
+                    "y": 1,
+                    "code": "KC_P"
+                },
+                {
+                    "x": 11,
+                    "y": 1,
+                    "code": "KC_DEL"
+                },
+                {
+                    "x": 0,
+                    "y": 2,
+                    "code": "KC_ESC"
+                },
+                {
+                    "x": 1,
+                    "y": 2,
+                    "code": "KC_A"
+                },
+                {
+                    "x": 2,
+                    "y": 2,
+                    "code": "KC_S"
+                },
+                {
+                    "x": 3,
+                    "y": 2,
+                    "code": "KC_D"
+                },
+                {
+                    "x": 4,
+                    "y": 2,
+                    "code": "KC_F"
+                },
+                {
+                    "x": 5,
+                    "y": 2,
+                    "code": "KC_G"
+                },
+                {
+                    "x": 6,
+                    "y": 2,
+                    "code": "KC_H"
+                },
+                {
+                    "x": 7,
+                    "y": 2,
+                    "code": "KC_J"
+                },
+                {
+                    "x": 8,
+                    "y": 2,
+                    "code": "KC_K"
+                },
+                {
+                    "x": 9,
+                    "y": 2,
+                    "code": "KC_L"
+                },
+                {
+                    "x": 10,
+                    "y": 2,
+                    "code": "KC_SCLN"
+                },
+                {
+                    "x": 11,
+                    "y": 2,
+                    "code": "KC_QUOT"
+                },
+                {
+                    "x": 0,
+                    "y": 3,
+                    "code": "KC_LSFT"
+                },
+                {
+                    "x": 1,
+                    "y": 3,
+                    "code": "KC_Z"
+                },
+                {
+                    "x": 2,
+                    "y": 3,
+                    "code": "KC_X"
+                },
+                {
+                    "x": 3,
+                    "y": 3,
+                    "code": "KC_C"
+                },
+                {
+                    "x": 4,
+                    "y": 3,
+                    "code": "KC_V"
+                },
+                {
+                    "x": 5,
+                    "y": 3,
+                    "code": "KC_B"
+                },
+                {
+                    "x": 6,
+                    "y": 3,
+                    "code": "KC_N"
+                },
+                {
+                    "x": 7,
+                    "y": 3,
+                    "code": "KC_M"
+                },
+                {
+                    "x": 8,
+                    "y": 3,
+                    "code": "KC_COMM"
+                },
+                {
+                    "x": 9,
+                    "y": 3,
+                    "code": "KC_DOT"
+                },
+                {
+                    "x": 10,
+                    "y": 3,
+                    "code": "KC_SLSH"
+                },
+                {
+                    "x": 11,
+                    "y": 3,
+                    "code": "KC_ENT"
+                },
+                {
+                    "x": 0,
+                    "y": 4,
+                    "code": "BL_TOGG"
+                },
+                {
+                    "x": 1,
+                    "y": 4,
+                    "code": "KC_LCTL"
+                },
+                {
+                    "x": 2,
+                    "y": 4,
+                    "code": "KC_LALT"
+                },
+                {
+                    "x": 3,
+                    "y": 4,
+                    "code": "KC_LGUI"
+                },
+                {
+                    "x": 4,
+                    "y": 4,
+                    "code": "MO(2)"
+                },
+                {
+                    "x": 5,
+                    "y": 4,
+                    "code": "KC_SPC"
+                },
+                {
+                    "x": 6,
+                    "y": 4,
+                    "code": "KC_SPC"
+                },
+                {
+                    "x": 7,
+                    "y": 4,
+                    "code": "MO(1)"
+                },
+                {
+                    "x": 8,
+                    "y": 4,
+                    "code": "KC_LEFT"
+                },
+                {
+                    "x": 9,
+                    "y": 4,
+                    "code": "KC_DOWN"
+                },
+                {
+                    "x": 10,
+                    "y": 4,
+                    "code": "KC_UP"
+                },
+                {
+                    "x": 11,
+                    "y": 4,
+                    "code": "KC_RGHT"
+                }
+            ]
+        }
+    },
+    "maintainer": "awkannan",
+    "readme": true,
+    "url": "https://cannonkeys.com",
+    "width": 12,
+    "height": 5,
+    "vendor_id": "0xCA04",
+    "product_id": "0xA7A5",
+    "device_ver": "0x0001",
+    "manufacturer": "CannonKeys",
+    "description": "Atlas Keyboard",
+    "processor_type": "arm",
+    "bootloader": "stm32-dfu",
+    "processor": "STM32F072",
+    "protocol": "ChibiOS",
+    "platform": "STM32",
+    "identifier": "0xCA04:0xA7A5:0x0001"
+}

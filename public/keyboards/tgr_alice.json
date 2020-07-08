@@ -1,0 +1,370 @@
+{
+    "keyboard_name": "TGR Alice",
+    "keyboard_folder": "tgr/alice",
+    "keymaps": [],
+    "layouts": {
+        "default": {
+            "key_count": 66,
+            "layout": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "code": "KC_ESC"
+                },
+                {
+                    "x": 1.25,
+                    "y": 0,
+                    "code": "KC_GESC"
+                },
+                {
+                    "x": 2.25,
+                    "y": 0,
+                    "code": "KC_1"
+                },
+                {
+                    "x": 3.25,
+                    "y": 0,
+                    "code": "KC_2"
+                },
+                {
+                    "x": 4.25,
+                    "y": 0,
+                    "code": "KC_3"
+                },
+                {
+                    "x": 5.25,
+                    "y": 0,
+                    "code": "KC_4"
+                },
+                {
+                    "x": 6.25,
+                    "y": 0,
+                    "code": "KC_5"
+                },
+                {
+                    "x": 7.25,
+                    "y": 0,
+                    "code": "KC_6"
+                },
+                {
+                    "x": 10.25,
+                    "y": 0,
+                    "code": "KC_7"
+                },
+                {
+                    "x": 11.25,
+                    "y": 0,
+                    "code": "KC_8"
+                },
+                {
+                    "x": 12.25,
+                    "y": 0,
+                    "code": "KC_9"
+                },
+                {
+                    "x": 13.25,
+                    "y": 0,
+                    "code": "KC_0"
+                },
+                {
+                    "x": 14.25,
+                    "y": 0,
+                    "code": "KC_MINS"
+                },
+                {
+                    "x": 15.25,
+                    "y": 0,
+                    "code": "KC_EQL"
+                },
+                {
+                    "x": 16.25,
+                    "y": 0,
+                    "code": "KC_GRV"
+                },
+                {
+                    "x": 17.25,
+                    "y": 0,
+                    "code": "KC_BSLS"
+                },
+                {
+                    "x": 0,
+                    "y": 1,
+                    "code": "KC_PGUP"
+                },
+                {
+                    "x": 1.25,
+                    "y": 1,
+                    "w": 1.5,
+                    "code": "KC_TAB"
+                },
+                {
+                    "x": 2.75,
+                    "y": 1,
+                    "code": "KC_Q"
+                },
+                {
+                    "x": 3.75,
+                    "y": 1,
+                    "code": "KC_W"
+                },
+                {
+                    "x": 4.75,
+                    "y": 1,
+                    "code": "KC_E"
+                },
+                {
+                    "x": 5.75,
+                    "y": 1,
+                    "code": "KC_R"
+                },
+                {
+                    "x": 6.75,
+                    "y": 1,
+                    "code": "KC_T"
+                },
+                {
+                    "x": 9.75,
+                    "y": 1,
+                    "code": "KC_Y"
+                },
+                {
+                    "x": 10.75,
+                    "y": 1,
+                    "code": "KC_U"
+                },
+                {
+                    "x": 11.75,
+                    "y": 1,
+                    "code": "KC_I"
+                },
+                {
+                    "x": 12.75,
+                    "y": 1,
+                    "code": "KC_O"
+                },
+                {
+                    "x": 13.75,
+                    "y": 1,
+                    "code": "KC_P"
+                },
+                {
+                    "x": 14.75,
+                    "y": 1,
+                    "code": "KC_LBRC"
+                },
+                {
+                    "x": 15.75,
+                    "y": 1,
+                    "code": "KC_RBRC"
+                },
+                {
+                    "x": 16.75,
+                    "y": 1,
+                    "w": 1.5,
+                    "code": "KC_BSPC"
+                },
+                {
+                    "x": 0,
+                    "y": 2,
+                    "code": "KC_PGDN"
+                },
+                {
+                    "x": 1.25,
+                    "y": 2,
+                    "w": 1.75,
+                    "code": "KC_LCTL"
+                },
+                {
+                    "x": 3,
+                    "y": 2,
+                    "code": "KC_A"
+                },
+                {
+                    "x": 4,
+                    "y": 2,
+                    "code": "KC_S"
+                },
+                {
+                    "x": 5,
+                    "y": 2,
+                    "code": "KC_D"
+                },
+                {
+                    "x": 6,
+                    "y": 2,
+                    "code": "KC_F"
+                },
+                {
+                    "x": 7,
+                    "y": 2,
+                    "code": "KC_G"
+                },
+                {
+                    "x": 10,
+                    "y": 2,
+                    "code": "KC_H"
+                },
+                {
+                    "x": 11,
+                    "y": 2,
+                    "code": "KC_J"
+                },
+                {
+                    "x": 12,
+                    "y": 2,
+                    "code": "KC_K"
+                },
+                {
+                    "x": 13,
+                    "y": 2,
+                    "code": "KC_L"
+                },
+                {
+                    "x": 14,
+                    "y": 2,
+                    "code": "KC_SCLN"
+                },
+                {
+                    "x": 15,
+                    "y": 2,
+                    "code": "KC_QUOT"
+                },
+                {
+                    "x": 16,
+                    "y": 2,
+                    "w": 2.25,
+                    "code": "KC_ENT"
+                },
+                {
+                    "x": 1.25,
+                    "y": 3,
+                    "w": 2.25,
+                    "code": "KC_LSFT"
+                },
+                {
+                    "x": 3.5,
+                    "y": 3,
+                    "code": "KC_Z"
+                },
+                {
+                    "x": 4.5,
+                    "y": 3,
+                    "code": "KC_X"
+                },
+                {
+                    "x": 5.5,
+                    "y": 3,
+                    "code": "KC_C"
+                },
+                {
+                    "x": 6.5,
+                    "y": 3,
+                    "code": "KC_V"
+                },
+                {
+                    "x": 7.5,
+                    "y": 3,
+                    "code": "KC_B"
+                },
+                {
+                    "x": 9.5,
+                    "y": 3,
+                    "code": "KC_B"
+                },
+                {
+                    "x": 10.5,
+                    "y": 3,
+                    "code": "KC_N"
+                },
+                {
+                    "x": 11.5,
+                    "y": 3,
+                    "code": "KC_M"
+                },
+                {
+                    "x": 12.5,
+                    "y": 3,
+                    "code": "KC_COMM"
+                },
+                {
+                    "x": 13.5,
+                    "y": 3,
+                    "code": "KC_DOT"
+                },
+                {
+                    "x": 14.5,
+                    "y": 3,
+                    "code": "KC_SLSH"
+                },
+                {
+                    "x": 15.5,
+                    "y": 3,
+                    "w": 1.75,
+                    "code": "KC_RSFT"
+                },
+                {
+                    "x": 17.25,
+                    "y": 3,
+                    "code": "MO(1)"
+                },
+                {
+                    "x": 1.25,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "KC_LGUI"
+                },
+                {
+                    "x": 4.25,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "KC_LALT"
+                },
+                {
+                    "x": 5.75,
+                    "y": 4,
+                    "w": 2,
+                    "code": "KC_SPC"
+                },
+                {
+                    "x": 7.75,
+                    "y": 4,
+                    "w": 1.25,
+                    "code": "KC_LGUI"
+                },
+                {
+                    "x": 9.5,
+                    "y": 4,
+                    "w": 2.75,
+                    "code": "KC_SPC"
+                },
+                {
+                    "x": 12.25,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "KC_RALT"
+                },
+                {
+                    "x": 16.75,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "KC_RCTL"
+                }
+            ]
+        }
+    },
+    "maintainer": "Felipe Coury",
+    "readme": true,
+    "url": "",
+    "width": 17.75,
+    "height": 5,
+    "vendor_id": "0x20A0",
+    "product_id": "0x422E",
+    "device_ver": "0x0200",
+    "manufacturer": "TGR",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x20A0:0x422E:0x0200"
+}
