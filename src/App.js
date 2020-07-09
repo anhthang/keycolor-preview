@@ -10,22 +10,65 @@ import keyBy from 'lodash.keyby';
 import max from 'lodash.max';
 import keycodes from './keycodes';
 
-// import alphaCodes from './key_alpha.json';
-import modCodes from './key_mod.json';
-import override from './override.json';
+import colorways from './components/colorways';
+
+// let substitute = Object.assign(
+//   {},
+//   colorways.iconCodes,
+//   colorways.platformIcons(window.navigator.platform)
+// );
 
 const keycodeMap = keyBy(keycodes, 'code')
 
 const { Option } = Select
 
-const colorways = ['DSA Galaxy Class', 'DSA Milkshake', 'SA Carbon', 'SA Danger Zone', 'SA Jukebox', 'SA Modern Selectric', 'SA Nantucket Selectric', 'SA Oblivion Hagoromo', 'SA Vilebloom', 'GMK 8008', 'GMK 9009', 'GMK Analog Dreams', 'GMK Ascii', 'GMK Bento', 'GMK Bingsu', 'GMK Cafe', 'GMK Calm Depths', 'GMK Dolch', 'GMK Jamon', 'GMK Merlin', 'GMK Metaverse', 'GMK Mizu', 'GMK Nautilus', 'GMK Olivetti', 'GMK Olivia', 'GMK Plum', 'GMK Serika', 'GMK Space Cadet', 'GMK Striker', 'GMK TA Royal Alpha', 'GMK Terminal', 'GMK WOB', 'GMK Yuri']
+function keyClasses(keycode, colorway) {
+  const classes = []
+  if (colorway.override && colorway.override[keycode]) {
+    // Colorway specific overrides by keycode
+    classes.push(
+      `${colorway.name}-${colorway.override[keycode]}`
+    );
+  } else if (
+    // Large alpha keys (like Numpad 0)
+    colorways.alphaCodes[keycode]
+  ) {
+    classes.push(`${colorway.name}-key`);
+  } else if (
+    // Mod keys
+    // colorways.modCodes[keycode] ||
+    // (this.w <= KEY_WIDTH * 3 &&
+    //   (this.w > KEY_WIDTH || this.h > KEY_HEIGHT))
+    colorways.modCodes[keycode]
+  ) {
+    classes.push('mod');
+    classes.push(`${colorway.name}-mod`);
+  } else {
+    // everything else
+    classes.push(`${colorway.name}-key`);
+  }
+
+  return classes.join(' ')
+}
+
+
+const colorwayNames = colorways.list.map(c => {
+  const display = c.name.split('-').map((n, i) => {
+    return i === 0 ? n.toUpperCase() : n.replace(n.charAt(0), n.charAt(0).toUpperCase())
+  }).join(' ')
+
+  return {
+    value: c.name,
+    text: display
+  }
+})
 
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
   const [keyboard, setKeyboard] = useState({})
   const [keymaps, setKeymaps] = useState([])
-  const [clw, setClw] = useState("gmk carbon")
-  const [modClw, setModClw] = useState("")
+  const [colorway, setColorway] = useState({})
+  // const [modClw, setModClw] = useState("")
 
   useEffect(() => {
     fetch('http://localhost:3000/keyboards.json')
@@ -49,13 +92,14 @@ function App() {
   // }
 
   const changeColorway = (name) => {
-    setClw(name.toLowerCase().replace(/ /g, '-'))
-    if (!modClw) {
-      setModClw(name.toLowerCase().replace(/ /g, '-'))
-    }
+    const clw = colorways.list.find(c => c.name === name)
+    setColorway(clw)
+    // if (!modClw) {
+    //   setModClw(name.toLowerCase().replace(/ /g, '-'))
+    // }
   }
   const changeModColorway = (name) => {
-    setModClw(name.toLowerCase().replace(/ /g, '-'))
+    // setModClw(name.toLowerCase().replace(/ /g, '-'))
   }
 
   const maxWidth = keyboard.layouts
@@ -86,15 +130,15 @@ function App() {
           </Select> */}
           <Select style={{ width: 300 }} onChange={changeColorway}>
             {
-              colorways.map(clw => {
-                return <Option value={clw} key={clw}>{clw}</Option>
+              colorwayNames.map(clw => {
+                return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
               })
             }
           </Select>
           <Select style={{ width: 300 }} onChange={changeModColorway}>
             {
-              colorways.map(clw => {
-                return <Option value={clw} key={clw}>{clw}</Option>
+              colorwayNames.map(clw => {
+                return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
               })
             }
           </Select>
@@ -109,24 +153,11 @@ function App() {
           whiteSpace: 'pre-line',
         }}>
           {keymaps.map((k, idx) => {
-            let suffix
-            if (override[clw] && override[clw][k.code]) {
-              suffix = override[clw][k.code]
-            } else if (modCodes.includes(k.code)) {
-              suffix = 'mod'
-            } else {
-              suffix = 'key'
-            }
-
-            let className = modCodes.includes(k.code)
-              ? `${modClw}-${suffix}`
-              : `${clw}-${suffix}`
-
             return <div
               key={idx}
               id={idx}
               title={k.code}
-              className={className}
+              className={keyClasses(k.code, colorway)}
               key-code={k.code}
               style={{
                   borderRadius: `6px`,
