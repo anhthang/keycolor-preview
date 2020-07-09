@@ -164,7 +164,7 @@ function App() {
                   boxShadow: `inset 0 -1px 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.3)`,
                   borderLeft: `1px solid rgba(0,0,0,.1)`,
                   borderRight: `1px solid rgba(0,0,0,.1)`,
-                  fontFamily: `Cascadia Code`,
+                  // fontFamily: `Cascadia Code`,
                   fontSize: "small",
                   left: `${k.x * 60}px`,
                   top: `${k.y * 60}px`,
