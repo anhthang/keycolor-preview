@@ -169,7 +169,7 @@ function App() {
                   left: `${k.x * 60}px`,
                   top: `${k.y * 60}px`,
                   width: `${(k.w || 1) * 60 - 5}px`,
-                  height: `${(k.h || 1) * 55}px`,
+                  height: `${(k.h || 1) * 60 - 5}px`,
                   position: `absolute`,
                   marginRight: `5px`,
                   marginBottom: `5px`,
