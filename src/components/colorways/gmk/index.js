@@ -7,6 +7,7 @@ import gmk_bingsu from './bingsu';
 import gmk_cafe from './cafe';
 import gmk_calm_depths from './calm_depths';
 import gmk_dolch from './dolch';
+import gmk_hyperfuse from './hyperfuse';
 import gmk_jamon from './jamon';
 import gmk_merlin from './merlin';
 import gmk_metaverse from './metaverse';
@@ -33,6 +34,7 @@ export default [
   gmk_cafe,
   gmk_calm_depths,
   gmk_dolch,
+  gmk_hyperfuse,
   gmk_jamon,
   gmk_merlin,
   gmk_metaverse,

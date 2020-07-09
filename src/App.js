@@ -128,14 +128,14 @@ function App() {
               })
             }
           </Select> */}
-          <Select style={{ width: 300 }} onChange={changeColorway}>
+          <Select showSearch style={{ width: 300 }} onChange={changeColorway}>
             {
               colorwayNames.map(clw => {
                 return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
               })
             }
           </Select>
-          <Select style={{ width: 300 }} onChange={changeModColorway}>
+          <Select showSearch style={{ width: 300 }} onChange={changeModColorway}>
             {
               colorwayNames.map(clw => {
                 return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
@@ -173,7 +173,7 @@ function App() {
                   position: `absolute`,
                   marginRight: `5px`,
                   marginBottom: `5px`,
-                  transform: `rotateZ(${k.z || 0}deg)`
+                  ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
               }}
               >
               {keycodeMap[k.code] && keycodeMap[k.code].name}
