@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import * as fetch from 'node-fetch';
-import { Select } from 'antd';
+import { Select, Card } from 'antd';
 import keyBy from 'lodash.keyby';
+import max from 'lodash.max';
 import keycodes from './keycodes';
 
 import 'antd/dist/antd.css';
@@ -55,45 +56,55 @@ function App() {
     setModClw(name.toLowerCase().replace(' ', '-'))
   }
 
+  const maxWidth = keyboard.layouts
+    ? max(keyboard.layouts.default.layout.map(k => k.x + (k.w || 1)))
+    : 0
+  const maxHeight = keyboard.layouts
+    ? max(keyboard.layouts.default.layout.map(k => k.y + (k.h || 1)))
+    : 0
+
   return (
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Select showSearch style={{ width: 300 }} onSelect={(e) => selectBoard(e)}>
-          {
-            keyboardNames.map(keyboard => {
-              return <Option value={keyboard} key={keyboard}>{keyboard}</Option>
-            })
-          }
-        </Select>
-        <Select style={{ width: 300 }} onSelect={chooseLayout}>
-          {
-            keyboard.layouts && Object.keys(keyboard.layouts).map(layout => {
-              return <Option value={layout} key={layout}>{layout}</Option>
-            })
-          }
-        </Select>
-        <Select style={{ width: 300 }} onChange={changeColorway}>
-          {
-            colorways.map(clw => {
-              return <Option value={clw} key={clw}>{clw}</Option>
-            })
-          }
-        </Select>
-        <Select style={{ width: 300 }} onChange={changeModColorway}>
-          {
-            colorways.map(clw => {
-              return <Option value={clw} key={clw}>{clw}</Option>
-            })
-          }
-        </Select>
-        {/* <Checkbox checked={false} onClick={() => alert("fuck")}>Different Modifiers Colorway</Checkbox> */}
-        <div style={{
+        <Card>
+          <Select showSearch style={{ width: 300 }} onSelect={(e) => selectBoard(e)}>
+            {
+              keyboardNames.map(keyboard => {
+                return <Option value={keyboard} key={keyboard}>{keyboard}</Option>
+              })
+            }
+          </Select>
+          <Select style={{ width: 300 }} onSelect={chooseLayout}>
+            {
+              keyboard.layouts && Object.keys(keyboard.layouts).map(layout => {
+                return <Option value={layout} key={layout}>{layout}</Option>
+              })
+            }
+          </Select>
+          <Select style={{ width: 300 }} onChange={changeColorway}>
+            {
+              colorways.map(clw => {
+                return <Option value={clw} key={clw}>{clw}</Option>
+              })
+            }
+          </Select>
+          <Select style={{ width: 300 }} onChange={changeModColorway}>
+            {
+              colorways.map(clw => {
+                return <Option value={clw} key={clw}>{clw}</Option>
+              })
+            }
+          </Select>
+        </Card>
+        <Card style={{
           position: 'relative',
-          width: 60 * (keyboard.width + 1),
-          height: 60 * (keyboard.height - 1),
+          width: 60 * maxWidth,
+          height: 60 * maxHeight,
+          top: 24,
+          backgroundColor: 'transparent',
+          borderColor: 'transparent',
           whiteSpace: 'pre-line',
-          // border: '1px solid white'
         }}>
           {keymaps.map((k, idx) => {
             let suffix
@@ -136,7 +147,7 @@ function App() {
             </div>
           })}
           {/* <Image /> */}
-        </div>
+        </Card>
         {/* <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
