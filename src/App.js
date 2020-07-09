@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import './App.scss';
+import 'antd/dist/antd.css';
+
 import * as fetch from 'node-fetch';
 import { Select, Card } from 'antd';
 import keyBy from 'lodash.keyby';
 import max from 'lodash.max';
 import keycodes from './keycodes';
 
-import 'antd/dist/antd.css';
-import './colorway.css';
 // import alphaCodes from './key_alpha.json';
 import modCodes from './key_mod.json';
 import override from './override.json';
@@ -17,7 +18,7 @@ const keycodeMap = keyBy(keycodes, 'code')
 
 const { Option } = Select
 
-const colorways = ['SA Carbon', 'GMK 8008', 'GMK Bento', 'SA Vilebloom']
+const colorways = ['DSA Galaxy Class', 'DSA Milkshake', 'SA Carbon', 'SA Danger Zone', 'SA Jukebox', 'SA Modern Selectric', 'SA Nantucket Selectric', 'SA Oblivion Hagoromo', 'SA Vilebloom', 'GMK 8008', 'GMK 9009', 'GMK Analog Dreams', 'GMK Ascii', 'GMK Bento', 'GMK Bingsu', 'GMK Cafe', 'GMK Calm Depths', 'GMK Dolch', 'GMK Jamon', 'GMK Merlin', 'GMK Metaverse', 'GMK Mizu', 'GMK Nautilus', 'GMK Olivetti', 'GMK Olivia', 'GMK Plum', 'GMK Serika', 'GMK Space Cadet', 'GMK Striker', 'GMK TA Royal Alpha', 'GMK Terminal', 'GMK WOB', 'GMK Yuri']
 
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
@@ -39,21 +40,22 @@ function App() {
       .then(res => res.json())
       .then(res => {
         setKeyboard(res)
+        setKeymaps(res.layouts.default.layout)
       })
   }
 
-  const chooseLayout = (name) => {
-    setKeymaps(keyboard.layouts[name].layout)
-  }
+  // const chooseLayout = (name) => {
+  //   setKeymaps(keyboard.layouts[name].layout)
+  // }
 
   const changeColorway = (name) => {
-    setClw(name.toLowerCase().replace(' ', '-'))
+    setClw(name.toLowerCase().replace(/ /g, '-'))
     if (!modClw) {
-      setModClw(name.toLowerCase().replace(' ', '-'))
+      setModClw(name.toLowerCase().replace(/ /g, '-'))
     }
   }
   const changeModColorway = (name) => {
-    setModClw(name.toLowerCase().replace(' ', '-'))
+    setModClw(name.toLowerCase().replace(/ /g, '-'))
   }
 
   const maxWidth = keyboard.layouts
@@ -75,13 +77,13 @@ function App() {
               })
             }
           </Select>
-          <Select style={{ width: 300 }} onSelect={chooseLayout}>
+          {/* <Select style={{ width: 300 }} onSelect={chooseLayout}>
             {
               keyboard.layouts && Object.keys(keyboard.layouts).map(layout => {
                 return <Option value={layout} key={layout}>{layout}</Option>
               })
             }
-          </Select>
+          </Select> */}
           <Select style={{ width: 300 }} onChange={changeColorway}>
             {
               colorways.map(clw => {

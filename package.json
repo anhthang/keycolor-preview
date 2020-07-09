@@ -1,5 +1,5 @@
 {
-  "name": "keyset-mixer",
+  "name": "keyboard-colorway-editor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "lodash.keyby": "^4.6.0",
     "lodash.max": "^4.0.1",
     "node-fetch": "^2.6.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
