@@ -19,6 +19,7 @@ import colorways from './components/colorways';
 // );
 
 const keycodeMap = keyBy(keycodes, 'code')
+const defaultColor = 'gmk-bento'
 
 const { Option } = Select
 
@@ -54,7 +55,6 @@ function keyClasses(keycode, colorway, override = {}) {
 
   return classes.join(' ')
 }
-
 
 const colorwayNames = colorways.list.map(c => {
   const display = c.name.split('-').map((n, i) => {
@@ -104,6 +104,8 @@ function App() {
         } else {
           getLayout(layout, res.layouts[layout])
         }
+
+        changeColorway(defaultColor)
       })
   }
 
@@ -148,7 +150,7 @@ function App() {
               })
             }
           </Select> */}
-          <Select showSearch style={{ width: 300 }} onChange={changeColorway}>
+          <Select showSearch defaultValue={defaultColor} style={{ width: 300 }} onChange={changeColorway}>
             {
               colorwayNames.map(clw => {
                 return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
@@ -173,6 +175,11 @@ function App() {
           whiteSpace: 'pre-line',
         }}>
           {keymaps.layout.map((k, idx) => {
+            const x = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].x) || k.x
+            const y = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].y) || k.y
+            const w = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].w) || k.w || 1
+            const h = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].h) || k.h || 1
+
             return <div
               key={idx}
               id={idx}
@@ -186,10 +193,10 @@ function App() {
                   borderRight: `1px solid rgba(0,0,0,.1)`,
                   // fontFamily: `Cascadia Code`,
                   fontSize: "small",
-                  left: `${k.x * 60}px`,
-                  top: `${k.y * 60}px`,
-                  width: `${(k.w || 1) * 60 - 5}px`,
-                  height: `${(k.h || 1) * 60 - 5}px`,
+                  left: `${x * 60}px`,
+                  top: `${y * 60}px`,
+                  width: `${w * 60 - 5}px`,
+                  height: `${h * 60 - 5}px`,
                   position: `absolute`,
                   marginRight: `5px`,
                   marginBottom: `5px`,
