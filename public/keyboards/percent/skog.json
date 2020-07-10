@@ -1,0 +1,23 @@
+{
+    "keyboard_name": "skog",
+    "keyboard_folder": "percent/skog",
+    "keymaps": [],
+    "layouts": {
+        "tkl": {}
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 18.25,
+    "height": 6.5,
+    "vendor_id": "0x5053 /* PS */",
+    "product_id": "0x422D",
+    "device_ver": "0x0200",
+    "manufacturer": "Percent Studios",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x5053 /* PS */:0x422D:0x0200"
+}

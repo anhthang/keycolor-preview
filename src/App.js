@@ -22,8 +22,12 @@ const keycodeMap = keyBy(keycodes, 'code')
 
 const { Option } = Select
 
-function keyClasses(keycode, colorway) {
+function keyClasses(keycode, colorway, override = {}) {
   const classes = []
+
+  if (override && override.display === false) {
+    classes.push('hidden-key')
+  }
   if (colorway.override && colorway.override[keycode]) {
     // Colorway specific overrides by keycode
     classes.push(
@@ -66,7 +70,7 @@ const colorwayNames = colorways.list.map(c => {
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
   const [keyboard, setKeyboard] = useState({})
-  const [keymaps, setKeymaps] = useState([])
+  const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState({})
   // const [modClw, setModClw] = useState("")
 
@@ -78,12 +82,28 @@ function App() {
       })
   }, [])
 
+  const getLayout = (layout_name, additional) => {
+    fetch(`http://localhost:3000/layouts/${layout_name}.json`)
+      .then(res => res.json())
+      .then(res => {
+        const kbLayout = {...res, ...additional}
+        setKeymaps(kbLayout)
+      })
+  }
+
   const selectBoard = (keyboard_name) => {
-    fetch(`http://localhost:3000/keyboards/${keyboard_name.replace(/\//g, "_")}.json`)
+    fetch(`http://localhost:3000/keyboards/${keyboard_name}.json`)
       .then(res => res.json())
       .then(res => {
         setKeyboard(res)
-        setKeymaps(res.layouts.default.layout)
+
+        const layout = Object.keys(res.layouts)[0]
+        if (layout === 'default') {
+          // make keyboards which still not change to new format working
+          setKeymaps(res.layouts.default)
+        } else {
+          getLayout(layout, res.layouts[layout])
+        }
       })
   }
 
@@ -102,11 +122,11 @@ function App() {
     // setModClw(name.toLowerCase().replace(/ /g, '-'))
   }
 
-  const maxWidth = keyboard.layouts
-    ? max(keyboard.layouts.default.layout.map(k => k.x + (k.w || 1)))
+  const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
+    ? max(keymaps.layout.map(k => k.x + (k.w || 1)))
     : 0
-  const maxHeight = keyboard.layouts
-    ? max(keyboard.layouts.default.layout.map(k => k.y + (k.h || 1)))
+  const maxHeight = Array.isArray(keymaps.layout) && keymaps.layout.length
+    ? max(keymaps.layout.map(k => k.y + (k.h || 1)))
     : 0
 
   return (
@@ -152,12 +172,12 @@ function App() {
           borderColor: 'transparent',
           whiteSpace: 'pre-line',
         }}>
-          {keymaps.map((k, idx) => {
+          {keymaps.layout.map((k, idx) => {
             return <div
               key={idx}
               id={idx}
               title={k.code}
-              className={keyClasses(k.code, colorway)}
+              className={keyClasses(k.code, colorway, keymaps.override && keymaps.override[k.code])}
               key-code={k.code}
               style={{
                   borderRadius: `6px`,
