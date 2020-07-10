@@ -105,7 +105,7 @@ function App() {
           getLayout(layout, res.layouts[layout])
         }
 
-        changeColorway(defaultColor)
+        changeColorway(colorway.name || defaultColor)
       })
   }
 
