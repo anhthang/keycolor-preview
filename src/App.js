@@ -6,8 +6,7 @@ import 'antd/dist/antd.css';
 
 import * as fetch from 'node-fetch';
 import { Select, Card } from 'antd';
-import keyBy from 'lodash.keyby';
-import max from 'lodash.max';
+import _ from 'lodash';
 import keycodes from './keycodes';
 
 import colorways from './components/colorways';
@@ -18,33 +17,33 @@ import colorways from './components/colorways';
 //   colorways.platformIcons(window.navigator.platform)
 // );
 
-const keycodeMap = keyBy(keycodes, 'code')
+const keycodeMap = _.keyBy(keycodes, 'code')
 const defaultColor = 'gmk-bento'
 
-const { Option } = Select
+const { Option, OptGroup } = Select
 
-function keyClasses(keycode, colorway, override = {}) {
-  const classes = []
+function keyClasses(key, colorway) {
+  const classes = ['key']
 
-  if (override && override.display === false) {
+  if (key.display === false) {
     classes.push('hidden-key')
   }
-  if (colorway.override && colorway.override[keycode]) {
+  if (colorway.override && colorway.override[key.code]) {
     // Colorway specific overrides by keycode
     classes.push(
-      `${colorway.name}-${colorway.override[keycode]}`
+      `${colorway.name}-${colorway.override[key.code]}`
     );
   } else if (
     // Large alpha keys (like Numpad 0)
-    colorways.alphaCodes[keycode]
+    colorways.alphaCodes[key.code]
   ) {
     classes.push(`${colorway.name}-key`);
   } else if (
     // Mod keys
-    // colorways.modCodes[keycode] ||
+    // colorways.modCodes[key.code] ||
     // (this.w <= KEY_WIDTH * 3 &&
     //   (this.w > KEY_WIDTH || this.h > KEY_HEIGHT))
-    colorways.modCodes[keycode]
+    colorways.modCodes[key.code] || (key.w <= 3 && (key.w > 1 || key.h > 1))
   ) {
     classes.push('mod');
     classes.push(`${colorway.name}-mod`);
@@ -56,16 +55,24 @@ function keyClasses(keycode, colorway, override = {}) {
   return classes.join(' ')
 }
 
-const colorwayNames = colorways.list.map(c => {
-  const display = c.name.split('-').map((n, i) => {
-    return i === 0 ? n.toUpperCase() : n.replace(n.charAt(0), n.charAt(0).toUpperCase())
-  }).join(' ')
-
-  return {
-    value: c.name,
-    text: display
-  }
-})
+const colorwayNames = _(colorways.list)
+  .groupBy(i => i.name.split('-')[0])
+  .map((list, manufacture) => {
+    return {
+      manufacture: manufacture.toUpperCase(),
+      colorways: list.map(c => {
+        const display = c.name.split('-').map((n, i) => {
+          return i === 0 ? n.toUpperCase() : n.replace(n.charAt(0), n.charAt(0).toUpperCase())
+        }).join(' ')
+    
+        return {
+          value: c.name,
+          text: display
+        }
+      })
+    }
+  })
+  .value()
 
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
@@ -125,10 +132,10 @@ function App() {
   }
 
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
-    ? max(keymaps.layout.map(k => k.x + (k.w || 1)))
+    ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
     : 0
   const maxHeight = Array.isArray(keymaps.layout) && keymaps.layout.length
-    ? max(keymaps.layout.map(k => k.y + (k.h || 1)))
+    ? _.max(keymaps.layout.map(k => k.y + (k.h || 1)))
     : 0
 
   return (
@@ -152,15 +159,27 @@ function App() {
           </Select> */}
           <Select showSearch defaultValue={defaultColor} style={{ width: 300 }} onChange={changeColorway}>
             {
-              colorwayNames.map(clw => {
-                return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
+              colorwayNames.map(grp => {
+                return <OptGroup label={grp.manufacture}>
+                  {
+                    grp.colorways.map(clw => {
+                      return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
+                    })
+                  }
+                </OptGroup>
               })
             }
           </Select>
-          <Select showSearch style={{ width: 300 }} onChange={changeModColorway}>
+          <Select showSearch defaultValue={defaultColor} style={{ width: 300 }} onChange={changeModColorway}>
             {
-              colorwayNames.map(clw => {
-                return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
+              colorwayNames.map(grp => {
+                return <OptGroup label={grp.manufacture}>
+                  {
+                    grp.colorways.map(clw => {
+                      return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
+                    })
+                  }
+                </OptGroup>
               })
             }
           </Select>
@@ -175,16 +194,13 @@ function App() {
           whiteSpace: 'pre-line',
         }}>
           {keymaps.layout.map((k, idx) => {
-            const x = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].x) || k.x
-            const y = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].y) || k.y
-            const w = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].w) || k.w || 1
-            const h = (keymaps.override && keymaps.override[k.code] && keymaps.override[k.code].h) || k.h || 1
+            const key = {...k, ...keymaps.override && keymaps.override[k.code]}
 
             return <div
               key={idx}
               id={idx}
               title={k.code}
-              className={keyClasses(k.code, colorway, keymaps.override && keymaps.override[k.code])}
+              className={keyClasses(key, colorway)}
               key-code={k.code}
               style={{
                   borderRadius: `6px`,
@@ -193,11 +209,10 @@ function App() {
                   borderRight: `1px solid rgba(0,0,0,.1)`,
                   // fontFamily: `Cascadia Code`,
                   fontSize: "small",
-                  left: `${x * 60}px`,
-                  top: `${y * 60}px`,
-                  width: `${w * 60 - 5}px`,
-                  height: `${h * 60 - 5}px`,
-                  position: `absolute`,
+                  left: `${key.x * 60}px`,
+                  top: `${key.y * 60}px`,
+                  width: `${(key.w || 1) * 60 - 5}px`,
+                  height: `${(key.h || 1) * 60 - 5}px`,
                   marginRight: `5px`,
                   marginBottom: `5px`,
                   ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
