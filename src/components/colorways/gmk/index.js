@@ -4,6 +4,7 @@ import gmk_analog_dreams from './analog_dreams';
 import gmk_ascii from './ascii';
 import gmk_bento from './bento';
 import gmk_bingsu from './bingsu';
+import gmk_bread from './bread';
 import gmk_cafe from './cafe';
 import gmk_calm_depths from './calm_depths';
 import gmk_camping from './camping';
@@ -35,6 +36,7 @@ export default [
   gmk_ascii,
   gmk_bento,
   gmk_bingsu,
+  gmk_bread,
   gmk_cafe,
   gmk_calm_depths,
   gmk_camping,

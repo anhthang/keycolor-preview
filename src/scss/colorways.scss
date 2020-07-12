@@ -368,6 +368,19 @@
   color: #533d45;
 }
 
+.gmk-bread-key {
+  background: $color-ral-1015;
+  color: $color-ral-8008;
+}
+.gmk-bread-mod {
+  background: $color-ral-8008;
+  color: $color-ral-1015;
+}
+.gmk-bread-accent {
+  background: $color-ral-1011;
+  color: $color-ral-8008;
+}
+
 .gmk-cafe-key {
   background: $color-gmk-abs-L9;
   color: #3d3635;
@@ -981,6 +994,21 @@
 }
 
 // JTKeycaps
+.jtk-classic-fc-key {
+  background: #f6ebda;
+  color: #74242a;
+}
+
+.jtk-classic-fc-mod {
+  background: #74242a;
+  color: #f6ebda;
+}
+
+.jtk-classic-fc-accent {
+  background: #1b1918;
+  color: #f6ebda;
+}
+
 .jtk-suited-assassin-key,
 .jtk-suited-assassin-mod {
   background: #312c2b;
