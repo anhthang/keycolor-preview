@@ -19,6 +19,7 @@ import colorways from './components/colorways';
 
 const keycodeMap = _.keyBy(keycodes, 'code')
 const defaultColor = ['gmk', 'camping']
+const defaultKeyboardColor = '#e0e0e0'
 
 const { Option } = Select
 
@@ -82,6 +83,7 @@ const colorwayNames = _(colorways.list)
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
   const [keyboard, setKeyboard] = useState({})
+  const [keyboardColor, setKeyboardColor] = useState('transparent')
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState({})
   const [kit, setKit] = useState(null)
@@ -109,6 +111,7 @@ function App() {
       .then(res => res.json())
       .then(res => {
         setKeyboard(res)
+        setKeyboardColor((res.colors && res.colors[0].color) || defaultKeyboardColor)
 
         const layout = Object.keys(res.layouts)[0]
         if (layout === 'default') {
@@ -151,23 +154,29 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Card>
-          <Select showSearch style={{ width: 300 }} onSelect={(e) => selectBoard(e)}>
+          <Select showSearch style={{ width: 300 }} onSelect={(e) => selectBoard(e)} placeholder="Select Keyboard" >
             {
               keyboardNames.map(keyboard => {
                 return <Option value={keyboard} key={keyboard}>{keyboard}</Option>
               })
             }
           </Select>
-          <Cascader showSearch style={{ width: 400 }} options={colorwayNames} onChange={changeColorway} placeholder="Select colorway" />
+          <Select showSearch style={{ width: 300 }} onSelect={(e) => setKeyboardColor(e)} placeholder="Select Keyboard Color" >
+            {
+              (keyboard.colors || []).map(c => {
+                return <Option value={c.color} key={c.name}>{c.name}</Option>
+              })
+            }
+          </Select>
+          <Cascader showSearch style={{ width: 400 }} options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
         </Card>
         <Card style={{
-          position: 'relative',
-          width: 60 * maxWidth,
-          height: 60 * maxHeight,
+          width: 60 * maxWidth + 15 * 2 - 5,
+          height: 60 * maxHeight + 15 * 2 - 5,
           top: 24,
-          backgroundColor: 'transparent',
-          borderColor: 'transparent',
-          whiteSpace: 'pre-line',
+          border: `15px solid ${keyboardColor}`,
+          borderRadius: 6,
+          backgroundColor: `${keyboardColor}`
         }}>
           {keymaps.layout.map((k, idx) => {
             const key = {...k, ...keymaps.override && keymaps.override[k.code]}
@@ -189,8 +198,8 @@ function App() {
                   top: `${key.y * 60}px`,
                   width: `${(key.w || 1) * 60 - 5}px`,
                   height: `${(key.h || 1) * 60 - 5}px`,
-                  marginRight: `5px`,
-                  marginBottom: `5px`,
+                  // marginRight: `5px`,
+                  // marginBottom: `5px`,
                   ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
               }}
               >

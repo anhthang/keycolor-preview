@@ -1,7 +1,25 @@
 {
     "keyboard_name": "Gray Studio Space65",
     "keyboard_folder": "gray_studio/space65",
-    "keymaps": [],
+    "colors": [{
+        "name": "Stormtrooper",
+        "color": "#e0e0e0"
+    }, {
+        "name": "Bruce Lee",
+        "color": "#c6aa2f"
+    }, {
+        "name": "Ocean",
+        "color": "#444961"
+    }, {
+        "name": "EVA-01",
+        "color": "#6f4fa4"
+    }, {
+        "name": "RoboCop",
+        "color": "#7d7d7d"
+    }, {
+        "name": "Deadpool",
+        "color": "#9a2827"
+    }],
     "layouts": {
         "default": {
             "key_count": 71,
