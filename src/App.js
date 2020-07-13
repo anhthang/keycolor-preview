@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import './App.scss';
 import 'antd/dist/antd.css';
+import 'rc-color-picker/assets/index.css';
 
 import * as fetch from 'node-fetch';
 import { Select, Card, Cascader } from 'antd';
+import ColorPicker from 'rc-color-picker';
 import _ from 'lodash';
 import keycodes from './keycodes';
 
@@ -168,6 +170,11 @@ function App() {
               })
             }
           </Select>
+          <ColorPicker
+            animation="slide-up"
+            color={defaultKeyboardColor}
+            onChange={(e) => setKeyboardColor(e.color)}
+          />
           <Cascader showSearch style={{ width: 400 }} options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
         </Card>
         <Card style={{
