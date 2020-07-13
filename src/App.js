@@ -5,7 +5,7 @@ import './App.scss';
 import 'antd/dist/antd.css';
 
 import * as fetch from 'node-fetch';
-import { Select, Card } from 'antd';
+import { Select, Card, Cascader } from 'antd';
 import _ from 'lodash';
 import keycodes from './keycodes';
 
@@ -18,13 +18,16 @@ import colorways from './components/colorways';
 // );
 
 const keycodeMap = _.keyBy(keycodes, 'code')
-const defaultColor = 'gmk-bento'
+const defaultColor = ['gmk', 'camping']
 
-const { Option, OptGroup } = Select
+const { Option } = Select
 
-function keyClasses(key, colorway) {
+function keyClasses(key, colorway, kit) {
   const classes = ['key']
 
+  if (kit) {
+    classes.push(kit)
+  }
   if (key.display === false) {
     classes.push('hidden-key')
   }
@@ -59,15 +62,17 @@ const colorwayNames = _(colorways.list)
   .groupBy(i => i.name.split('-')[0])
   .map((list, manufacture) => {
     return {
-      manufacture: manufacture.toUpperCase(),
-      colorways: list.map(c => {
-        const display = c.name.split('-').map((n, i) => {
-          return i === 0 ? n.toUpperCase() : n.replace(n.charAt(0), n.charAt(0).toUpperCase())
-        }).join(' ')
-    
+      value: manufacture,
+      label: manufacture.toUpperCase(),
+      children: list.map(c => {
+        const parts = c.name.split('-')
+        parts.shift()
+        const display = parts.map((n) => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
+
         return {
-          value: c.name,
-          text: display
+          value: parts.join('-'),
+          label: display,
+          children: c.kits ? c.kits.map(k => ({ value: k, label: k.replace(k.charAt(0), k.charAt(0).toUpperCase()) })) : []
         }
       })
     }
@@ -79,6 +84,7 @@ function App() {
   const [keyboard, setKeyboard] = useState({})
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState({})
+  const [kit, setKit] = useState(null)
   // const [modClw, setModClw] = useState("")
 
   useEffect(() => {
@@ -112,7 +118,7 @@ function App() {
           getLayout(layout, res.layouts[layout])
         }
 
-        changeColorway(colorway.name || defaultColor)
+        changeColorway(colorway.name ? colorway.name.split('-') : defaultColor)
       })
   }
 
@@ -121,8 +127,10 @@ function App() {
   // }
 
   const changeColorway = (name) => {
-    const clw = colorways.list.find(c => c.name === name)
+    const base = name.slice(0, 2).join('-')
+    const clw = colorways.list.find(c => c.name === base)
     setColorway(clw)
+    setKit(name[2])
     // if (!modClw) {
     //   setModClw(name.toLowerCase().replace(/ /g, '-'))
     // }
@@ -150,39 +158,7 @@ function App() {
               })
             }
           </Select>
-          {/* <Select style={{ width: 300 }} onSelect={chooseLayout}>
-            {
-              keyboard.layouts && Object.keys(keyboard.layouts).map(layout => {
-                return <Option value={layout} key={layout}>{layout}</Option>
-              })
-            }
-          </Select> */}
-          <Select showSearch defaultValue={defaultColor} style={{ width: 300 }} onChange={changeColorway}>
-            {
-              colorwayNames.map(grp => {
-                return <OptGroup label={grp.manufacture}>
-                  {
-                    grp.colorways.map(clw => {
-                      return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
-                    })
-                  }
-                </OptGroup>
-              })
-            }
-          </Select>
-          <Select showSearch defaultValue={defaultColor} style={{ width: 300 }} onChange={changeModColorway}>
-            {
-              colorwayNames.map(grp => {
-                return <OptGroup label={grp.manufacture}>
-                  {
-                    grp.colorways.map(clw => {
-                      return <Option value={clw.value} key={clw.value}>{clw.text}</Option>
-                    })
-                  }
-                </OptGroup>
-              })
-            }
-          </Select>
+          <Cascader showSearch style={{ width: 400 }} options={colorwayNames} onChange={changeColorway} placeholder="Select colorway" />
         </Card>
         <Card style={{
           position: 'relative',
@@ -200,7 +176,7 @@ function App() {
               key={idx}
               id={idx}
               title={k.code}
-              className={keyClasses(key, colorway)}
+              className={keyClasses(key, colorway, kit)}
               key-code={k.code}
               style={{
                   borderRadius: `6px`,

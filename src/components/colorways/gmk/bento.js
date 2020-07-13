@@ -1,5 +1,6 @@
 export default {
   name: 'gmk-bento',
+  kits: ["traditional", "revival"],
   override: {
     KC_ESC: 'accent',
     KC_ENT: 'accent',

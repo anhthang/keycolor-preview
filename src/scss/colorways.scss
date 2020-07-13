@@ -333,6 +333,14 @@
 .gmk-bento-key {
   background: #fff3ef;
   color: #3e728f;
+  // &.traditional {
+  //   background: #fff3ef;
+  //   color: #3e728f;
+  // }
+  &.revival {
+    background: #3e728f;
+    color: #fb7279;
+  }
   input,
   .key-contents {
     background: #fff3ef;
@@ -452,28 +460,19 @@
 .gmk-dolch-kb {
 }
 
-.gmk-hammer-head-dark-key {
+.gmk-hammerhead-key {
   background: $color-pantone-533C;
   color: $color-pantone-3258C;
+  &.light {
+    background: $color-pantone-536C;
+    color: $color-pantone-2378C;
+  }
 }
-.gmk-hammer-head-dark-mod {
+.gmk-hammerhead-mod {
   background: $color-pantone-2378C;
   color: $color-pantone-3258C;
 }
-.gmk-hammer-head-dark-accent {
-  background: $color-pantone-3258C;
-  color: $color-pantone-2378C;
-}
-
-.gmk-hammer-head-light-key {
-  background: $color-pantone-536C;
-  color: $color-pantone-2378C;
-}
-.gmk-hammer-head-light-mod {
-  background: $color-pantone-2378C;
-  color: $color-pantone-3258C;
-}
-.gmk-hammer-head-light-accent {
+.gmk-hammerhead-accent {
   background: $color-pantone-3258C;
   color: $color-pantone-2378C;
 }
