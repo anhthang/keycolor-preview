@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 import 'rc-color-picker/assets/index.css';
 
 import * as fetch from 'node-fetch';
-import { Select, Card, Cascader } from 'antd';
+import { Select, Card, Cascader, Row, Col } from 'antd';
 import ColorPicker from 'rc-color-picker';
 import _ from 'lodash';
 import keycodes from './keycodes';
@@ -63,10 +63,10 @@ function keyClasses(key, colorway, kit) {
 
 const colorwayNames = _(colorways.list)
   .groupBy(i => i.name.split('-')[0])
-  .map((list, manufacture) => {
+  .map((list, manufacturer) => {
     return {
-      value: manufacture,
-      label: manufacture.toUpperCase(),
+      value: manufacturer,
+      label: manufacturer.toUpperCase(),
       children: list.map(c => {
         const parts = c.name.split('-')
         parts.shift()
@@ -92,10 +92,24 @@ function App() {
   // const [modClw, setModClw] = useState("")
 
   useEffect(() => {
-    fetch('http://localhost:3000/keyboards.json')
+    fetch('http://localhost:3000/keyboard_folders.json')
       .then(res => res.json())
       .then(res => {
-        setKeyboardNames(res)
+        const keyboards = _(res)
+          .groupBy('manufacturer')
+          .map((list, manufacturer) => {
+            return {
+              value: manufacturer,
+              label: manufacturer,
+              children: list.map(board => ({
+                value: board.keyboard_folder,
+                label: board.keyboard_name,
+              }))
+            }
+          })
+          .value()
+
+        setKeyboardNames(keyboards)
       })
   }, [])
 
@@ -109,7 +123,7 @@ function App() {
   }
 
   const selectBoard = (keyboard_name) => {
-    fetch(`http://localhost:3000/keyboards/${keyboard_name}.json`)
+    fetch(`http://localhost:3000/keyboards/${keyboard_name[1]}.json`)
       .then(res => res.json())
       .then(res => {
         setKeyboard(res)
@@ -140,9 +154,9 @@ function App() {
     //   setModClw(name.toLowerCase().replace(/ /g, '-'))
     // }
   }
-  const changeModColorway = (name) => {
-    // setModClw(name.toLowerCase().replace(/ /g, '-'))
-  }
+  // const changeModColorway = (name) => {
+  //   setModClw(name.toLowerCase().replace(/ /g, '-'))
+  // }
 
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
@@ -156,26 +170,32 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Card>
-          <Select showSearch style={{ width: 300 }} onSelect={(e) => selectBoard(e)} placeholder="Select Keyboard" >
-            {
-              keyboardNames.map(keyboard => {
-                return <Option value={keyboard} key={keyboard}>{keyboard}</Option>
-              })
-            }
-          </Select>
-          <Select showSearch style={{ width: 300 }} onSelect={(e) => setKeyboardColor(e)} placeholder="Select Keyboard Color" >
-            {
-              (keyboard.colors || []).map(c => {
-                return <Option value={c.color} key={c.name}>{c.name}</Option>
-              })
-            }
-          </Select>
-          <ColorPicker
-            animation="slide-up"
-            color={defaultKeyboardColor}
-            onChange={(e) => setKeyboardColor(e.color)}
-          />
-          <Cascader showSearch style={{ width: 400 }} options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
+          <Row gutter={16}>
+            <Col>
+              <Cascader showSearch style={{ width: 300 }} options={keyboardNames} onChange={selectBoard} placeholder="Select Keyboard" />
+            </Col>
+            <Col>
+              <Select showSearch style={{ width: 300 }} onSelect={(e) => setKeyboardColor(e)} placeholder="Select Keyboard Color" >
+                {
+                  (keyboard.colors || []).map(c => {
+                    return <Option value={c.color} key={c.name}>{c.name}</Option>
+                  })
+                }
+              </Select>
+            </Col>
+            <Col>
+              <ColorPicker
+                animation="slide-up"
+                color={defaultKeyboardColor}
+                onChange={(e) => setKeyboardColor(e.color)}
+              />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: 24 }}>
+            <Col>
+              <Cascader showSearch style={{ width: 700 }} options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
+            </Col>
+          </Row>
         </Card>
         <Card style={{
           width: 60 * maxWidth + 15 * 2 - 5,

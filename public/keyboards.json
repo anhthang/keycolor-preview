@@ -21,10 +21,7 @@
     "duck/eagle_viper",
     "duck/jetfire",
     "duck/lightsaver",
-    "duck/octagon",
-    "duck/octagon_v1",
     "duck/octagon_v2",
-    "duck/orion",
     "duck/orion_v3",
     "duck/tcv3",
     "exclusive/e65",
@@ -43,8 +40,7 @@
     "gray_studio/cod67",
     "gray_studio/hb85",
     "gray_studio/space65",
-    "gray_studio/think65/hotswap",
-    "gray_studio/think65/solder",
+    "gray_studio/think65",
     "kbdfans/kbd19x",
     "kbdfans/kbd4x",
     "kbdfans/kbd66",
@@ -69,8 +65,7 @@
     "percent/skog",
     "percent/skog_lite",
     "tgr/910",
-    "tgr/910ce",
     "tgr/alice",
     "tgr/jane",
     "tgr/tris"
-  ]
+]

@@ -13,7 +13,7 @@
     "vendor_id": "0x5053 /* PS */",
     "product_id": "0x422D",
     "device_ver": "0x0200",
-    "manufacturer": "Percent Studios",
+    "manufacturer": "Percent Studio",
     "processor_type": "avr",
     "bootloader": "bootloadHID",
     "platform": "unknown",
