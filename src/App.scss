@@ -4,3 +4,22 @@
 @import './scss/pantone';
 @import './scss/ral';
 @import './scss/colorways';
+
+.key {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  box-sizing: border-box;
+  white-space: pre-line;
+  padding: 1px;
+  padding-bottom: 3px;
+
+  &.hidden-key {
+    display: none;
+  }
+  &.alpha {
+    text-transform: uppercase;
+  }
+}

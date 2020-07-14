@@ -4,7 +4,6 @@
     "keymaps": [],
     "layouts": {
         "65_ansi": {
-            "key_count": 67,
             "override": {
                 "KC_PSCR": {
                     "display": false

@@ -25,6 +25,10 @@
         {
             "name": "Deadpool",
             "color": "#9a2827"
+        },
+        {
+            "name": "Terminal",
+            "color": "#525252"
         }
     ],
     "layouts": {

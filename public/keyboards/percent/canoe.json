@@ -1,7 +1,36 @@
 {
     "keyboard_name": "Canoe",
     "keyboard_folder": "percent/canoe",
-    "keymaps": [],
+    "colors": [
+        {
+            "name": "Classic",
+            "color": "#c1bfbf"
+        },
+        {
+            "name": "Industry",
+            "color": "#e0992d"
+        },
+        {
+            "name": "Panda",
+            "color": "#e7e1dc"
+        },
+        {
+            "name": "Svart",
+            "color": "#5f6268"
+        },
+        {
+            "name": "Homelander",
+            "color": "#1b3143"
+        },
+        {
+            "name": "Casio (Limited Edition)",
+            "color": "#dfe1e3"
+        },
+        {
+            "name": "EVA 01 (Limited Edition)",
+            "color": "#604b7b"
+        }
+    ],
     "layouts": {
         "65_ansi": {}
     },

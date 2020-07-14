@@ -57,6 +57,9 @@ function keyClasses(key, colorway, kit) {
     classes.push(`${colorway.name}-mod`);
   } else {
     // everything else
+    if (key.code !== 'KC_SPC') {
+      classes.push('alpha')
+    }
     classes.push(`${colorway.name}-key`);
   }
 
@@ -171,6 +174,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src="./keyboard.png" alt="Keyboard" />
         <Card>
           <Row gutter={16}>
             <Col>
@@ -221,14 +225,10 @@ function App() {
                   boxShadow: `inset 0 -1px 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.3)`,
                   borderLeft: `1px solid rgba(0,0,0,.1)`,
                   borderRight: `1px solid rgba(0,0,0,.1)`,
-                  // fontFamily: `Cascadia Code`,
-                  fontSize: "small",
                   left: `${key.x * 60}px`,
                   top: `${key.y * 60}px`,
                   width: `${(key.w || 1) * 60 - 5}px`,
                   height: `${(key.h || 1) * 60 - 5}px`,
-                  // marginRight: `5px`,
-                  // marginBottom: `5px`,
                   ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
               }}
               >

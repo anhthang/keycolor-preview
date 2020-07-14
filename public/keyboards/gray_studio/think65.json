@@ -3,7 +3,16 @@
     "keyboard_folder": "gray_studio/think65",
     "keymaps": [],
     "layouts": {
-        "65_ansi": {}
+        "65_ansi": {
+            "override": {
+                "KC_PGUP": {
+                    "display": false
+                },
+                "KC_PGDN": {
+                    "display": false
+                }
+            }
+        }
     },
     "maintainer": "qmk",
     "readme": true,
