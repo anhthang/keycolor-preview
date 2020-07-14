@@ -25,6 +25,8 @@ const defaultKeyboardColor = '#e0e0e0'
 
 const { Option } = Select
 
+const apiUrl = 'https://kce.anhthang.org'
+
 function keyClasses(key, colorway, kit) {
   const classes = ['key']
 
@@ -92,7 +94,7 @@ function App() {
   // const [modClw, setModClw] = useState("")
 
   useEffect(() => {
-    fetch('http://localhost:3000/keyboard_folders.json')
+    fetch(`${apiUrl}/keyboard_folders.json`)
       .then(res => res.json())
       .then(res => {
         const keyboards = _(res)
@@ -114,7 +116,7 @@ function App() {
   }, [])
 
   const getLayout = (layout_name, additional) => {
-    fetch(`http://localhost:3000/layouts/${layout_name}.json`)
+    fetch(`${apiUrl}/layouts/${layout_name}.json`)
       .then(res => res.json())
       .then(res => {
         const kbLayout = {...res, ...additional}
@@ -123,7 +125,7 @@ function App() {
   }
 
   const selectBoard = (keyboard_name) => {
-    fetch(`http://localhost:3000/keyboards/${keyboard_name[1]}.json`)
+    fetch(`${apiUrl}/keyboards/${keyboard_name[1]}.json`)
       .then(res => res.json())
       .then(res => {
         setKeyboard(res)
