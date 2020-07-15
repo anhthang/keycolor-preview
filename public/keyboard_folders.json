@@ -66,7 +66,8 @@
     },
     {
         "keyboard_name": "Satisfaction75 rev1",
-        "keyboard_folder": "cannonkeys/satisfaction75/rev1"
+        "keyboard_folder": "cannonkeys/satisfaction75/rev1",
+        "manufacturer": "CannonKeys"
     },
     {
         "keyboard_name": "Savage65",
@@ -116,7 +117,7 @@
     {
         "keyboard_name": "e6_rgb",
         "keyboard_folder": "exclusive/e6_rgb",
-        "manufacturer": "astro"
+        "manufacturer": "Exclusive"
     },
     {
         "keyboard_name": "E6-V2 LE",
@@ -231,15 +232,12 @@
     {
         "keyboard_name": "kbd6x",
         "keyboard_folder": "kbdfans/kbd6x",
-        "manufacturer": "You"
+        "manufacturer": "KBDFans"
     },
     {
         "keyboard_name": "KBD75",
-        "keyboard_folder": "kbdfans/kbd75/rev1"
-    },
-    {
-        "keyboard_name": "KBD75",
-        "keyboard_folder": "kbdfans/kbd75/rev2"
+        "keyboard_folder": "kbdfans/kbd75/rev1",
+        "manufacturer": "KBDFans"
     },
     {
         "keyboard_name": "KBD 8X",
@@ -254,7 +252,7 @@
     {
         "keyboard_name": "kbdfans/kbdmini",
         "keyboard_folder": "kbdfans/kbdmini",
-        "manufacturer": "DZTECH"
+        "manufacturer": "KBDFans"
     },
     {
         "keyboard_name": "KBDfans KBDPad MKI",
@@ -289,7 +287,7 @@
     {
         "keyboard_name": "TGR-910",
         "keyboard_folder": "tgr/910",
-        "manufacturer": "Quadcube"
+        "manufacturer": "TGR"
     },
     {
         "keyboard_name": "TGR Alice",
