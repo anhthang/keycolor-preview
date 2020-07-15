@@ -54,7 +54,7 @@
 
 .gmk, .jtk {
   font-size: larger;
-  // font-weight: bolder;
+  font-weight: bolder;
   padding-left: 6px;
   &.smaller {
     font-size: smaller;
@@ -63,4 +63,10 @@
   &.special-chars {
     font-size: medium;
   }
+}
+
+.bilingual {
+  align-self: flex-end;
+  margin-left: auto;
+  padding-right: 6px;
 }

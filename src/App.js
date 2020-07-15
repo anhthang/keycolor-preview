@@ -20,7 +20,7 @@ import colorways from './components/colorways';
 // );
 
 const keycodeMap = _.keyBy(keycodes, 'code')
-const defaultColor = ['gmk', 'camping']
+const defaultColor = ['gmk', 'bento']
 const defaultKeyboardColor = '#e0e0e0'
 
 const { Option } = Select
@@ -239,6 +239,7 @@ function App() {
               }}
               >
               {keycodeMap[k.code] && keycodeMap[k.code].name}
+              {Array.isArray(colorway.bilingual) && colorway.bilingual.length && <div className="bilingual">{keycodeMap[k.code] && keycodeMap[k.code][colorway.bilingual[0]]}</div>}
             </div>
           })}
           {/* <Image /> */}
