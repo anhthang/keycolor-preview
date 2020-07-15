@@ -27,14 +27,23 @@ const { Option } = Select
 
 const apiUrl = 'https://kce.anhthang.org'
 
+const rg = new RegExp(/[a-zA-Z0-9]/)
+
 function keyClasses(key, colorway, kit) {
   const classes = ['key']
 
+  if (colorway && colorway.name) {
+    classes.push(colorway.name.split('-')[0])
+  }
   if (kit) {
     classes.push(kit)
   }
   if (keycodeMap[key.code] && keycodeMap[key.code].name.length > 1) {
-    classes.push('smaller')
+    if (rg.test(keycodeMap[key.code].name.charAt(0))) {
+      classes.push('smaller')
+    } else {
+      classes.push('special-chars')
+    }
   }
   if (key.display === false) {
     classes.push('hidden-key')
