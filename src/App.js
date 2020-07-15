@@ -33,6 +33,9 @@ function keyClasses(key, colorway, kit) {
   if (kit) {
     classes.push(kit)
   }
+  if (keycodeMap[key.code] && keycodeMap[key.code].name.length > 1) {
+    classes.push('smaller')
+  }
   if (key.display === false) {
     classes.push('hidden-key')
   }
@@ -57,9 +60,6 @@ function keyClasses(key, colorway, kit) {
     classes.push(`${colorway.name}-mod`);
   } else {
     // everything else
-    if (key.code !== 'KC_SPC') {
-      classes.push('alpha')
-    }
     classes.push(`${colorway.name}-key`);
   }
 
@@ -142,7 +142,8 @@ function App() {
           getLayout(layout, res.layouts[layout])
         }
 
-        changeColorway(colorway.name ? colorway.name.split('-') : defaultColor)
+        // fix bug color name has more than 2 words
+        changeColorway(colorway.name ? colorway.name.replace('-', '/').split('/') : defaultColor)
       })
   }
 
@@ -221,15 +222,11 @@ function App() {
               className={keyClasses(key, colorway, kit)}
               key-code={k.code}
               style={{
-                  borderRadius: `6px`,
-                  boxShadow: `inset 0 -1px 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.3)`,
-                  borderLeft: `1px solid rgba(0,0,0,.1)`,
-                  borderRight: `1px solid rgba(0,0,0,.1)`,
-                  left: `${key.x * 60}px`,
-                  top: `${key.y * 60}px`,
-                  width: `${(key.w || 1) * 60 - 5}px`,
-                  height: `${(key.h || 1) * 60 - 5}px`,
-                  ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
+                left: `${key.x * 60}px`,
+                top: `${key.y * 60}px`,
+                width: `${(key.w || 1) * 60 - 5}px`,
+                height: `${(key.h || 1) * 60 - 5}px`,
+                ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
               }}
               >
               {keycodeMap[k.code] && keycodeMap[k.code].name}
