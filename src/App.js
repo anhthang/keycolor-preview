@@ -4,21 +4,14 @@ import 'antd/dist/antd.css';
 import 'rc-color-picker/assets/index.css';
 
 import * as fetch from 'node-fetch';
-import { Select, Card, Cascader, Row, Col, Form } from 'antd';
+import { Select, Card, Cascader, Row, Col, Form, Checkbox, Empty } from 'antd';
 import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
+import Key from './components/Key';
 import ColorPicker from 'rc-color-picker';
 // import RightHeader from './components/RightHeader';
 import _ from 'lodash';
-import keycodes from './keycodes';
 import colorways from './components/colorways';
 
-// let substitute = Object.assign(
-//   {},
-//   colorways.iconCodes,
-//   colorways.platformIcons(window.navigator.platform)
-// );
-
-const keycodeMap = _.keyBy(keycodes, 'code')
 const defaultColor = ['gmk', 'bento']
 const defaultKeyboardColor = '#e0e0e0'
 
@@ -26,53 +19,9 @@ const { Option } = Select
 
 const apiUrl = 'https://kce.anhthang.org'
 
-const rg = new RegExp(/[a-zA-Z0-9]/)
 const keyWidth = 55
 const keySpacing = 4
 const keyboardBezel = 15
-
-function keyClasses(key, colorway, kit) {
-  const classes = ['key']
-
-  if (colorway && colorway.name) {
-    classes.push(colorway.name.split('-')[0])
-  }
-  if (kit) {
-    classes.push(kit)
-  }
-  if (keycodeMap[key.code] && keycodeMap[key.code].name.length > 1) {
-    if (rg.test(keycodeMap[key.code].name.charAt(0))) {
-      classes.push('smaller')
-    } else {
-      classes.push('special-chars')
-    }
-  }
-  if (key.display === false) {
-    classes.push('hidden-key')
-  }
-  if (colorway.override && colorway.override[key.code]) {
-    // Colorway specific overrides by keycode
-    classes.push(
-      `${colorway.name}-${colorway.override[key.code]}`
-    );
-  } else if (
-    // Large alpha keys (like Numpad 0)
-    colorways.alphaCodes[key.code]
-  ) {
-    classes.push(`${colorway.name}-key`);
-  } else if (
-    // Mod keys
-    colorways.modCodes[key.code] || (key.w <= 3 && (key.w > 1 || key.h > 1))
-  ) {
-    classes.push('mod');
-    classes.push(`${colorway.name}-mod`);
-  } else {
-    // everything else
-    classes.push(`${colorway.name}-key`);
-  }
-
-  return classes.join(' ')
-}
 
 const colorwayNames = _(colorways.list)
   .groupBy(i => i.name.split('-')[0])
@@ -102,6 +51,7 @@ function App() {
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState({})
   const [kit, setKit] = useState(null)
+  const [useDiffModifier, setChangeModifier] = useState(false)
 
   useEffect(() => {
     fetch(`${apiUrl}/keyboard_folders.json`)
@@ -207,42 +157,43 @@ function App() {
                 <Form.Item label="Keyset">
                   <Cascader showSearch options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
                 </Form.Item>
+                <Form.Item>
+                  <Checkbox defaultChecked={false} disabled onChange={(e) => setChangeModifier(e.target.checked)}>Change Modifier Colorway</Checkbox>
+                </Form.Item>
+                {
+                  useDiffModifier && (
+                    <Form.Item label="Modifier Colorway">
+                      <Cascader showSearch options={colorwayNames} placeholder="Select Colorway" />
+                    </Form.Item>
+                  )
+                }
               </Form>
             </Card>
           </Col>
           <Col md={18}>
             <Card className="keyboard-box" title="Keyboard" size="small">
-              <Card
-                className="keyboard-drawer"
-                style={{
-                  width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
-                  height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
-                  border: `${keyboardBezel}px solid ${keyboardColor}`,
-                  borderRadius: 6,
-                  backgroundColor: `${keyboardColor}`
-                }}>
-                {keymaps.layout.map((k, idx) => {
-                  const key = {...k, ...keymaps.override && keymaps.override[k.code]}
+              {keyboard && keyboard.keyboard_name
+                ? <Card
+                  className="keyboard-drawer"
+                  style={{
+                    width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
+                    height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
+                    border: `${keyboardBezel}px solid ${keyboardColor}`,
+                    borderRadius: 6,
+                    backgroundColor: `${keyboardColor}`
+                  }}>
+                  {keymaps.layout.map((k, idx) => {
+                    const key = {...k, ...keymaps.override && keymaps.override[k.code]}
 
-                  return <div
-                    key={idx}
-                    id={idx}
-                    title={k.code}
-                    className={keyClasses(key, colorway, kit)}
-                    key-code={k.code}
-                    style={{
-                      left: `${key.x * keyWidth}px`,
-                      top: `${key.y * keyWidth}px`,
-                      width: `${(key.w || 1) * keyWidth - keySpacing}px`,
-                      height: `${(key.h || 1) * keyWidth - keySpacing}px`,
-                      ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
-                    }}
-                    >
-                    {keycodeMap[k.code] && keycodeMap[k.code].name}
-                    {Array.isArray(colorway.bilingual) && colorway.bilingual.length && <div className="bilingual">{keycodeMap[k.code] && keycodeMap[k.code][colorway.bilingual[0]]}</div>}
-                  </div>
-                })}
-              </Card>
+                    return <Key key={idx} info={key} colorway={colorway} kit={kit} />
+                  })}
+                </Card>
+                : <Empty
+                    image='./logo256.png'
+                    imageStyle={{ height: 'auto'}}
+                    description='No Keyboard Selected'
+                  />
+              }
             </Card>
           </Col>
         </Row>
