@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-// import logo from './logo.svg';
-import './App.css';
 import './App.scss';
 import 'antd/dist/antd.css';
 import 'rc-color-picker/assets/index.css';
 
 import * as fetch from 'node-fetch';
-import { Select, Card, Cascader, Row, Col } from 'antd';
+import { Select, Card, Cascader, Row, Col, Form } from 'antd';
+import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
 import ColorPicker from 'rc-color-picker';
+// import RightHeader from './components/RightHeader';
 import _ from 'lodash';
 import keycodes from './keycodes';
-
 import colorways from './components/colorways';
 
 // let substitute = Object.assign(
@@ -28,6 +27,9 @@ const { Option } = Select
 const apiUrl = 'https://kce.anhthang.org'
 
 const rg = new RegExp(/[a-zA-Z0-9]/)
+const keyWidth = 55
+const keySpacing = 4
+const keyboardBezel = 15
 
 function keyClasses(key, colorway, kit) {
   const classes = ['key']
@@ -60,9 +62,6 @@ function keyClasses(key, colorway, kit) {
     classes.push(`${colorway.name}-key`);
   } else if (
     // Mod keys
-    // colorways.modCodes[key.code] ||
-    // (this.w <= KEY_WIDTH * 3 &&
-    //   (this.w > KEY_WIDTH || this.h > KEY_HEIGHT))
     colorways.modCodes[key.code] || (key.w <= 3 && (key.w > 1 || key.h > 1))
   ) {
     classes.push('mod');
@@ -103,7 +102,6 @@ function App() {
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState({})
   const [kit, setKit] = useState(null)
-  // const [modClw, setModClw] = useState("")
 
   useEffect(() => {
     fetch(`${apiUrl}/keyboard_folders.json`)
@@ -156,22 +154,12 @@ function App() {
       })
   }
 
-  // const chooseLayout = (name) => {
-  //   setKeymaps(keyboard.layouts[name].layout)
-  // }
-
   const changeColorway = (name) => {
     const base = name.slice(0, 2).join('-')
     const clw = colorways.list.find(c => c.name === base)
     setColorway(clw)
     setKit(name[2])
-    // if (!modClw) {
-    //   setModClw(name.toLowerCase().replace(/ /g, '-'))
-    // }
   }
-  // const changeModColorway = (name) => {
-  //   setModClw(name.toLowerCase().replace(/ /g, '-'))
-  // }
 
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
@@ -181,83 +169,87 @@ function App() {
     : 0
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <img src="./keyboard.png" alt="Keyboard" />
-        <Card>
-          <Row gutter={16}>
-            <Col>
-              <Cascader showSearch style={{ width: 300 }} options={keyboardNames} onChange={selectBoard} placeholder="Select Keyboard" />
-            </Col>
-            <Col>
-              <Select showSearch style={{ width: 300 }} onSelect={(e) => setKeyboardColor(e)} placeholder="Select Keyboard Color" >
-                {
-                  (keyboard.colors || []).map(c => {
-                    return <Option value={c.color} key={c.name}>{c.name}</Option>
-                  })
-                }
-              </Select>
-            </Col>
-            <Col>
-              <ColorPicker
-                animation="slide-up"
-                color={defaultKeyboardColor}
-                onChange={(e) => setKeyboardColor(e.color)}
-              />
-            </Col>
-          </Row>
-          <Row style={{ marginTop: 24 }}>
-            <Col>
-              <Cascader showSearch style={{ width: 700 }} options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
-            </Col>
-          </Row>
-        </Card>
-        <Card style={{
-          width: 60 * maxWidth + 15 * 2 - 5,
-          height: 60 * maxHeight + 15 * 2 - 5,
-          top: 24,
-          border: `15px solid ${keyboardColor}`,
-          borderRadius: 6,
-          backgroundColor: `${keyboardColor}`
-        }}>
-          {keymaps.layout.map((k, idx) => {
-            const key = {...k, ...keymaps.override && keymaps.override[k.code]}
+    <BasicLayout
+      title="Keyboard Colorway Editor"
+      layout="top"
+      logo={false}
+      headerRender={false}
+      // rightContentRender={RightHeader}
+    >
+      <PageContainer style={{ minHeight: '100vh', margin: 24 }}>
+        <Row gutter={16}>
+          <Col md={6}>
+            <Card className="keyboard-box" title="Options" size="small">
+              <Form layout="vertical">
+                <Form.Item label="Keyboard">
+                  <Cascader showSearch options={keyboardNames} onChange={selectBoard} placeholder="Select Keyboard" />
+                </Form.Item>
+                <Form.Item label="Keyboard Color">
+                  <Select
+                    showSearch
+                    disabled={!Array.isArray(keyboard.colors) || !keyboard.colors.length}
+                    onSelect={(e) => setKeyboardColor(e)}
+                    placeholder="Select Keyboard Color">
+                    {
+                      (keyboard.colors || []).map(c => {
+                        return <Option value={c.color} key={c.color}>{c.name}</Option>
+                      })
+                    }
+                  </Select>
+                </Form.Item>
+                <Form.Item label="Customize Keyboard Color">
+                  <ColorPicker
+                    animation="slide-up"
+                    color={defaultKeyboardColor}
+                    onChange={(e) => setKeyboardColor(e.color)}
+                  />
+                </Form.Item>
+                <Form.Item label="Keyset">
+                  <Cascader showSearch options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
+                </Form.Item>
+              </Form>
+            </Card>
+          </Col>
+          <Col md={18}>
+            <Card className="keyboard-box" title="Keyboard" size="small">
+              <Card
+                className="keyboard-drawer"
+                style={{
+                  width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
+                  height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
+                  border: `${keyboardBezel}px solid ${keyboardColor}`,
+                  borderRadius: 6,
+                  backgroundColor: `${keyboardColor}`
+                }}>
+                {keymaps.layout.map((k, idx) => {
+                  const key = {...k, ...keymaps.override && keymaps.override[k.code]}
 
-            return <div
-              key={idx}
-              id={idx}
-              title={k.code}
-              className={keyClasses(key, colorway, kit)}
-              key-code={k.code}
-              style={{
-                left: `${key.x * 60}px`,
-                top: `${key.y * 60}px`,
-                width: `${(key.w || 1) * 60 - 5}px`,
-                height: `${(key.h || 1) * 60 - 5}px`,
-                ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
-              }}
-              >
-              {keycodeMap[k.code] && keycodeMap[k.code].name}
-              {Array.isArray(colorway.bilingual) && colorway.bilingual.length && <div className="bilingual">{keycodeMap[k.code] && keycodeMap[k.code][colorway.bilingual[0]]}</div>}
-            </div>
-          })}
-          {/* <Image /> */}
-        </Card>
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
-  );
+                  return <div
+                    key={idx}
+                    id={idx}
+                    title={k.code}
+                    className={keyClasses(key, colorway, kit)}
+                    key-code={k.code}
+                    style={{
+                      left: `${key.x * keyWidth}px`,
+                      top: `${key.y * keyWidth}px`,
+                      width: `${(key.w || 1) * keyWidth - keySpacing}px`,
+                      height: `${(key.h || 1) * keyWidth - keySpacing}px`,
+                      ...k.z && { transform: `rotateZ(${k.z || 0}deg)` }
+                    }}
+                    >
+                    {keycodeMap[k.code] && keycodeMap[k.code].name}
+                    {Array.isArray(colorway.bilingual) && colorway.bilingual.length && <div className="bilingual">{keycodeMap[k.code] && keycodeMap[k.code][colorway.bilingual[0]]}</div>}
+                  </div>
+                })}
+              </Card>
+            </Card>
+          </Col>
+        </Row>
+        
+      </PageContainer>
+    </BasicLayout>
+  )
 }
 
 export default App;

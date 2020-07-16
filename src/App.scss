@@ -6,6 +6,11 @@
 @import './scss/ral';
 @import './scss/colorways';
 
+.page-container {
+  min-height: 100vh;
+  margin: 24px;
+}
+
 .key {
   display: flex;
   position: absolute;
@@ -69,4 +74,15 @@
   align-self: flex-end;
   margin-left: auto;
   padding-right: 6px;
+}
+
+.keyboard-box {
+  min-height: 500px;
+}
+
+.keyboard-drawer {
+  display: flex;
+  justify-content: center;
+  // flex-direction: column;
+  // align-items: center;
 }
