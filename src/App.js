@@ -46,7 +46,7 @@ const colorwayNames = _(colorways.list)
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
   const [keyboard, setKeyboard] = useState({})
-  const [keyboardColor, setKeyboardColor] = useState('transparent')
+  const [keyboardColor, setKeyboardColor] = useState(null)
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState(_.sample(colorways.list))
   const [kit, setKit] = useState(null)
@@ -87,8 +87,8 @@ function App() {
     fetch(`${apiUrl}/keyboards/${keyboard_name[1]}.json`)
       .then(res => res.json())
       .then(res => {
-        setKeyboard(res)
         setKeyboardColor((res.colors && res.colors[0].color) || defaultKeyboardColor)
+        setKeyboard(res)
 
         const layout = Object.keys(res.layouts)[0]
         if (layout === 'default') {
@@ -133,19 +133,25 @@ function App() {
                 <Form.Item label="Keyboard">
                   <Cascader showSearch options={keyboardNames} onChange={selectBoard} placeholder="Select Keyboard" />
                 </Form.Item>
-                <Form.Item label="Keyboard Color">
-                  <Select
-                    showSearch
-                    disabled={!Array.isArray(keyboard.colors) || !keyboard.colors.length}
-                    onSelect={(e) => setKeyboardColor(e)}
-                    placeholder="Select Keyboard Color">
-                    {
-                      (keyboard.colors || []).map(c => {
-                        return <Option value={c.color} key={c.color}>{c.name}</Option>
-                      })
-                    }
-                  </Select>
-                </Form.Item>
+                {
+                  Array.isArray(keyboard.colors) && keyboard.colors.length && (
+                    <Form.Item label="Keyboard Color">
+                      <Select
+                        showSearch
+                        // disabled={!Array.isArray(keyboard.colors) || !keyboard.colors.length}
+                        defaultValue={keyboardColor}
+                        defaultActiveFirstOption
+                        onSelect={(e) => setKeyboardColor(e)}
+                        placeholder="Select Keyboard Color">
+                        {
+                          (keyboard.colors || []).map(c => {
+                            return <Option value={c.color} key={c.color}>{c.name}</Option>
+                          })
+                        }
+                      </Select>
+                    </Form.Item>
+                  )
+                }
                 <Form.Item label="Customize Keyboard Color">
                   <ColorPicker.Panel
                     enableAlpha={false}
