@@ -12,7 +12,6 @@ import ColorPicker from 'rc-color-picker';
 import _ from 'lodash';
 import colorways from './components/colorways';
 
-const defaultColor = ['gmk', 'bento']
 const defaultKeyboardColor = '#e0e0e0'
 
 const { Option } = Select
@@ -49,7 +48,7 @@ function App() {
   const [keyboard, setKeyboard] = useState({})
   const [keyboardColor, setKeyboardColor] = useState('transparent')
   const [keymaps, setKeymaps] = useState({ layout: [] })
-  const [colorway, setColorway] = useState({})
+  const [colorway, setColorway] = useState(_.sample(colorways.list))
   const [kit, setKit] = useState(null)
   const [useDiffModifier, setChangeModifier] = useState(false)
 
@@ -100,7 +99,7 @@ function App() {
         }
 
         // fix bug color name has more than 2 words
-        changeColorway(colorway.name ? colorway.name.replace('-', '/').split('/') : defaultColor)
+        changeColorway(colorway.name.replace('-', '/').split('/'))
       })
   }
 
@@ -148,14 +147,20 @@ function App() {
                   </Select>
                 </Form.Item>
                 <Form.Item label="Customize Keyboard Color">
-                  <ColorPicker
-                    animation="slide-up"
+                  <ColorPicker.Panel
+                    enableAlpha={false}
                     color={defaultKeyboardColor}
                     onChange={(e) => setKeyboardColor(e.color)}
                   />
                 </Form.Item>
                 <Form.Item label="Keyset">
-                  <Cascader showSearch options={colorwayNames} onChange={changeColorway} placeholder="Select Colorway" />
+                  <Cascader
+                    showSearch
+                    defaultValue={colorway.name.replace('-', '/').split('/')}
+                    options={colorwayNames}
+                    onChange={changeColorway}
+                    placeholder="Select Colorway"
+                  />
                 </Form.Item>
                 <Form.Item>
                   <Checkbox defaultChecked={false} disabled onChange={(e) => setChangeModifier(e.target.checked)}>Change Modifier Colorway</Checkbox>
@@ -163,7 +168,11 @@ function App() {
                 {
                   useDiffModifier && (
                     <Form.Item label="Modifier Colorway">
-                      <Cascader showSearch options={colorwayNames} placeholder="Select Colorway" />
+                      <Cascader
+                        showSearch
+                        options={colorwayNames}
+                        placeholder="Select Colorway"
+                      />
                     </Form.Item>
                   )
                 }
