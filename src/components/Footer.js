@@ -4,10 +4,7 @@ import { GithubOutlined } from '@ant-design/icons';
 
 function Footer() {
   return <DefaultFooter
-    style={{
-      padding: '0px 24px 24px',
-      textAlign: 'center'
-    }}
+    className="footer"
     copyright="2020 - Hosted on Github Pages"
     links={[
       {
