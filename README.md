@@ -12,9 +12,10 @@ I ordered Canoe Gen 2 and I want to see what it looks like when combined with th
 ## TODO
 - [x] Different font, text display per keycap profile
 - [x] Support display bilingual (Japanese, Korean...)
-- [] Multiple colorway selection for alphas, modifiers
-- [] Keyboard cases
-- [] 3D keycap render with three.js
+- [ ] Multiple colorway selection for alphas, modifiers
+- [ ] Keyboard cases
+- [ ] 3D keycap render with three.js
+- [ ] Filter by layout type
 
 ## Pull Request
 You are welcome.

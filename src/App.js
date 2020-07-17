@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import _ from 'lodash';
 import colorways from './components/colorways';
 
-const defaultKeyboardColor = '#e0e0e0'
+const defaultCaseColor = '#e0e0e0'
 
 const { Option } = Select
 
@@ -49,11 +49,12 @@ const colorwayNames = _(colorways.list)
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
   const [keyboard, setKeyboard] = useState({})
-  const [keyboardColor, setKeyboardColor] = useState(null)
+  const [caseColor, setCaseColor] = useState(null)
   const [keymaps, setKeymaps] = useState({ layout: [] })
   const [colorway, setColorway] = useState(_.sample(colorways.list))
   const [kit, setKit] = useState(null)
   const [useDiffModifier, setChangeModifier] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     fetch(`${apiUrl}/keyboard_folders.json`)
@@ -87,10 +88,11 @@ function App() {
   }
 
   const selectBoard = (keyboard_name) => {
+    setLoading(true)
     fetch(`${apiUrl}/keyboards/${keyboard_name[1]}.json`)
       .then(res => res.json())
       .then(res => {
-        setKeyboardColor((res.colors && res.colors[0].color) || defaultKeyboardColor)
+        setCaseColor((res.colors && res.colors[0].color) || defaultCaseColor)
         setKeyboard(res)
 
         const layout = Object.keys(res.layouts)[0]
@@ -103,8 +105,10 @@ function App() {
 
         // fix bug color name has more than 2 words
         changeColorway(colorway.name.replace('-', '/').split('/'))
+        setLoading(false)
       })
       .catch(err => {
+        setLoading(false)
         setKeyboard({})
       })
   }
@@ -139,7 +143,7 @@ function App() {
         ]}  
       >
         <Row gutter={16}>
-          <Col md={6}>
+          <Col md={5}>
             <Card className="keyboard-box" title="Options" size="small">
               <Form layout="vertical">
                 <Form.Item label="Keyboard">
@@ -147,14 +151,14 @@ function App() {
                 </Form.Item>
                 {
                   Array.isArray(keyboard.colors) && keyboard.colors.length && (
-                    <Form.Item label="Keyboard Color">
+                    <Form.Item label="Case Color">
                       <Select
                         showSearch
                         // disabled={!Array.isArray(keyboard.colors) || !keyboard.colors.length}
-                        defaultValue={keyboardColor}
+                        defaultValue={caseColor}
                         defaultActiveFirstOption
-                        onSelect={(e) => setKeyboardColor(e)}
-                        placeholder="Select Keyboard Color">
+                        onSelect={(e) => setCaseColor(e)}
+                        placeholder="Select Case Color">
                         {
                           (keyboard.colors || []).map(c => {
                             return <Option value={c.color} key={c.color}>{c.name}</Option>
@@ -164,11 +168,11 @@ function App() {
                     </Form.Item>
                   )
                 }
-                <Form.Item label="Customize Keyboard Color">
+                <Form.Item label="Customize Case Color">
                   <ColorPicker.Panel
                     enableAlpha={false}
-                    color={defaultKeyboardColor}
-                    onChange={(e) => setKeyboardColor(e.color)}
+                    color={defaultCaseColor}
+                    onChange={(e) => setCaseColor(e.color)}
                   />
                 </Form.Item>
                 <Form.Item label="Keyset">
@@ -197,17 +201,22 @@ function App() {
               </Form>
             </Card>
           </Col>
-          <Col md={18}>
-            <Card className="keyboard-box" title="Keyboard" size="small">
+          <Col md={19}>
+            <Card
+              size="small"
+              loading={loading}
+              title="Keyboard"
+              className="keyboard-box"
+            >
               {keyboard && keyboard.keyboard_name
                 ? <Card
                   className="keyboard-drawer"
                   style={{
                     width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
                     height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
-                    border: `${keyboardBezel}px solid ${keyboardColor}`,
+                    border: `${keyboardBezel}px solid ${caseColor}`,
                     borderRadius: 6,
-                    backgroundColor: `${keyboardColor}`
+                    backgroundColor: `${caseColor}`
                   }}>
                   {keymaps.layout.map((k, idx) => {
                     const key = {...k, ...keymaps.override && keymaps.override[k.code]}
