@@ -1,8 +1,9 @@
+# Keyboard Colorway Editor
+
 <p align="center">
     <img src="./public/logo256.png"/>
 </p>
 
-# Keyboard Colorway Editor
 This project was inspired by [QMK Configurator](https://config.qmk.fm/).
 
 ## Why I'm here

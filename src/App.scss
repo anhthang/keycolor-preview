@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 @import './scss/gmk-abs';
 @import './scss/sp-abs';
 @import './scss/sp-pbt';
@@ -17,7 +18,7 @@
   box-sizing: border-box;
   white-space: pre-line;
   padding: 1px;
-  padding-bottom: 3px;
+  // padding-bottom: 3px;
 
   &.hidden-key {
     display: none;
@@ -58,6 +59,7 @@
 }
 
 .gmk, .jtk {
+  font-family: 'Varela Round', sans-serif;
   font-size: larger;
   font-weight: bolder;
   padding-left: 6px;

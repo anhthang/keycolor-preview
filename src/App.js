@@ -6,9 +6,12 @@ import 'rc-color-picker/assets/index.css';
 import * as fetch from 'node-fetch';
 import { Select, Card, Cascader, Row, Col, Form, Checkbox, Empty } from 'antd';
 import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
-import Key from './components/Key';
+import { GithubOutlined } from '@ant-design/icons';
 import ColorPicker from 'rc-color-picker';
+
+import Key from './components/Key';
 // import RightHeader from './components/RightHeader';
+import Footer from './components/Footer';
 import _ from 'lodash';
 import colorways from './components/colorways';
 
@@ -101,6 +104,9 @@ function App() {
         // fix bug color name has more than 2 words
         changeColorway(colorway.name.replace('-', '/').split('/'))
       })
+      .catch(err => {
+        setKeyboard({})
+      })
   }
 
   const changeColorway = (name) => {
@@ -123,9 +129,15 @@ function App() {
       layout="top"
       logo={false}
       headerRender={false}
+      footerRender={Footer}
       // rightContentRender={RightHeader}
     >
-      <PageContainer style={{ minHeight: '100vh', margin: 24 }}>
+      <PageContainer
+        style={{ minHeight: '100vh', margin: 24 }}
+        extra={[
+          <a href="https://github.com/anhthang/keyboard-colorway-editor" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
+        ]}  
+      >
         <Row gutter={16}>
           <Col md={6}>
             <Card className="keyboard-box" title="Options" size="small">
@@ -206,7 +218,7 @@ function App() {
                 : <Empty
                     image='./logo256.png'
                     imageStyle={{ height: 'auto'}}
-                    description='No Keyboard Selected'
+                    description='No keyboard selected or missing info'
                   />
               }
             </Card>
