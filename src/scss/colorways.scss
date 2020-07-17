@@ -512,6 +512,10 @@
 .gmk-mecha-01-key {
   background: $color-pantone-267C;
   color: $color-pantone-802C;
+
+  &.berserk {
+    color: $color-gmk-abs-RO2;
+  }
 }
 .gmk-mecha-01-mod {
   background: $color-gmk-abs-CR;
@@ -719,6 +723,43 @@
 .gmk-plum-accent {
   background: #863f48;
   color: #ded0af;
+}
+
+.gmk-rouge-key {
+  background: $color-ral-H290L20C15;
+  color: $color-ral-H320L50C20;
+  input,
+  .key-contents {
+    background: lighten($color-ral-H290L20C15, 10%);
+    color: $color-ral-H320L50C20;
+    border-color: mix($color-ral-H290L20C15, $color-ral-H320L50C20);
+  }
+}
+.gmk-rouge-mod {
+  background: $color-ral-H290L20C15;
+  color: $color-ral-H320L50C20;
+  input,
+  .key-contents {
+    background: lighten($color-ral-H290L20C15, 10%);
+    color: $color-ral-H320L50C20;
+    border-color: mix($color-ral-H290L20C15, $color-ral-H320L50C20);
+  }
+}
+.gmk-rouge-accent1 {
+  background: $color-ral-H310L20C20;
+  color: $color-ral-H320L50C20;
+}
+.gmk-rouge-accent2 {
+  background: $color-ral-H310L30C20;
+  color: $color-ral-H320L50C20;
+}
+.gmk-rouge-accent3 {
+  background: $color-ral-H300L30C20;
+  color: $color-ral-H320L50C20;
+}
+.gmk-rouge-accent4 {
+  background: $color-ral-H300L30C15;
+  color: $color-ral-H320L50C20;
 }
 
 .gmk-serika-key {

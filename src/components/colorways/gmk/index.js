@@ -20,6 +20,7 @@ import gmk_nautilus from './nautilus';
 import gmk_olivetti from './olivetti';
 import gmk_olivia from './olivia';
 import gmk_plum from './plum';
+import gmk_rouge from './rouge';
 import gmk_serika from './serika';
 import gmk_space_cadet from './space_cadet';
 import gmk_striker from './striker';
@@ -51,6 +52,7 @@ export default [
   gmk_olivetti,
   gmk_olivia,
   gmk_plum,
+  gmk_rouge,
   gmk_serika,
   gmk_space_cadet,
   gmk_striker,
