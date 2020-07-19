@@ -17,6 +17,7 @@ import gmk_merlin from './merlin';
 import gmk_metaverse from './metaverse';
 import gmk_mizu from './mizu';
 import gmk_nautilus from './nautilus';
+import gmk_noel from './noel';
 import gmk_olivetti from './olivetti';
 import gmk_olivia from './olivia';
 import gmk_plum from './plum';
@@ -24,6 +25,7 @@ import gmk_rouge from './rouge';
 import gmk_serika from './serika';
 import gmk_space_cadet from './space_cadet';
 import gmk_striker from './striker';
+import gmk_sumi from './sumi';
 import gmk_terminal from './terminal';
 import gmk_ta_royal_alpha from './ta_royal_alpha';
 import gmk_wob from './wob';
@@ -49,6 +51,7 @@ export default [
   gmk_metaverse,
   gmk_mizu,
   gmk_nautilus,
+  gmk_noel,
   gmk_olivetti,
   gmk_olivia,
   gmk_plum,
@@ -56,6 +59,7 @@ export default [
   gmk_serika,
   gmk_space_cadet,
   gmk_striker,
+  gmk_sumi,
   gmk_ta_royal_alpha,
   gmk_terminal,
   gmk_wob,

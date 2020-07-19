@@ -139,7 +139,7 @@ function App() {
       <PageContainer
         style={{ minHeight: '100vh', margin: 24 }}
         extra={[
-          <a href="https://github.com/anhthang/keyboard-colorway-editor" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
+          <a key="github" href="https://github.com/anhthang/keyboard-colorway-editor" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
         ]}  
       >
         <Row gutter={16}>

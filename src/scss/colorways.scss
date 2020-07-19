@@ -646,6 +646,39 @@
   background: $color-pantone-533C;
 }
 
+// it should be WS2 instead of WS1, but i dont have color code now
+.gmk-noel-key {
+  background: $color-gmk-abs-WS1;
+  color: $color-ral-H230L70C30;
+  input,
+  .key-contents {
+    background: darken($color-gmk-abs-WS1, 10%);
+    color: lighten($color-ral-H230L70C30, 5%);
+    border-color: mix($color-gmk-abs-WS1, lighten($color-ral-H230L70C30, 5%));
+  }
+}
+.gmk-noel-mod {
+  background: $color-ral-H210L85C15;
+  color: $color-ral-H230L70C30;
+  input,
+  .key-contents {
+    background: darken($color-ral-H210L85C15, 10%);
+    color: $color-ral-H230L70C30;
+    border-color: mix($color-ral-H210L85C15, $color-ral-H230L70C30);
+  }
+}
+.gmk-noel-accent {
+  background: $color-ral-H010L80C20;
+  color: $color-gmk-abs-WS1;
+  input {
+    background: lighten($color-ral-H010L80C20, 40%);
+  }
+}
+.gmk-noel-kb {
+  // placeholder
+  background: $color-pantone-533C;
+}
+
 .gmk-olivetti-key {
   background: $color-gmk-abs-CP;
   color: $color-gmk-abs-V4;
@@ -836,6 +869,35 @@
 .gmk-striker-accent {
   background: #002e51;
   color: $color-gmk-abs-WS1;
+}
+
+.gmk-sumi-key {
+  background: $color-ral-5004;
+  color: $color-gmk-abs-WS1;
+  input,
+  .key-contents {
+    background: darken($color-ral-5004, 10%);
+    color: lighten($color-gmk-abs-WS1, 5%);
+    border-color: mix($color-ral-5004, lighten($color-gmk-abs-WS1, 5%));
+  }
+}
+
+.gmk-sumi-mod {
+  background: $color-gmk-abs-WS1;
+  color: $color-ral-5004;
+  input,
+  .key-contents {
+    background: darken($color-gmk-abs-WS1, 10%);
+    color: $color-ral-5004;
+    border-color: mix($color-gmk-abs-WS1, $color-ral-5004);
+  }
+}
+.gmk-sumi-accent {
+  background: $color-ral-3028;
+  color: $color-gmk-abs-WS1;
+  input {
+    background: lighten($color-ral-3028, 40%);
+  }
 }
 
 .gmk-ta-royal-alpha-key {
