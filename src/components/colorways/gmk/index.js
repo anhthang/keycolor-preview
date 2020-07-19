@@ -11,6 +11,7 @@ import gmk_camping from './camping';
 import gmk_deku from './deku';
 import gmk_dolch from './dolch';
 import gmk_hammerhead from './hammerhead';
+import gmk_hanguk from './hanguk';
 import gmk_jamon from './jamon';
 import gmk_mecha_01 from './mecha_01';
 import gmk_merlin from './merlin';
@@ -45,6 +46,7 @@ export default [
   gmk_deku,
   gmk_dolch,
   gmk_hammerhead,
+  gmk_hanguk,
   gmk_jamon,
   gmk_mecha_01,
   gmk_merlin,
