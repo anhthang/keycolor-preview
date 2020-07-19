@@ -2,10 +2,10 @@ export default {
   name: 'gmk-bento',
   kits: {
     traditional: {
-      BR: 'japanese'
+      BR: 'hiragana'
     },
     revival: {
-      BR: 'japanese'
+      BR: 'hiragana'
     },
     latin: {}
   },

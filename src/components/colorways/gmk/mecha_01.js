@@ -2,10 +2,10 @@ export default {
   name: 'gmk-mecha-01',
   kits: {
     base: {
-      BR: 'japanese'
+      BR: 'hiragana'
     },
     berserk: {
-      TL: 'japanese'
+      TL: 'hiragana'
     }
   },
   override: {

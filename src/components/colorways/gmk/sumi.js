@@ -2,10 +2,10 @@ export default {
   name: 'gmk-sumi',
   kits: {
     base: {
-      BR: 'japanese'
+      BR: 'hiragana'
     },
     hiragana: {
-      TL: 'japanese'
+      TL: 'hiragana'
     }
   },
   override: {
