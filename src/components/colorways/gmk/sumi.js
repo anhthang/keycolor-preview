@@ -1,7 +1,13 @@
 export default {
   name: 'gmk-sumi',
-  kits: ["base", "hiragana"],
-  bilingual: ['japanese'],
+  kits: {
+    base: {
+      BR: 'japanese'
+    },
+    hiragana: {
+      TL: 'japanese'
+    }
+  },
   override: {
     KC_ESC: 'accent',
     KC_ENT: 'accent',

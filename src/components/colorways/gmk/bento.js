@@ -1,7 +1,14 @@
 export default {
   name: 'gmk-bento',
-  kits: ["traditional", "revival"],
-  bilingual: ['japanese'],
+  kits: {
+    traditional: {
+      BR: 'japanese'
+    },
+    revival: {
+      BR: 'japanese'
+    },
+    latin: {}
+  },
   override: {
     KC_ESC: 'accent',
     KC_ENT: 'accent',

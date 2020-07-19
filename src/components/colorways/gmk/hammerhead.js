@@ -1,6 +1,9 @@
 export default {
   name: 'gmk-hammerhead',
-  kits: ['dark', 'light'],
+  kits: {
+    dark: {},
+    light: {}
+  },
   override: {
     KC_ENT: 'accent',
     KC_PENT: 'accent',

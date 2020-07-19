@@ -39,7 +39,7 @@ const colorwayNames = _(colorways.list)
         return {
           value: parts.join('-'),
           label: display,
-          children: c.kits ? c.kits.map(k => ({ value: k, label: k.replace(k.charAt(0), k.charAt(0).toUpperCase()) })) : []
+          children: c.kits ? Object.keys(c.kits).map(k => ({ value: k, label: k.replace(k.charAt(0), k.charAt(0).toUpperCase()) })) : []
         }
       })
     }

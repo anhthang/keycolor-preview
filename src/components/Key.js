@@ -58,6 +58,34 @@ function keyClasses(key, colorway, kit) {
   return classes.join(' ')
 }
 
+function getDisplayText(code, bilingual = {}) {
+  let tl = keycodeMap[code] && keycodeMap[code].name
+
+  const sub = []
+  Object.keys(bilingual).forEach(position => {
+    switch (position) {
+      case 'TL':
+        tl = keycodeMap[code] && keycodeMap[code][bilingual[position]] || tl
+        break;
+      default:
+        sub.push({
+          className: `bilingual-${position}`,
+          text: keycodeMap[code] && keycodeMap[code][bilingual[position]]
+        })
+        break;
+    }
+  })
+
+  return sub.length
+    ? (
+      <>
+        {tl}
+        {sub.map(p => (<div className={p.className}>{p.text}</div>))}
+      </>
+    )
+    : tl
+}
+
 function Key({info, colorway, kit}) {
   return <div
     id={info.code}
@@ -72,8 +100,7 @@ function Key({info, colorway, kit}) {
       ...info.z && { transform: `rotateZ(${info.z || 0}deg)` }
     }}
     >
-    {keycodeMap[info.code] && keycodeMap[info.code].name}
-    {Array.isArray(colorway.bilingual) && colorway.bilingual.length && <div className="bilingual">{keycodeMap[info.code] && keycodeMap[info.code][colorway.bilingual[0]]}</div>}
+    {getDisplayText(info.code, colorway.kits && colorway.kits[kit])}
   </div>
 }
 
