@@ -65,7 +65,7 @@ function getDisplayText(code, bilingual = {}) {
   Object.keys(bilingual).forEach(position => {
     switch (position) {
       case 'TL':
-        tl = keycodeMap[code] && keycodeMap[code][bilingual[position]] || tl
+        tl = (keycodeMap[code] && keycodeMap[code][bilingual[position]]) || tl
         break;
       default:
         sub.push({

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
 import 'antd/dist/antd.css';
-import 'rc-color-picker/assets/index.css';
 
 import * as fetch from 'node-fetch';
 import { Select, Card, Cascader, Row, Col, Form, Checkbox, Empty } from 'antd';
+import { SketchPicker } from 'react-color';
 import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
 import { GithubOutlined } from '@ant-design/icons';
-import ColorPicker from 'rc-color-picker';
 
 import Key from './components/Key';
 // import RightHeader from './components/RightHeader';
@@ -169,10 +168,10 @@ function App() {
                   )
                 }
                 <Form.Item label="Customize Case Color">
-                  <ColorPicker.Panel
-                    enableAlpha={false}
-                    color={defaultCaseColor}
-                    onChange={(e) => setCaseColor(e.color)}
+                  <SketchPicker
+                    color={caseColor || defaultCaseColor}
+                    disableAlpha={true}
+                    onChange={c => setCaseColor(c.hex)}
                   />
                 </Form.Item>
                 <Form.Item label="Keyset">
