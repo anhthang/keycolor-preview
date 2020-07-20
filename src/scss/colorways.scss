@@ -941,6 +941,34 @@
   // placeholder
 }
 
+.gmk-taro-key {
+  background: #8E71A2;
+  color: #170B19;
+  &.boba {
+    background: #170B19;
+    color: #8E71A2;
+  }
+}
+.gmk-taro-mod {
+  background: #170B19;
+  color: #8E71A2;
+  &.milk-tea {
+    background: #8E71A2;
+    color: #170B19;
+  }
+}
+.gmk-taro-accent {
+  background: $color-gmk-abs-TU2;
+  color: #170B19;
+}
+.gmk-taro-accent2 {
+  background: $color-gmk-abs-CV;
+  color: #170B19;
+}
+.gmk-taro-kb {
+  // placeholder
+}
+
 .gmk-terminal-key,
 .gmk-terminal-mod {
   background: $color-gmk-abs-N9;

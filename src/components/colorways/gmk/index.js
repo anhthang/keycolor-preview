@@ -29,6 +29,7 @@ import gmk_striker from './striker';
 import gmk_sumi from './sumi';
 import gmk_terminal from './terminal';
 import gmk_ta_royal_alpha from './ta_royal_alpha';
+import gmk_taro from './taro';
 import gmk_wob from './wob';
 import gmk_yuri from './yuri';
 
@@ -63,6 +64,7 @@ export default [
   gmk_striker,
   gmk_sumi,
   gmk_ta_royal_alpha,
+  gmk_taro,
   gmk_terminal,
   gmk_wob,
   gmk_yuri

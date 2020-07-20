@@ -80,7 +80,7 @@ function getDisplayText(code, bilingual = {}) {
     ? (
       <>
         {tl}
-        {sub.map(p => (<div className={p.className}>{p.text}</div>))}
+        {sub.map(p => (<div key={p.className} className={p.className}>{p.text}</div>))}
       </>
     )
     : tl

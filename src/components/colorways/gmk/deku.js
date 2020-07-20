@@ -1,5 +1,11 @@
 export default {
   name: 'gmk-deku',
+  kits: {
+    base: {
+      BR: 'hiragana'
+    },
+    latin: {}
+  },
   override: {
     KC_ENT: 'accent',
     KC_PENT: 'accent',
