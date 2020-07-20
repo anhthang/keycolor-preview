@@ -1,4 +1,4 @@
-# Keyboard Colorway Editor
+# KeyColor Viewer
 
 <p align="center">
     <img src="./public/logo256.png"/>

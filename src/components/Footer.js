@@ -10,7 +10,7 @@ function Footer() {
       {
         key: 'GitHub',
         title: <GithubOutlined style={{ fontSize: 32 }} />,
-        href: 'https://github.com/anhthang/keyboard-colorway-editor',
+        href: 'https://github.com/anhthang/keycolor-viewer',
         blankTarget: true,
       },
     ]}

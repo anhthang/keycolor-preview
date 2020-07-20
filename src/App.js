@@ -18,7 +18,7 @@ const defaultCaseColor = '#e0e0e0'
 
 const { Option } = Select
 
-const apiUrl = 'https://kce.anhthang.org'
+const apiUrl = 'https://keycolor.xyz'
 
 const keyWidth = 55
 const keySpacing = 4
@@ -128,7 +128,7 @@ function App() {
 
   return (
     <BasicLayout
-      title="Keyboard Colorway Editor"
+      title="KeyColor Viewer"
       layout="top"
       logo={false}
       headerRender={false}
@@ -138,7 +138,7 @@ function App() {
       <PageContainer
         style={{ minHeight: '100vh', margin: 24 }}
         extra={[
-          <a key="github" href="https://github.com/anhthang/keyboard-colorway-editor" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
+          <a key="github" href="https://github.com/anhthang/keycolor-viewer" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
         ]}  
       >
         <Row gutter={16}>

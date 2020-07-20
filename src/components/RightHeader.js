@@ -7,7 +7,7 @@ function RightHeader() {
     overflow: 'hidden',
     marginRight: 24
   }}>
-    <a href="https://github.com/anhthang/keyboard-colorway-editor">Github</a>
+    <a href="https://github.com/anhthang/keycolor-viewer">Github</a>
   </div>
 }
 
