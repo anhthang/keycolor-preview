@@ -115,6 +115,60 @@
 .sa-danger-zone-kb {
 }
 
+.sa-dream-eater-key {
+  background: $color-sp-abs-BBI;
+  color: $color-sp-abs-RCJ;
+  input,
+  .key-contents {
+    background: darken($color-sp-abs-BBI, 10%);
+    color: $color-sp-abs-RCJ;
+    border-color: mix($color-sp-abs-BBI, $color-sp-abs-RCJ);
+  }
+}
+
+.sa-dream-eater-mod {
+  background: $color-sp-abs-BBI;
+  color: $color-sp-abs-RCJ;
+  input,
+  .key-contents {
+    background: darken($color-sp-abs-BBI, 10%);
+    color: $color-sp-abs-RCJ;
+    border-color: mix($color-sp-abs-BBI, $color-sp-abs-RCJ);
+  }
+}
+
+.sa-dream-eater-accent1 {
+  background: $color-sp-abs-VBV;
+  color: $color-sp-abs-BBI;
+  input {
+    background: lighten($color-sp-abs-VBV, 40%);
+  }
+}
+
+.sa-dream-eater-accent2 {
+  background: $color-sp-abs-BFL;
+  color: $color-sp-abs-BBI;
+  input {
+    background: lighten($color-sp-abs-BFL, 40%);
+  }
+}
+
+.sa-dream-eater-accent3 {
+  background: #3b6f75;
+  color: $color-sp-abs-BBI;
+  input {
+    background: lighten(#3b6f75, 40%);
+  }
+}
+
+.sa-dream-eater-accent4 {
+  background: $color-sp-abs-BED;
+  color: $color-sp-abs-RCJ;
+  input {
+    background: lighten($color-sp-abs-BED, 40%);
+  }
+}
+
 .sa-jukebox-key {
   background: $color-sp-abs-TM;
   color: $color-sp-abs-RN;

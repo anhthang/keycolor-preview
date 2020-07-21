@@ -1,5 +1,6 @@
 import sa_carbon from './carbon';
 import sa_danger_zone from './danger_zone';
+import sa_dream_eater from './dream_eater';
 import sa_jukebox from './jukebox';
 import sa_modern_selectric from './modern_selectric';
 import sa_nantucket_selectric from './nantucket_selectric';
@@ -9,6 +10,7 @@ import sa_vilebloom from './vilebloom';
 export default [
   sa_carbon,
   sa_danger_zone,
+  sa_dream_eater,
   sa_jukebox,
   sa_modern_selectric,
   sa_nantucket_selectric,
