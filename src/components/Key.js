@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import keycodes from '../keycodes';
-import colorways from './colorways';
+import keycodes from './keycodes';
 
 // let substitute = Object.assign(
 //   {},
@@ -39,20 +38,12 @@ function keyClasses(key, colorway, kit) {
     classes.push(
       `${colorway.name}-${colorway.override[key.code]}`
     );
-  } else if (
-    // Large alpha keys (like Numpad 0)
-    colorways.alphaCodes[key.code]
-  ) {
-    classes.push(`${colorway.name}-key`);
-  } else if (
-    // Mod keys
-    colorways.modCodes[key.code] || (key.w <= 3 && (key.w > 1 || key.h > 1))
-  ) {
-    classes.push('mod');
-    classes.push(`${colorway.name}-mod`);
-  } else {
+  } else if (keycodeMap[key.code]) {
     // everything else
-    classes.push(`${colorway.name}-key`);
+    classes.push(`${colorway.name}-${keycodeMap[key.code].type}`);
+  } else {
+    // keycode dont have any mapping
+    console.log('missing key', key.code)
   }
 
   return classes.join(' ')
