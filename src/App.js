@@ -50,7 +50,13 @@ function App() {
   const [keyboard, setKeyboard] = useState({})
   const [caseColor, setCaseColor] = useState(null)
   const [keymaps, setKeymaps] = useState({ layout: [] })
-  const [colorway, setColorway] = useState(_.sample(colorways.list))
+
+  const randomKeyset = _.sample(colorways.list)
+  const [colorway, setColorway] = useState({
+    key: randomKeyset,
+    mod: randomKeyset
+  })
+
   const [kit, setKit] = useState(null)
   const [useDiffModifier, setChangeModifier] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -103,7 +109,7 @@ function App() {
         }
 
         // fix bug color name has more than 2 words
-        changeColorway(colorway.name.replace('-', '/').split('/'))
+        changeColorway(colorway.key.name.replace('-', '/').split('/'))
         setLoading(false)
       })
       .catch(err => {
@@ -112,10 +118,22 @@ function App() {
       })
   }
 
-  const changeColorway = (name) => {
+  const changeColorway = (name, isModifier) => {
     const base = name.slice(0, 2).join('-')
-    const clw = colorways.list.find(c => c.name === base)
-    setColorway(clw)
+    const keyset = colorways.list.find(c => c.name === base)
+
+    if (isModifier) {
+      setColorway({
+        key: colorway.key,
+        mod: keyset
+      })
+    } else {
+      setColorway({
+        key: keyset,
+        mod: colorway.mod
+      })
+    }
+
     setKit(name[2])
   }
 
@@ -177,14 +195,14 @@ function App() {
                 <Form.Item label="Keyset">
                   <Cascader
                     showSearch
-                    defaultValue={colorway.name.replace('-', '/').split('/')}
+                    defaultValue={colorway.key.name.replace('-', '/').split('/')}
                     options={colorwayNames}
-                    onChange={changeColorway}
+                    onChange={e => changeColorway(e, false)}
                     placeholder="Select Colorway"
                   />
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox defaultChecked={false} disabled onChange={(e) => setChangeModifier(e.target.checked)}>Change Modifier Colorway</Checkbox>
+                  <Checkbox defaultChecked={false} onChange={(e) => setChangeModifier(e.target.checked)}>Change Modifier Colorway</Checkbox>
                 </Form.Item>
                 {
                   useDiffModifier && (
@@ -192,7 +210,8 @@ function App() {
                       <Cascader
                         showSearch
                         options={colorwayNames}
-                        placeholder="Select Colorway"
+                        placeholder="Select Modifier Colorway"
+                        onChange={e => changeColorway(e, true)}
                       />
                     </Form.Item>
                   )

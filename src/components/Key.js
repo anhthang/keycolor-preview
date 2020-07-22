@@ -14,11 +14,11 @@ const rg = new RegExp(/[a-zA-Z0-9]/)
 const keyWidth = 55
 const keySpacing = 4
 
-function keyClasses(key, colorway, kit) {
+function keyClasses(key, keyset, kit) {
   const classes = ['key']
 
-  if (colorway && colorway.name) {
-    classes.push(colorway.name.split('-')[0])
+  if (keyset && keyset.name) {
+    classes.push(keyset.name.split('-')[0])
   }
   if (kit) {
     classes.push(kit)
@@ -33,14 +33,14 @@ function keyClasses(key, colorway, kit) {
   if (key.display === false) {
     classes.push('hidden-key')
   }
-  if (colorway.override && colorway.override[key.code]) {
+  if (keyset.override && keyset.override[key.code]) {
     // Colorway specific overrides by keycode
     classes.push(
-      `${colorway.name}-${colorway.override[key.code]}`
+      `${keyset.name}-${keyset.override[key.code]}`
     );
   } else if (keycodeMap[key.code]) {
     // everything else
-    classes.push(`${colorway.name}-${keycodeMap[key.code].type}`);
+    classes.push(`${keyset.name}-${keycodeMap[key.code].type}`);
   } else {
     // keycode dont have any mapping
     console.log('missing key', key.code)
@@ -78,10 +78,13 @@ function getDisplayText(code, bilingual = {}) {
 }
 
 function Key({info, colorway, kit}) {
+  const type = keycodeMap[info.code] && keycodeMap[info.code].type
+  const keyset = colorway[type] || colorway.key
+
   return <div
     id={info.code}
     title={info.code}
-    className={keyClasses(info, colorway, kit)}
+    className={keyClasses(info, keyset, kit)}
     key-code={info.code}
     style={{
       left: `${info.x * keyWidth}px`,
@@ -91,7 +94,7 @@ function Key({info, colorway, kit}) {
       ...info.z && { transform: `rotateZ(${info.z || 0}deg)` }
     }}
     >
-    {getDisplayText(info.code, colorway.kits && colorway.kits[kit])}
+    {getDisplayText(info.code, keyset.kits && keyset.kits[kit])}
   </div>
 }
 

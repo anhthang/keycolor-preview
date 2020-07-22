@@ -23,7 +23,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 - [ ] Filter by layout type
 - [ ] Auto deploy
 
-## 🏗 Pull Request
+## 📬 Pull Request
 You are welcome.
 
 - Add new keyboards:
