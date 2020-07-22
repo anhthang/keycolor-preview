@@ -7,7 +7,7 @@ export default {
   },
   override: {
     KC_ENT: 'accent2',
-    KC_PENT: 'accent2',
+    // KC_PENT: 'accent2',
     KC_ESC: 'accent',
     KC_GESC: 'accent',
     KC_F1: 'mod',

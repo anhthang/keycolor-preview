@@ -127,7 +127,9 @@ function App() {
       mod: (isModifier || !changeModifier) ? keyset : colorway.mod
     })
 
-    setKit(name[2])
+    if (!isModifier) {
+      setKit(name[2])
+    }
   }
 
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
