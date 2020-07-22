@@ -39,9 +39,9 @@ export default {
     KC_P9: 'accent4',
     KC_PMNS: 'accent4',
     KC_P2: 'accent2',
-    KC_P3: 'accent3',
+    KC_P3: 'accent2',
     KC_P6: 'accent2',
-    KC_PPLS: 'accent3',
+    KC_PPLS: 'accent2',
     KC_P0: 'accent2',
     KC_PDOT: 'accent1',
     KC_PENT: 'accent1'

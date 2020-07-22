@@ -58,7 +58,7 @@ function App() {
   })
 
   const [kit, setKit] = useState(null)
-  const [useDiffModifier, setChangeModifier] = useState(false)
+  const [changeModifier, setChangeModifier] = useState(false)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -122,17 +122,10 @@ function App() {
     const base = name.slice(0, 2).join('-')
     const keyset = colorways.list.find(c => c.name === base)
 
-    if (isModifier) {
-      setColorway({
-        key: colorway.key,
-        mod: keyset
-      })
-    } else {
-      setColorway({
-        key: keyset,
-        mod: colorway.mod
-      })
-    }
+    setColorway({
+      key: isModifier ? colorway.key : keyset,
+      mod: (isModifier || !changeModifier) ? keyset : colorway.mod
+    })
 
     setKit(name[2])
   }
@@ -202,10 +195,18 @@ function App() {
                   />
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox defaultChecked={false} onChange={(e) => setChangeModifier(e.target.checked)}>Change Modifier Colorway</Checkbox>
+                  <Checkbox defaultChecked={false} onChange={(e) => {
+                    setChangeModifier(e.target.checked)
+                    if (!e.target.checked) {
+                      setColorway({
+                        key: colorway.key,
+                        mod: colorway.key
+                      })
+                    }
+                  }}>Change Modifier Colorway</Checkbox>
                 </Form.Item>
                 {
-                  useDiffModifier && (
+                  changeModifier && (
                     <Form.Item label="Modifier Colorway">
                       <Cascader
                         showSearch

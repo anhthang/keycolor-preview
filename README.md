@@ -15,9 +15,9 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
     - Hiragana (GMK Bento, Mecha-01, Sumi...)
     - Hangul (GMK Hanguk)
     - Cyrillics (GMK Yuri)
+- [x] Multiple colorway selections for alphas, modifiers
 
 ## 🎨 TODO
-- [ ] Multiple colorway selections for alphas, modifiers
 - [ ] Keyboard cases
 - [ ] 3D keycap render with three.js
 - [ ] Filter by layout type

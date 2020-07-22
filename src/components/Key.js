@@ -78,8 +78,8 @@ function getDisplayText(code, bilingual = {}) {
 }
 
 function Key({info, colorway, kit}) {
-  const type = keycodeMap[info.code] && keycodeMap[info.code].type
-  const keyset = colorway[type] || colorway.key
+  const { type, modifier } = keycodeMap[info.code] || {}
+  const keyset = modifier ? colorway.mod : colorway[type || 'key']
 
   return <div
     id={info.code}
