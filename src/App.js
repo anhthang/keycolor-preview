@@ -108,8 +108,10 @@ function App() {
           getLayout(layout, res.layouts[layout])
         }
 
-        // fix bug color name has more than 2 words
-        changeColorway(colorway.key.name.replace('-', '/').split('/'))
+        if (!keyboard || !keyboard.keyboard_name) {
+          // fix bug color name has more than 2 words
+          changeColorway(colorway.key.name.replace('-', '/').split('/'))
+        }
         setLoading(false)
       })
       .catch(err => {
