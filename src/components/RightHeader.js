@@ -7,7 +7,7 @@ function RightHeader() {
     overflow: 'hidden',
     marginRight: 24
   }}>
-    <a href="https://github.com/anhthang/keycolor-viewer">Github</a>
+    <a href={process.env.REACT_APP_REPO}>Github</a>
   </div>
 }
 

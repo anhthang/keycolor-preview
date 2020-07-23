@@ -18,7 +18,7 @@ const defaultCaseColor = '#e0e0e0'
 
 const { Option } = Select
 
-const apiUrl = 'https://keycolor.xyz'
+const apiUrl = process.env.PUBLIC_URL
 
 const keyWidth = 55
 const keySpacing = 4
@@ -141,7 +141,7 @@ function App() {
 
   return (
     <BasicLayout
-      title="KeyColor Viewer"
+      title={process.env.REACT_APP_NAME}
       layout="top"
       logo={false}
       headerRender={false}
@@ -151,7 +151,7 @@ function App() {
       <PageContainer
         style={{ minHeight: '100vh', margin: 24 }}
         extra={[
-          <a key="github" href="https://github.com/anhthang/keycolor-viewer" target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
+          <a key="github" href={process.env.REACT_APP_REPO} target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
         ]}  
       >
         <Row gutter={16}>
@@ -205,15 +205,15 @@ function App() {
                         mod: colorway.key
                       })
                     }
-                  }}>Change Modifier Colorway</Checkbox>
+                  }}>Change Modifier Keyset</Checkbox>
                 </Form.Item>
                 {
                   changeModifier && (
-                    <Form.Item label="Modifier Colorway">
+                    <Form.Item label="Modifier Keyset">
                       <Cascader
                         showSearch
                         options={colorwayNames}
-                        placeholder="Select Modifier Colorway"
+                        placeholder="Select Modifier Keyset"
                         onChange={e => changeColorway(e, true)}
                       />
                     </Form.Item>

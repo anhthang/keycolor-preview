@@ -1,4 +1,4 @@
-# KeyColor Viewer
+# KeyColor - Keyboard & Keycap Color Preview
 
 <p align="center">
     <img src="./public/logo256.png"/>
