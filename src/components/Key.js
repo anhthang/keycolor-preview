@@ -1,14 +1,54 @@
 import React from 'react';
 import _ from 'lodash';
+import {
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+  AppleFilled,
+  WindowsFilled
+} from '@ant-design/icons';
+
 import keycodes from './keycodes';
 
-// let substitute = Object.assign(
-//   {},
-//   colorways.iconCodes,
-//   colorways.platformIcons(window.navigator.platform)
-// );
+function platformIcons(platform) {
+  let icon;
+  switch (platform) {
+    case 'MacIntel':
+    case 'Macintosh':
+    case 'MacPPC':
+    case 'iPhone':
+    case 'iPad':
+      icon = <AppleFilled style={{ fontSize: 20 }} />;
+      break;
+    case 'Linux i686':
+    case 'Linux x86_64':
+    case 'Linux armv7l':
+      icon = ['fab', 'linux'];
+      break;
+    case 'Win32':
+      icon = <WindowsFilled style={{ fontSize: 20 }} />;
+      break;
+    default:
+      // fall back to text if we can't detect
+      icon = undefined;
+  }
+  return {
+    KC_LGUI: icon,
+    KC_RGUI: icon
+  };
+}
 
-const keycodeMap = _.keyBy(keycodes, 'code')
+const iconCodes = {
+  KC_UP: <ArrowUpOutlined style={{ fontSize: 16 }} />,
+  KC_DOWN: <ArrowDownOutlined style={{ fontSize: 16 }} />,
+  KC_LEFT: <ArrowLeftOutlined style={{ fontSize: 16 }} />,
+  KC_RGHT: <ArrowRightOutlined style={{ fontSize: 16 }} />,
+  ...platformIcons(window.navigator.platform)
+};
+
+const platformCodes = ['KC_LGUI', 'KC_RGUI'];
+const keycodeMap = _.keyBy(keycodes, 'code');
 
 const rg = new RegExp(/[a-zA-Z0-9]/)
 const keyWidth = 55
@@ -29,6 +69,9 @@ function keyClasses(key, keyset, kit) {
     } else {
       classes.push('special-chars')
     }
+  }
+  if (platformCodes.includes(key.code)) {
+    classes.push('icon-key')
   }
   if (key.display === false) {
     classes.push('hidden-key')
@@ -94,7 +137,7 @@ function Key({info, colorway, kit}) {
       ...info.z && { transform: `rotateZ(${info.z || 0}deg)` }
     }}
     >
-    {getDisplayText(info.code, keyset.kits && keyset.kits[kit])}
+    {iconCodes[info.code] || getDisplayText(info.code, keyset.kits && keyset.kits[kit])}
   </div>
 }
 

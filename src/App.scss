@@ -30,6 +30,12 @@
     display: none;
   }
 
+  &.icon-key {
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 0;
+  }
+
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
   // font-size: var(--default-key-font-size);

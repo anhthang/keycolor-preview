@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "sh -ac '. ./.env; react-scripts build",
+    "build": "sh -ac '. ./.env; react-scripts build'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
