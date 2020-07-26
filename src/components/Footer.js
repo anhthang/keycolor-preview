@@ -5,7 +5,7 @@ import { GithubOutlined } from '@ant-design/icons';
 function Footer() {
   return <DefaultFooter
     className="footer"
-    copyright="2020 - Hosted on Github Pages"
+    copyright="2020 - Made with 💗 by Anh Thang Bui"
     links={[
       {
         key: 'GitHub',

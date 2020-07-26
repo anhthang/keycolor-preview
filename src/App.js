@@ -6,10 +6,8 @@ import * as fetch from 'node-fetch';
 import { Select, Card, Cascader, Row, Col, Form, Checkbox, Empty } from 'antd';
 import { SketchPicker } from 'react-color';
 import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
-import { GithubOutlined } from '@ant-design/icons';
 
 import Key from './components/Key';
-// import RightHeader from './components/RightHeader';
 import Footer from './components/Footer';
 import _ from 'lodash';
 import colorways from './components/colorways';
@@ -24,6 +22,10 @@ const keyWidth = 55
 const keySpacing = 4
 const keyboardBezel = 15
 
+const getName = (name) => {
+  return name.split('-').map(n => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
+}
+
 const colorwayNames = _(colorways.list)
   .groupBy(i => i.name.split('-')[0])
   .map((list, manufacturer) => {
@@ -33,12 +35,12 @@ const colorwayNames = _(colorways.list)
       children: list.map(c => {
         const parts = c.name.split('-')
         parts.shift()
-        const display = parts.map((n) => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
+        const display = parts.map((n) => getName(n)).join(' ')
 
         return {
           value: parts.join('-'),
           label: display,
-          children: c.kits ? Object.keys(c.kits).map(k => ({ value: k, label: k.replace(k.charAt(0), k.charAt(0).toUpperCase()) })) : []
+          children: c.kits ? Object.keys(c.kits).map(k => ({ value: k, label: getName(k) })) : []
         }
       })
     }
@@ -148,14 +150,8 @@ function App() {
       logo={false}
       headerRender={false}
       footerRender={Footer}
-      // rightContentRender={RightHeader}
     >
-      <PageContainer
-        style={{ minHeight: '100vh', margin: 24 }}
-        extra={[
-          <a key="github" href={process.env.REACT_APP_REPO} target="blank" title="Github"><GithubOutlined style={{ fontSize: 32 }} /></a>
-        ]}  
-      >
+      <PageContainer style={{ minHeight: '100vh', margin: 24 }}>
         <Row gutter={16}>
           <Col md={5}>
             <Card className="keyboard-box" title="Options" size="small">
@@ -168,7 +164,6 @@ function App() {
                     <Form.Item label="Case Color">
                       <Select
                         showSearch
-                        // disabled={!Array.isArray(keyboard.colors) || !keyboard.colors.length}
                         defaultValue={caseColor}
                         defaultActiveFirstOption
                         onSelect={(e) => setCaseColor(e)}
@@ -256,7 +251,6 @@ function App() {
             </Card>
           </Col>
         </Row>
-        
       </PageContainer>
     </BasicLayout>
   )

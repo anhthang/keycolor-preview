@@ -6,7 +6,8 @@ import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   AppleFilled,
-  WindowsFilled
+  WindowsFilled,
+  QqOutlined
 } from '@ant-design/icons';
 
 import keycodes from './keycodes';
@@ -24,7 +25,7 @@ function platformIcons(platform) {
     case 'Linux i686':
     case 'Linux x86_64':
     case 'Linux armv7l':
-      icon = ['fab', 'linux'];
+      icon = <QqOutlined style={{ fontSize: 20 }} />;
       break;
     case 'Win32':
       icon = <WindowsFilled style={{ fontSize: 20 }} />;
