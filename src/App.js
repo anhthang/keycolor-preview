@@ -64,7 +64,7 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    fetch(`${apiUrl}/keyboard_folders.json`)
+    fetch(`${apiUrl}/keyboards.json`)
       .then(res => res.json())
       .then(res => {
         const keyboards = _(res)

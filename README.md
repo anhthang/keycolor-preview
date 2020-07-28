@@ -27,7 +27,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 You are welcome.
 
 - Add new keyboards:
-    - Add new items at `public/keyboard_folders.json`
+    - Add new items at `public/keyboards.json`
     - Add new keyboard info at the `public/keyboards` folder following the data from QMK
     - Key `code` is required for layout, don't need any label here. Or you can use default layout (see `keyboards/percent/canoe`)
 
