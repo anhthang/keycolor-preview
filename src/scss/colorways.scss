@@ -1225,6 +1225,21 @@
 }
 
 // JTKeycaps
+.jtk-avocado-key {
+  background: $color-pantone-600C;
+  color: $color-pantone-2264C;
+}
+
+.jtk-avocado-mod {
+  background: $color-pantone-Black5C;
+  color: $color-pantone-2264C;
+}
+
+.jtk-avocado-accent {
+  background: $color-pantone-2264C;
+  color: $color-pantone-600C;
+}
+
 .jtk-classic-fc-key {
   background: #f6ebda;
   color: #74242a;
