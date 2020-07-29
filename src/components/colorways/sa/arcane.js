@@ -1,0 +1,28 @@
+export default {
+  name: 'sa-arcane',
+  override: {
+    KC_ESC: 'accent',
+    KC_GESC: 'accent',
+    KC_ENT: 'accent',
+    KC_PENT: 'accent',
+    KC_UP: 'accent',
+    KC_DOWN: 'accent',
+    KC_LEFT: 'accent',
+    KC_RGHT: 'accent',
+    KC_F1: 'mod',
+    KC_F2: 'mod',
+    KC_F3: 'mod',
+    KC_F4: 'mod',
+    KC_F5: 'accent',
+    KC_F6: 'accent',
+    KC_F7: 'accent',
+    KC_F8: 'accent',
+    KC_F9: 'mod',
+    KC_F10: 'mod',
+    KC_F11: 'mod',
+    KC_F12: 'mod',
+    KC_PSCR: 'accent',
+    KC_SLCK: 'accent',
+    KC_PAUS: 'accent',
+  }
+};

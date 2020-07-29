@@ -1,11 +1,11 @@
 import dsa from './dsa';
 import gmk from './gmk';
-import sa from './sa';
 import jtk from './jtk';
 import kat from './kat';
+import sa from './sa';
 
 export default {
-  list: [...dsa, ...sa, ...gmk, ...jtk, ...kat],
+  list: [...dsa, ...gmk, ...jtk, ...kat, ...sa],
   /*
    * List of codes we should use icons for instead of text
    */

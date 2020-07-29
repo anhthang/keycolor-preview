@@ -2,6 +2,45 @@
  * SA Keysets
  */
 
+.sa-arcane-key {
+  background: $color-sp-abs-WFK;
+  color: $color-sp-abs-RDA;
+}
+.sa-arcane-mod {
+  background: $color-sp-abs-RDA;
+  color: $color-sp-abs-WFK;
+}
+.sa-arcane-accent {
+  background: $color-sp-abs-BBJ;
+  color: $color-sp-abs-RDA;
+}
+
+.sa-bliss-key {
+  background: $color-sp-abs-GC;
+  color: $color-pantone-13-1406;
+}
+.sa-bliss-mod {
+  background: $color-sp-abs-GC;
+  color: $color-pantone-13-1406;
+}
+.sa-bliss-accent {
+  background: $color-pantone-13-1406;
+  color: $color-sp-abs-GC;
+}
+
+.sa-bubble-key {
+  background: $color-sp-abs-WCK;
+  color: $color-pantone-13-1520;
+}
+.sa-bubble-mod {
+  background: $color-pantone-15-3919;
+  color: $color-sp-abs-WCK;
+}
+.sa-bubble-accent {
+  background: $color-pantone-13-1520;
+  color: $color-sp-abs-WCK;
+}
+
 .sa-carbon-key {
   background: $color-sp-abs-WBO;
   color: $color-sp-abs-GQM;
@@ -112,6 +151,19 @@
   }
 }
 
+.sa-hunter-killua-key {
+  background: $color-pantone-2085C;
+  color: $color-sp-abs-BFU;
+}
+.sa-hunter-killua-mod {
+  background: $color-sp-abs-BFU;
+  color: $color-pantone-2085C;
+}
+.sa-hunter-killua-accent {
+  background: $color-sp-abs-RDE;
+  color: $color-pantone-2085C;
+}
+
 .sa-jukebox-key {
   background: $color-sp-abs-TM;
   color: $color-sp-abs-RN;
@@ -140,6 +192,32 @@
   }
 }
 .sa-jukebox-kb {
+}
+
+.sa-lime-key {
+  background: $color-pantone-5455C;
+  color: $color-sp-abs-VBQ;
+}
+.sa-lime-mod {
+  background: $color-pantone-430C;
+  color: $color-sp-abs-VAT;
+}
+.sa-lime-accent {
+  background: $color-sp-abs-VAT;
+  color: $color-sp-abs-WFK;
+}
+
+.sa-magic-city-key {
+  background: $color-sp-abs-TBT;
+  color: $color-sp-abs-TAA;
+}
+.sa-magic-city-mod {
+  background: $color-sp-abs-TAA;
+  color: $color-sp-abs-TBT;
+}
+.sa-magic-city-accent {
+  background: $color-sp-abs-RDD;
+  color: $color-sp-abs-TBT;
 }
 
 .sa-modern-selectric-key {
@@ -213,6 +291,32 @@
   color: $color-sp-abs-GAL;
 }
 .sa-oblivion-hagoromo-kb {
+}
+
+.sa-sail-key {
+  background: $color-pantone-7717C;
+  color: $color-sp-abs-WCK;
+}
+.sa-sail-mod {
+  background: $color-pantone-7717C;
+  color: $color-sp-abs-WCK;
+}
+
+.sa-sunday-morning-key {
+  background: $color-pantone-487C;
+  color: $color-pantone-202C;
+  &.maroon {
+    background: $color-pantone-202C;
+    color: $color-pantone-487C;
+  }
+}
+.sa-sunday-morning-mod {
+  background: $color-pantone-202C;
+  color: $color-pantone-487C;
+}
+.sa-sunday-morning-accent {
+  background: $color-pantone-6C;
+  color: $color-pantone-487C;
 }
 
 .sa-vilebloom-key {
