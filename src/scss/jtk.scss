@@ -1,0 +1,52 @@
+/**
+ * JTK Keysets
+ */
+
+.jtk-avocado-key {
+  background: $color-pantone-600C;
+  color: $color-pantone-2264C;
+  &.green {
+    background: $color-pantone-2264C;
+    color: $color-pantone-600C;
+  }
+}
+
+.jtk-avocado-mod {
+  background: $color-pantone-Black5C;
+  color: $color-pantone-2264C;
+}
+
+.jtk-avocado-accent {
+  background: $color-pantone-2264C;
+  color: $color-pantone-600C;
+  &.green {
+    background: $color-pantone-600C;
+    color: $color-pantone-2264C;
+  }
+}
+
+.jtk-classic-fc-key {
+  background: #f6ebda;
+  color: #74242a;
+}
+
+.jtk-classic-fc-mod {
+  background: #74242a;
+  color: #f6ebda;
+}
+
+.jtk-classic-fc-accent {
+  background: #1b1918;
+  color: #f6ebda;
+}
+
+.jtk-suited-assassin-key,
+.jtk-suited-assassin-mod {
+  background: #312c2b;
+  color: #a79373;
+}
+
+.jtk-suited-assassin-accent {
+  background: #a79373;
+  color: #312c2b;
+}

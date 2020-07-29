@@ -22,6 +22,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 - [ ] 3D keycap render with three.js
 - [ ] Filter by layout type
 - [ ] Auto deploy
+- [ ] Auto resize in small screens
 
 ## 📬 Pull Request
 You are welcome.
