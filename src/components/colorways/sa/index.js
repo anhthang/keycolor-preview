@@ -10,7 +10,7 @@ import sa_lime from './lime';
 import sa_magic_city from './magic_city';
 import sa_modern_selectric from './modern_selectric';
 import sa_nantucket_selectric from './nantucket_selectric';
-import sa_oblivion_hagoromo from './oblivion_hagoromo';
+import sa_oblivion from './oblivion';
 import sa_sail from './sail';
 import sa_sunday_morning from './sunday_morning';
 import sa_vilebloom from './vilebloom';
@@ -28,7 +28,7 @@ export default [
   sa_magic_city,
   sa_modern_selectric,
   sa_nantucket_selectric,
-  sa_oblivion_hagoromo,
+  sa_oblivion,
   sa_sail,
   sa_sunday_morning,
   sa_vilebloom

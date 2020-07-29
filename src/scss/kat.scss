@@ -3,37 +3,37 @@
  */
 
 .kat-hyperfuse-key {
-  background: $color-gmk-abs-2M;
-  color: $color-gmk-abs-DY;
+  background: #dadbd6;
+  color: #7f55a2;
   input,
   .key-contents {
-    background: darken($color-gmk-abs-2M, 10%);
-    color: lighten($color-gmk-abs-DY, 5%);
-    border-color: mix($color-gmk-abs-2M, lighten($color-gmk-abs-DY, 5%));
+    background: darken(#dadbd6, 10%);
+    color: lighten(#7f55a2, 5%);
+    border-color: mix(#dadbd6, lighten(#7f55a2, 5%));
   }
 }
 .kat-hyperfuse-mod {
-  background: $color-gmk-abs-2B;
-  color: $color-gmk-abs-TU2;
+  background: #7b8788;
+  color: #75bdaa;
   input,
   .key-contents {
-    background: darken($color-gmk-abs-2B, 10%);
-    color: $color-gmk-abs-TU2;
-    border-color: mix($color-gmk-abs-2B, $color-gmk-abs-TU2);
+    background: darken(#7b8788, 10%);
+    color: #75bdaa;
+    border-color: mix(#7b8788, #75bdaa);
   }
 }
 .kat-hyperfuse-accent {
-  background: $color-gmk-abs-TU2;
-  color: $color-gmk-abs-DY;
+  background: #75bdaa;
+  color: #7f55a2;
   input {
-    background: lighten($color-gmk-abs-TU2, 40%);
+    background: lighten(#75bdaa, 40%);
   }
 }
 .kat-hyperfuse-accent2 {
-  background: $color-gmk-abs-DY;
-  color: $color-gmk-abs-TU2;
+  background: #7f55a2;
+  color: #75bdaa;
   input {
-    background: lighten($color-gmk-abs-DY, 40%);
+    background: lighten(#7f55a2, 40%);
   }
 }
 

@@ -19,6 +19,7 @@ import gmk_metaverse from './metaverse';
 import gmk_mizu from './mizu';
 import gmk_nautilus from './nautilus';
 import gmk_noel from './noel';
+import gmk_oblivion from './oblivion';
 import gmk_olivetti from './olivetti';
 import gmk_olivia from './olivia';
 import gmk_plum from './plum';
@@ -55,6 +56,7 @@ export default [
   gmk_mizu,
   gmk_nautilus,
   gmk_noel,
+  gmk_oblivion,
   gmk_olivetti,
   gmk_olivia,
   gmk_plum,

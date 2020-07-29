@@ -425,6 +425,23 @@
   background: $color-pantone-533C;
 }
 
+.gmk-oblivion-key {
+  background: $color-sp-abs-GD;
+  color: $color-sp-abs-GAL;
+  &.hagoromo {
+    background: $color-gmk-abs-CP;
+    color: $color-sp-abs-GD;
+  }
+}
+.gmk-oblivion-mod {
+  background: $color-sp-abs-GQM;
+  color: $color-sp-abs-GAL;
+}
+.gmk-oblivion-accent {
+  background: $color-sp-abs-BFP;
+  color: $color-sp-abs-BFN;
+}
+
 .gmk-olivetti-key {
   background: $color-gmk-abs-CP;
   color: $color-gmk-abs-V4;

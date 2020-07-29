@@ -266,9 +266,13 @@
 .sa-nantucket-selectric-kb {
 }
 
-.sa-oblivion-hagoromo-key {
-  background: $color-sp-abs-WFK;
-  color: $color-sp-abs-GD;
+.sa-oblivion-key {
+  background: $color-sp-abs-GD;
+  color: $color-sp-abs-GAL;
+  &.hagoromo {
+    background: $color-sp-abs-WFK;
+    color: $color-sp-abs-GD;
+  }
   input,
   .key-contents {
     background: lighten($color-sp-abs-WFK, 10%);
@@ -276,7 +280,7 @@
     border-color: mix($color-sp-abs-WFK, darken($color-sp-abs-GD, 10%));
   }
 }
-.sa-oblivion-hagoromo-mod {
+.sa-oblivion-mod {
   background: $color-sp-abs-GQM;
   color: $color-sp-abs-GAL;
   input,
@@ -286,11 +290,11 @@
     border-color: mix($color-sp-abs-GQM, lighten($color-sp-abs-GAL, 17%));
   }
 }
-.sa-oblivion-hagoromo-accent {
+.sa-oblivion-accent {
   background: $color-sp-abs-RAS;
   color: $color-sp-abs-GAL;
 }
-.sa-oblivion-hagoromo-kb {
+.sa-oblivion-kb {
 }
 
 .sa-sail-key {

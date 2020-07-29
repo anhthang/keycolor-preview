@@ -138,7 +138,7 @@ function Key({info, colorway, kit}) {
       ...info.z && { transform: `rotateZ(${info.z || 0}deg)` }
     }}
     >
-    {iconCodes[info.code] || getDisplayText(info.code, keyset.kits && keyset.kits[kit])}
+    {iconCodes[info.code] || (keyset && keyset.icon && keyset.icon[info.code]) || getDisplayText(info.code, keyset.kits && keyset.kits[kit])}
   </div>
 }
 

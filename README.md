@@ -16,6 +16,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
     - Hangul (GMK Hanguk)
     - Cyrillics (GMK Yuri)
 - [x] Multiple colorway selections for alphas, modifiers
+- [x] Use SVG icon for novelties like Esc, Enter (SA Oblivion)
 
 ## 🎨 TODO
 - [ ] Keyboard cases
@@ -39,7 +40,7 @@ You are welcome.
     - Clone a new colorway from QMK or look at `src/scss/colorways.scss` and other files in the same folder
 
 
-### 📝 Note
+## 📝 Notes
 - [Logo], [Favicon] made by [Flat Icons](https://www.flaticon.com)
 
 [Logo]: https://www.flaticon.com/free-icon/keyboard_2867576
