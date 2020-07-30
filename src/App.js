@@ -151,7 +151,7 @@ function App() {
       headerRender={false}
       footerRender={Footer}
     >
-      <PageContainer style={{ minHeight: '100vh', margin: 24 }}>
+      <PageContainer className="page-container">
         <Row gutter={16}>
           <Col md={5}>
             <Card className="keyboard-box" title="Options" size="small">

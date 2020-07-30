@@ -16,7 +16,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
     - Hangul (GMK Hanguk)
     - Cyrillics (GMK Yuri)
 - [x] Multiple colorway selections for alphas, modifiers
-- [x] Use SVG icon for novelties like Esc, Enter (SA Oblivion)
+- [x] Use SVG icons for novelties like Esc, Enter (SA Oblivion)
 
 ## 🎨 TODO
 - [ ] Keyboard cases

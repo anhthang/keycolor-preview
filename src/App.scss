@@ -8,9 +8,19 @@
 @import './scss/color/ral';
 @import './scss/colorways';
 
+#root {
+  height: 100%;
+}
+
+.ant-pro-basicLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
 .page-container {
-  min-height: 100vh;
-  margin: 24px;
+  margin: 0 24px;
 }
 
 .footer {
