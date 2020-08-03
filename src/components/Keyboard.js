@@ -3,6 +3,13 @@ import { Card, Radio, Empty } from 'antd';
 import _ from 'lodash';
 import Key from './Key';
 
+// import scss variables
+import gmkabs from '../scss/color/gmk-abs.scss'
+import pantone from '../scss/color/pantone.scss'
+import ral from '../scss/color/ral.scss'
+import spabs from '../scss/color/sp-abs.scss'
+import sppbt from '../scss/color/sp-pbt.scss'
+
 import {
   Scene,
   Mesh,
@@ -21,6 +28,8 @@ import { TDSLoader } from 'three/examples/jsm/loaders/TDSLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import keycodes from './keycodes';
 const keycodeMap = _.keyBy(keycodes, 'code');
+
+const colorCodeMap = {...gmkabs, ...pantone, ...ral, ...spabs, ...sppbt }
 
 const keyWidth = 55;
 const keySpacing = 4;
@@ -137,12 +146,12 @@ function init(keymaps, colorway, kit) {
     var context = canvas.getContext("2d")
     // var size = 15 * key.f
     var size = 15 * 3
-    context.fillStyle = colorCodes[0] || '#2e3b51'
+    context.fillStyle = colorCodeMap[colorCodes[0]] || colorCodes[0] || '#2e3b51'
     context.fillRect(0, 0, canvas.width, canvas.height)
     context.font = size + "px Montserrat"
     context.textAlign = "center"
     context.textBaseline = "middle"
-    context.fillStyle = colorCodes[1] || '#22aabc'
+    context.fillStyle = colorCodeMap[colorCodes[1]] || colorCodes[1] || '#22aabc'
     context.fillText(key.code, canvas.width / 2, canvas.height / 2)
     var texture = new Texture(canvas)
     // texture.offset = new THREE.Vector2(0.5, 0.5)
