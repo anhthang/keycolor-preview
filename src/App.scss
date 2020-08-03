@@ -107,4 +107,16 @@
 .keyboard-drawer {
   left: 50%;
   transform: translateX(-50%);
+  &.hidden {
+    display: none;
+  }
+}
+
+
+#keyboard-3d {
+  display: flex;
+  justify-content: center;
+  &.hidden {
+    display: none;
+  }
 }

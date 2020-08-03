@@ -3,13 +3,13 @@ import './App.scss';
 import 'antd/dist/antd.css';
 
 import * as fetch from 'node-fetch';
-import { Select, Card, Cascader, Row, Col, Form, Checkbox, Empty } from 'antd';
+import _ from 'lodash';
+import { Select, Card, Cascader, Row, Col, Form, Checkbox } from 'antd';
 import { SketchPicker } from 'react-color';
 import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
 
-import Key from './components/Key';
 import Footer from './components/Footer';
-import _ from 'lodash';
+import Keyboard from './components/Keyboard';
 import colorways from './components/colorways';
 
 const defaultCaseColor = '#e0e0e0'
@@ -17,10 +17,6 @@ const defaultCaseColor = '#e0e0e0'
 const { Option } = Select
 
 const apiUrl = process.env.PUBLIC_URL
-
-const keyWidth = 55
-const keySpacing = 4
-const keyboardBezel = 15
 
 const getName = (name) => {
   return name.split('-').map(n => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
@@ -136,13 +132,6 @@ function App() {
     }
   }
 
-  const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
-    ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
-    : 0
-  const maxHeight = Array.isArray(keymaps.layout) && keymaps.layout.length
-    ? _.max(keymaps.layout.map(k => k.y + (k.h || 1)))
-    : 0
-
   return (
     <BasicLayout
       title={process.env.REACT_APP_NAME}
@@ -220,35 +209,7 @@ function App() {
             </Card>
           </Col>
           <Col md={19}>
-            <Card
-              size="small"
-              loading={loading}
-              title="Keyboard"
-              className="keyboard-box"
-            >
-              {keyboard && keyboard.keyboard_name
-                ? <Card
-                  className="keyboard-drawer"
-                  style={{
-                    width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
-                    height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
-                    border: `${keyboardBezel}px solid ${caseColor}`,
-                    borderRadius: 6,
-                    backgroundColor: `${caseColor}`
-                  }}>
-                  {keymaps.layout.map((k, idx) => {
-                    const key = {...k, ...keymaps.override && keymaps.override[k.code]}
-
-                    return <Key key={idx} info={key} colorway={colorway} kit={kit} />
-                  })}
-                </Card>
-                : <Empty
-                    image='./logo256.png'
-                    imageStyle={{ height: 'auto'}}
-                    description='No keyboard selected or missing info'
-                  />
-              }
-            </Card>
+            <Keyboard keyboard={keyboard} caseColor={caseColor} colorway={colorway} kit={kit} keymaps={keymaps} loading={loading} />
           </Col>
         </Row>
       </PageContainer>

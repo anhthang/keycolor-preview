@@ -20,10 +20,11 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 
 ## 🎨 TODO
 - [ ] Keyboard cases
-- [ ] 3D keycap render with three.js
+- [ ] 3D keycap render (threejs, babylonjs) [I'm working on it]
 - [ ] Filter by layout type
 - [ ] Auto deploy
 - [ ] Auto resize in small screens
+- [ ] Dark mode toggle
 
 ## 📬 Pull Request
 You are welcome.
@@ -40,7 +41,8 @@ You are welcome.
     - Clone a new colorway from QMK or look at `src/scss/colorways.scss` and other files in the same folder
 
 
-## 📝 Notes
+## 📝 Credits
+- SA, Cherry keycap models are Copyright (c) 2017 [Josh Hinnebusch](https://github.com/hineybush)
 - [Logo], [Favicon] made by [Flat Icons](https://www.flaticon.com)
 
 [Logo]: https://www.flaticon.com/free-icon/keyboard_2867576
