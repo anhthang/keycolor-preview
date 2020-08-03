@@ -125,7 +125,7 @@ function init(keymaps, colorway, kit) {
     const pointLight = new PointLight(0xffffff, 1)
     pointLight.position.set(100, 300, 300)
     // pointLight.position.set(100, 2000, 300)
-    scene.add(pointLight)        
+    scene.add(pointLight)
   
     const plane = new GridHelper(1900, 100, 0x888888, 0x888888)
     plane.position.y = -20
@@ -138,8 +138,9 @@ function init(keymaps, colorway, kit) {
     const { type, modifier } = keycodeMap[key.code] || {}
     const keyset = modifier ? colorway.mod : colorway[type || 'key']
 
-    const colorCodes = keyset.color_codes ? keyset.color_codes[type === 'key' ? 'alpha' : 'mod'] : []
-
+    const colorCodes = keyset.color_codes ? keyset.color_codes[(keyset.override && keyset.override[key.code]) || type || 'key'] : []
+    const legend = keycodeMap[key.code] && keycodeMap[key.code].name
+  
     // create keycap texture
     var canvas = document.createElement("canvas")
     canvas.height = 256
@@ -153,7 +154,7 @@ function init(keymaps, colorway, kit) {
     context.textAlign = "center"
     context.textBaseline = "middle"
     context.fillStyle = colorCodeMap[colorCodes[1]] || colorCodes[1] || '#22aabc'
-    context.fillText(key.code, canvas.width / 2, canvas.height / 2)
+    context.fillText(legend, canvas.width / 2, canvas.height / 2)
     var texture = new Texture(canvas)
     // texture.offset = new THREE.Vector2(0.5, 0.5)
     texture.needsUpdate = true

@@ -1,5 +1,12 @@
 export default {
   name: 'sa-vilebloom',
+  color_codes: {
+    key: ['color-pantone-7699C', 'color-sp-abs-WFK'],
+    mod: ['color-pantone-7699C', 'color-sp-abs-WFK'],
+    accent1: ['color-pantone-474U', 'color-pantone-7699C'],
+    accent2: ['color-pantone-177C', 'color-sp-abs-WFK'],
+    accent3: ['color-pantone-2046U', 'color-sp-abs-WFK'],
+  },
   override: {
     KC_ESC: 'accent1',
     KC_F1: 'accent1',

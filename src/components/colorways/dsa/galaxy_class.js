@@ -1,5 +1,14 @@
 export default {
   name: 'dsa-galaxy-class',
+  color_codes: {
+    key: ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
+    mod: ['color-pantone-141C', 'color-sp-pbt-BLACK'],
+    purple: ['color-sp-pbt-RCB', 'color-sp-pbt-BLACK'],
+    'darker-blue': ['color-sp-pbt-BDJ', 'color-sp-pbt-BLACK'],
+    pink: ['color-sp-pbt-RCA', 'color-sp-pbt-BLACK'],
+    'light-blue': ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
+    gray: ['color-sp-pbt-GQT', 'color-sp-pbt-BLACK'],
+  },
   override: {
     KC_ESC: 'pink',
     KC_F1: 'darker-blue',
