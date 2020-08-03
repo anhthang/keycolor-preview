@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Radio, Empty } from 'antd';
 import _ from 'lodash';
 import Key from './Key';
@@ -89,8 +89,8 @@ const scaleH = ({w = 1, h = 1, z = 0, x = 0, y = 0}) => {
   return h * 19 / 18.5 - 1 / 18.5
 }
 
-const width = 960;
-const height = 540;
+const width = 1153.5;
+const height = 383.5;
 let camera, scene, renderer;
 const obj = []
 
@@ -123,7 +123,8 @@ function init(keymaps, colorway, kit) {
   
     scene.add(new AmbientLight(0x404040))
     const pointLight = new PointLight(0xffffff, 1)
-    pointLight.position.set(100, 2000, 300)
+    pointLight.position.set(100, 300, 300)
+    // pointLight.position.set(100, 2000, 300)
     scene.add(pointLight)        
   
     const plane = new GridHelper(1900, 100, 0x888888, 0x888888)
@@ -205,6 +206,10 @@ function animate() {
 function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
   const [renderMode, setRenderMode] = useState('2d')
 
+  useEffect(() => {
+    if (renderMode === '3d') render3DKeyboard('3d')
+  }, [colorway])
+
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
     : 0
@@ -215,7 +220,7 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
   const render3DKeyboard = (mode) => {
     setRenderMode(mode)
 
-    const kb2d = document.getElementById("keyboard-drawer")
+    const kb2d = document.getElementById("keyboard-2d")
     const kb3d = document.getElementById("keyboard-3d")
 
     if (mode === '3d') {
@@ -236,31 +241,41 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
       loading={loading}
       title="Keyboard"
       className="keyboard-box"
-      extra={[
-        <Radio.Group disabled={!keyboard || !keyboard.keyboard_name} onChange={e => render3DKeyboard(e.target.value)} value={renderMode} key={renderMode}>
-          <Radio value={'2d'}>2D</Radio>
-          <Radio value={'3d'}>3D (WIP)</Radio>
-        </Radio.Group>
-      ]}
     >
-      <div id="keyboard-3d"></div>
       {keyboard && keyboard.keyboard_name
-        ? <Card
-          id="keyboard-drawer"
-          className="keyboard-drawer"
-          style={{
-            width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
-            height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
-            border: `${keyboardBezel}px solid ${caseColor}`,
-            borderRadius: 6,
-            backgroundColor: `${caseColor}`
-          }}>
-          {keymaps.layout.map((k, idx) => {
-            const key = {...k, ...keymaps.override && keymaps.override[k.code]}
+        ? (
+          <>
+            <Card className="display-center" bordered={false}>
+              <Radio.Group
+                disabled={!keyboard || !keyboard.keyboard_name}
+                onChange={e => render3DKeyboard(e.target.value)}
+                value={renderMode}
+                key={renderMode}
+                buttonStyle="solid"
+                className="display-center"
+              >
+                <Radio.Button value={'2d'}>2D</Radio.Button>
+                <Radio.Button value={'3d'}>3D (WIP)</Radio.Button>
+              </Radio.Group>
+            </Card>
+            <Card id="keyboard-3d" className="display-center hidden" bordered={false}></Card>
+            <Card
+              id="keyboard-2d"
+              style={{
+                width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
+                height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
+                border: `${keyboardBezel}px solid ${caseColor}`,
+                borderRadius: 6,
+                backgroundColor: `${caseColor}`
+              }}>
+              {keymaps.layout.map((k, idx) => {
+                const key = {...k, ...keymaps.override && keymaps.override[k.code]}
 
-            return <Key key={idx} info={key} colorway={colorway} kit={kit} />
-          })}
-        </Card>
+                return <Key key={idx} info={key} colorway={colorway} kit={kit} />
+              })}
+            </Card>
+          </>
+        )
         : <Empty
             image='./logo256.png'
             imageStyle={{ height: 'auto' }}

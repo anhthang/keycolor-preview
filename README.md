@@ -20,7 +20,11 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 
 ## 🎨 TODO
 - [ ] Keyboard cases
-- [ ] 3D keycap render (threejs, babylonjs) [I'm working on it]
+- [ ] 3D keycap render
+    - [x] Keycap render with three.js
+    - [ ] Display keycap per row profile
+    - [ ] Update colorway information with color codes for renderer
+    - [ ] Better material render
 - [ ] Filter by layout type
 - [ ] Auto deploy
 - [ ] Auto resize in small screens
