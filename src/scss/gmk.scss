@@ -74,22 +74,10 @@
     background: #3e728f;
     color: #fb7279;
   }
-  input,
-  .key-contents {
-    background: #fff3ef;
-    color: darken(#3e728f, 9%);
-    border-color: mix(#fff3ef, darken(#3e728f, 9%));
-  }
 }
 .gmk-bento-mod {
   background: #3e728f;
   color: #fb7279;
-  input,
-  .key-contents {
-    background: darken(#3e728f, 17%);
-    color: lighten(#fb7279, 17%);
-    border-color: mix(#3e728f, lighten(#fb7279, 17%));
-  }
 }
 .gmk-bento-accent {
   background: #fb7279;
@@ -173,26 +161,11 @@
 .gmk-dolch-key {
   background: $color-gmk-abs-CC;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-CC, 10%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix($color-gmk-abs-CC, $color-gmk-abs-WS1);
-  }
 }
 .gmk-dolch-mod {
   background: $color-gmk-abs-N9;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-N9, 10%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix($color-gmk-abs-N9, $color-gmk-abs-WS1);
-  }
 }
-.gmk-dolch-kb {
-}
-
 .gmk-hammerhead-key {
   background: $color-pantone-533C;
   color: $color-pantone-3258C;
@@ -226,35 +199,15 @@
 .gmk-jamon-key {
   background: #84172c;
   color: #ece4d0;
-  input,
-  .key-contents {
-    background: darken(#84172c, 10%);
-    color: #ece4d0;
-    border-color: mix(#84172c, #ece4d0);
-  }
 }
 .gmk-jamon-mod {
   background: #ac2c32;
   color: #ece4d0;
-  input,
-  .key-contents {
-    background: darken(#ac2c32, 10%);
-    color: #ece4d0;
-    border-color: mix(darken(#ac2c32, 10%), #ece4d0);
-  }
 }
 .gmk-jamon-accent {
   background: #ece4d0;
   color: #313337;
-  input {
-    background: lighten(#ece4d0, 40%);
-  }
 }
-.gmk-jamon-kb {
-  // placeholder
-  background: $color-pantone-533C;
-}
-
 .gmk-mecha-01-key {
   background: $color-pantone-267C;
   color: $color-pantone-802C;
@@ -279,81 +232,36 @@
 .gmk-merlin-key {
   background: $color-gmk-abs-CP;
   color: $color-gmk-abs-TU1;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-CP, 10%);
-    color: darken($color-gmk-abs-TU1, 5%);
-    border-color: mix($color-gmk-abs-CP, darken($color-gmk-abs-TU1, 5%));
-  }
 }
 .gmk-merlin-mod {
   background: $color-gmk-abs-TU1;
   color: $color-gmk-abs-N6;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-TU1, 10%);
-    color: $color-gmk-abs-N6;
-    border-color: mix($color-gmk-abs-TU1, $color-gmk-abs-N6);
-  }
 }
 .gmk-merlin-accent {
   background: $color-gmk-abs-N6;
   color: $color-gmk-abs-TU1;
-  input {
-    background: lighten($color-gmk-abs-N6, 40%);
-  }
-}
-.gmk-merlin-kb {
 }
 
 .gmk-metaverse-key {
   background: $color-gmk-abs-WS1;
   color: $color-gmk-abs-CR;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-WS1, 10%);
-    color: $color-gmk-abs-CR;
-    border-color: mix($color-gmk-abs-WS1, $color-gmk-abs-CR);
-  }
 }
 .gmk-metaverse-mod {
   background: $color-gmk-abs-CR;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    color: $color-gmk-abs-WS1;
-    background: lighten($color-gmk-abs-CR, 10%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix($color-gmk-abs-CR, $color-gmk-abs-WS1);
-  }
 }
 .gmk-metaverse-accent {
   background: $color-gmk-abs-RO2;
   color: $color-gmk-abs-WS1;
 }
-.gmk-metaverse-kb {
-  // placeholder
-}
 
 .gmk-mizu-key {
   background: #c2d9e4;
   color: #444f58;
-  input,
-  .key-contents {
-    background: darken(#c2d9e4, 10%);
-    color: #444f58;
-    border-color: mix(#c2d9e4, #444f58);
-  }
 }
 .gmk-mizu-mod {
   background: #444f58;
   color: #f7eee3;
-  input,
-  .key-contents {
-    background: darken(#444f58, 5%);
-    color: #f7eee3;
-    border-color: mix(#444f58, #f7eee3);
-  }
 }
 .gmk-mizu-accent {
   background: #f7eee3;
@@ -363,66 +271,28 @@
 .gmk-nautilus-key {
   background: $color-pantone-534C;
   color: $color-gmk-abs-TU2;
-  input,
-  .key-contents {
-    background: darken($color-pantone-534C, 10%);
-    color: lighten($color-gmk-abs-TU2, 5%);
-    border-color: mix($color-pantone-534C, lighten($color-gmk-abs-TU2, 5%));
-  }
 }
 .gmk-nautilus-mod {
   background: $color-pantone-533C;
   color: $color-gmk-abs-N6;
-  input,
-  .key-contents {
-    background: darken($color-pantone-533C, 10%);
-    color: $color-gmk-abs-N6;
-    border-color: mix($color-pantone-533C, $color-gmk-abs-N6);
-  }
 }
 .gmk-nautilus-accent {
   background: $color-gmk-abs-N6;
   color: $color-pantone-533C;
-  input {
-    background: lighten($color-gmk-abs-N6, 40%);
-  }
-}
-.gmk-nautilus-kb {
-  // placeholder
-  background: $color-pantone-533C;
 }
 
 // it should be WS2 instead of WS1, but i dont have color code now
 .gmk-noel-key {
   background: $color-gmk-abs-WS1;
   color: $color-ral-H230L70C30;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-WS1, 10%);
-    color: lighten($color-ral-H230L70C30, 5%);
-    border-color: mix($color-gmk-abs-WS1, lighten($color-ral-H230L70C30, 5%));
-  }
 }
 .gmk-noel-mod {
   background: $color-ral-H210L85C15;
   color: $color-ral-H230L70C30;
-  input,
-  .key-contents {
-    background: darken($color-ral-H210L85C15, 10%);
-    color: $color-ral-H230L70C30;
-    border-color: mix($color-ral-H210L85C15, $color-ral-H230L70C30);
-  }
 }
 .gmk-noel-accent {
   background: $color-ral-H010L80C20;
   color: $color-gmk-abs-WS1;
-  input {
-    background: lighten($color-ral-H010L80C20, 40%);
-  }
-}
-.gmk-noel-kb {
-  // placeholder
-  background: $color-pantone-533C;
 }
 
 .gmk-oblivion-key {
@@ -445,76 +315,34 @@
 .gmk-olivetti-key {
   background: $color-gmk-abs-CP;
   color: $color-gmk-abs-V4;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-CP, 10%);
-    color: darken($color-gmk-abs-V4, 5%);
-    border-color: mix($color-gmk-abs-CP, darken($color-gmk-abs-V4, 5%));
-  }
 }
 .gmk-olivetti-mod {
   background: $color-gmk-abs-U9;
   color: $color-gmk-abs-V4;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-U9, 10%);
-    color: darken($color-gmk-abs-V4, 15%);
-    border-color: mix($color-gmk-abs-U9, darken($color-gmk-abs-V4, 15%));
-  }
 }
 .gmk-olivetti-accent {
   background: $color-gmk-abs-V4;
   color: $color-gmk-abs-CP;
 }
-.gmk-olivetti-kb {
-}
-
 .gmk-olivia-key {
   background: $color-gmk-abs-CP;
   color: #363434;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-CP, 10%);
-    color: #363434;
-    border-color: mix($color-gmk-abs-CP, #363434);
-  }
 }
 .gmk-olivia-mod {
   background: #363434;
   color: #e8c4b8;
-  input,
-  .key-contents {
-    color: #e8c4b8;
-    background: darken(#363434, 10%);
-    border-color: mix(#363434, #e8c4b8);
-  }
 }
 .gmk-olivia-accent {
   background: #e8c4b8;
   color: #363434;
 }
-.gmk-olivia-kb {
-}
-
 .gmk-plum-key {
   background: #ded0af;
   color: #736b7c;
-  input,
-  .key-contents {
-    background: lighten(#ded0af, 13%);
-    color: darken(#736b7c, 13%);
-    border-color: mix(#ded0af, darken(#736b7c, 13%));
-  }
 }
 .gmk-plum-mod {
   background: #736b7c;
   color: #ded0af;
-  input,
-  .key-contents {
-    background: darken(#736b7c, 13%);
-    color: lighten(#ded0af, 13%);
-    border-color: mix(#736b7c, lighten(#ded0af, 13%));
-  }
 }
 .gmk-plum-accent {
   background: #863f48;
@@ -524,22 +352,10 @@
 .gmk-rouge-key {
   background: $color-ral-H290L20C15;
   color: $color-ral-H320L50C20;
-  input,
-  .key-contents {
-    background: lighten($color-ral-H290L20C15, 10%);
-    color: $color-ral-H320L50C20;
-    border-color: mix($color-ral-H290L20C15, $color-ral-H320L50C20);
-  }
 }
 .gmk-rouge-mod {
   background: $color-ral-H290L20C15;
   color: $color-ral-H320L50C20;
-  input,
-  .key-contents {
-    background: lighten($color-ral-H290L20C15, 10%);
-    color: $color-ral-H320L50C20;
-    border-color: mix($color-ral-H290L20C15, $color-ral-H320L50C20);
-  }
 }
 .gmk-rouge-accent1 {
   background: $color-ral-H310L20C20;
@@ -561,73 +377,33 @@
 .gmk-serika-key {
   background: #ece4d0;
   color: #333732;
-  input,
-  .key-contents {
-    background: lighten(#ece4d0, 10%);
-    color: #333732;
-    border-color: mix(#ece4d0, #333732);
-  }
 }
 .gmk-serika-mod {
   background: #ffcd00;
   color: #333732;
-  input,
-  .key-contents {
-    background: lighten(#ffcd00, 10%);
-    color: #333732;
-    border-color: mix(#ffcd00, #333732);
-  }
 }
 .gmk-serika-accent {
   background: #333732;
   color: #ece4d0;
 }
-.gmk-serika-kb {
-}
 
 .gmk-space-cadet-key {
   background: $color-sp-abs-GD;
   color: $color-gmk-abs-CP;
-  input,
-  .key-contents {
-    background: darken($color-sp-abs-GD, 10%);
-    color: lighten($color-gmk-abs-CP, 10%);
-    border-color: mix($color-sp-abs-GD, lighten($color-gmk-abs-CP, 10%));
-  }
 }
 
 .gmk-space-cadet-mod {
   background: $color-sp-abs-BFP;
   color: $color-gmk-abs-CP;
-  input,
-  .key-contents {
-    background: darken($color-sp-abs-BFP, 10%);
-    color: lighten($color-gmk-abs-CP, 10%);
-    border-color: mix($color-sp-abs-BFP, lighten($color-gmk-abs-CP, 10%));
-  }
-}
-.gmk-space-cadet-kb {
 }
 
 .gmk-striker-key {
   background: #004d7c;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: darken(#004d7c, 5%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix(#004d7c, $color-gmk-abs-WS1);
-  }
 }
 .gmk-striker-mod {
   background: #004d7c;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: darken(#004d7c, 5%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix(#004d7c, $color-gmk-abs-WS1);
-  }
 }
 .gmk-striker-accent {
   background: #002e51;
@@ -637,67 +413,33 @@
 .gmk-sumi-key {
   background: $color-ral-5004;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: darken($color-ral-5004, 10%);
-    color: lighten($color-gmk-abs-WS1, 5%);
-    border-color: mix($color-ral-5004, lighten($color-gmk-abs-WS1, 5%));
-  }
 }
 
 .gmk-sumi-mod {
   background: $color-gmk-abs-WS1;
   color: $color-ral-5004;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-WS1, 10%);
-    color: $color-ral-5004;
-    border-color: mix($color-gmk-abs-WS1, $color-ral-5004);
-  }
 }
 .gmk-sumi-accent {
   background: $color-ral-3028;
   color: $color-gmk-abs-WS1;
-  input {
-    background: lighten($color-ral-3028, 40%);
-  }
 }
 
 .gmk-ta-royal-alpha-key {
   background: $color-gmk-abs-3K;
   color: $color-gmk-abs-N7;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-3K, 10%);
-    color: darken($color-gmk-abs-N7, 10%);
-    border-color: mix($color-gmk-abs-3K, darken($color-gmk-abs-N7, 10%));
-  }
 }
 .gmk-ta-royal-alpha-mod {
   background: $color-gmk-abs-AE;
   color: $color-gmk-abs-CP;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-AE, 17%);
-    color: lighten($color-gmk-abs-CP, 10%);
-    border-color: mix($color-gmk-abs-AE, lighten($color-gmk-abs-CP, 10%));
-  }
 }
 .gmk-ta-royal-alpha-accent {
   background: $color-gmk-abs-N7;
   color: $color-gmk-abs-CP;
 }
-.gmk-ta-royal-alpha-kb {
-  // placeholder
-}
 
 .gmk-taro-key {
   background: #8E71A2;
   color: #170B19;
-  &.boba {
-    background: #170B19;
-    color: #8E71A2;
-  }
 }
 .gmk-taro-mod {
   background: #170B19;
@@ -715,20 +457,11 @@
   background: $color-gmk-abs-CV;
   color: #170B19;
 }
-.gmk-taro-kb {
-  // placeholder
-}
 
 .gmk-terminal-key,
 .gmk-terminal-mod {
   background: $color-gmk-abs-N9;
   color: $color-gmk-abs-AE;
-  input,
-  .key-contents {
-    background: darken($color-gmk-abs-N9, 10%);
-    color: lighten($color-gmk-abs-AE, 9%);
-    border-color: mix($color-gmk-abs-N9, lighten($color-gmk-abs-AE, 9%));
-  }
 }
 .gmk-terminal-accent {
   background: $color-gmk-abs-AE;
@@ -738,45 +471,19 @@
 .gmk-wob-key {
   background: $color-gmk-abs-CR;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-CR, 10%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix($color-gmk-abs-CR, $color-gmk-abs-WS1);
-  }
 }
 .gmk-wob-mod {
   background: $color-gmk-abs-CR;
   color: $color-gmk-abs-WS1;
-  input,
-  .key-contents {
-    background: lighten($color-gmk-abs-CR, 10%);
-    color: $color-gmk-abs-WS1;
-    border-color: mix($color-gmk-abs-CR, $color-gmk-abs-WS1);
-  }
-}
-.gmk-wob-kb {
 }
 
 .gmk-yuri-key {
   background: #c7e6f5;
   color: #f54730;
-  input,
-  .key-contents {
-    background: lighten(#c7e6f5, 5%);
-    color: darken(#f54730, 26%);
-    border-color: mix(#c7e6f5, darken(#f54730, 26%));
-  }
 }
 .gmk-yuri-mod {
   background: #2d394c;
   color: #f54730;
-  input,
-  .key-contents {
-    background: darken(#2d394c, 14%);
-    color: lighten(#f54730, 14%);
-    border-color: mix(#2d394c, lighten(#f54730, 14%));
-  }
 }
 .gmk-yuri-accent {
   background: #f54730;
