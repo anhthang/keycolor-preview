@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Radio, Empty } from 'antd';
+import { Card, Radio, Empty, Popover } from 'antd';
+import { WarningFilled } from '@ant-design/icons';
 import _ from 'lodash';
 import Key from './Key';
 
@@ -11,22 +12,24 @@ import spabs from '../scss/color/sp-abs.scss'
 import sppbt from '../scss/color/sp-pbt.scss'
 
 import {
-  Scene,
-  Mesh,
-  PerspectiveCamera,
-  WebGLRenderer,
   Color,
-  AmbientLight,
-  PointLight,
+  GammaEncoding,
   GridHelper,
+  HemisphereLight,
+  Mesh,
   MeshStandardMaterial,
+  PerspectiveCamera,
+  Scene,
   Texture,
-  GammaEncoding
+  WebGLRenderer,
+  DirectionalLight,
 } from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import { TDSLoader } from 'three/examples/jsm/loaders/TDSLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import keycodes from './keycodes';
+import keysets from './keysets';
+
 const keycodeMap = _.keyBy(keycodes, 'code');
 
 const colorCodeMap = {...gmkabs, ...pantone, ...ral, ...spabs, ...sppbt }
@@ -38,10 +41,10 @@ const keyboardBezel = 15;
 const stlLoader = new STLLoader();
 stlLoader.setPath('./models/')
 
-let pcb
-stlLoader.load('pcb.stl', stl => {
-  pcb = stl
-})
+// let pcb
+// stlLoader.load('pcb.stl', stl => {
+//   pcb = stl
+// })
 
 const tdsLoader = new TDSLoader();
 tdsLoader.setPath('./models/')
@@ -94,6 +97,8 @@ const height = 383.5;
 let camera, scene, renderer;
 const obj = []
 
+const rg = new RegExp(/[a-zA-Z0-9]/)
+
 function init(keymaps, colorway, kit) {
   // clear old render material
   while (obj.length > 0) {
@@ -103,7 +108,7 @@ function init(keymaps, colorway, kit) {
   if (!renderer) {
     // prevent multiple render
     camera = new PerspectiveCamera(45, width / height, 0.1, 2000);
-    camera.position.set(0, 600, 0);
+    camera.position.set(0, 200, 0);
     
     scene = new Scene();
   
@@ -121,11 +126,11 @@ function init(keymaps, colorway, kit) {
   
     scene.background = new Color(0xf0f0f0)
   
-    scene.add(new AmbientLight(0x404040))
-    const pointLight = new PointLight(0xffffff, 1)
-    pointLight.position.set(100, 300, 300)
-    // pointLight.position.set(100, 2000, 300)
-    scene.add(pointLight)
+    scene.add(new HemisphereLight());
+
+    var directionalLight = new DirectionalLight(0xffeedd);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
   
     const plane = new GridHelper(1900, 100, 0x888888, 0x888888)
     plane.position.y = -20
@@ -138,22 +143,28 @@ function init(keymaps, colorway, kit) {
     const { type, modifier } = keycodeMap[key.code] || {}
     const keyset = modifier ? colorway.mod : colorway[type || 'key']
 
-    const colorCodes = keyset.color_codes ? keyset.color_codes[(keyset.override && keyset.override[key.code]) || type || 'key'] : []
+    const codes = keysets[keyset.name] ? keysets[keyset.name][(keyset.override && keyset.override[key.code]) || type || 'key'] : []
     const legend = keycodeMap[key.code] && keycodeMap[key.code].name
   
+    let size = 125
+    if (keycodeMap[key.code] && keycodeMap[key.code].name.length > 1) {
+      if (rg.test(keycodeMap[key.code].name.charAt(0))) {
+        size = 50
+      }
+    }
+
     // create keycap texture
     var canvas = document.createElement("canvas")
     canvas.height = 256
     canvas.width = 256
     var context = canvas.getContext("2d")
     // var size = 15 * key.f
-    var size = 15 * 3
-    context.fillStyle = colorCodeMap[colorCodes[0]] || colorCodes[0] || '#2e3b51'
+    context.fillStyle = colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
     context.fillRect(0, 0, canvas.width, canvas.height)
-    context.font = size + "px Montserrat"
+    context.font = `bold ${size}px Montserrat`
     context.textAlign = "center"
     context.textBaseline = "middle"
-    context.fillStyle = colorCodeMap[colorCodes[1]] || colorCodes[1] || '#22aabc'
+    context.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
     context.fillText(legend, canvas.width / 2, canvas.height / 2)
     var texture = new Texture(canvas)
     // texture.offset = new THREE.Vector2(0.5, 0.5)
@@ -167,7 +178,8 @@ function init(keymaps, colorway, kit) {
     var material = new MeshStandardMaterial({
       map : texture, 
       metalness: 0.5, 
-      roughness: 0.6
+      roughness: 0.6,
+      color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
     })
     kc.traverse(function(child) {
       if (child instanceof Mesh) {
@@ -176,40 +188,45 @@ function init(keymaps, colorway, kit) {
     })
 
     // allocate keycap
-    kc.position.x = centerX(key) * 19
-    kc.position.z = centerY(key) * 19
+    kc.position.x = centerX(key) * 19 - width/6
+    kc.position.z = centerY(key) * 19 - height/6
     kc.scale.x = scaleW(key)
     kc.scale.z = scaleH(key)
     // kc.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
     obj.push(kc)
     scene.add(kc)
 
-    var pcbMmaterial = new MeshStandardMaterial({color: 0x533d45, metalness: 0.5, roughness: 0.7})
-    var pcb1 = new Mesh(pcb, pcbMmaterial)
-    var sx = (key.w || 1) * 19 / 23 + 4 / 23
-    var sz = (key.h || 1) * 19 / 23 + 4 / 23
-    pcb1.position.x = centerX(key) * 19
-    pcb1.position.y = -7
-    pcb1.position.z = centerY(key) * 19
-    pcb1.scale.x = sx
-    pcb1.scale.z = sz
-    // pcb1.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
-    obj.push(pcb1)
-    scene.add(pcb1)
+    // var pcbMmaterial = new MeshStandardMaterial({color: 0x533d45, metalness: 0.5, roughness: 0.7})
+    // var pcb1 = new Mesh(pcb, pcbMmaterial)
+    // var sx = (key.w || 1) * 19 / 23 + 4 / 23
+    // var sz = (key.h || 1) * 19 / 23 + 4 / 23
+    // pcb1.position.x = centerX(key) * 19 - width/6
+    // pcb1.position.y = -7
+    // pcb1.position.z = centerY(key) * 19 - height/6
+    // pcb1.scale.x = sx
+    // pcb1.scale.z = sz
+    // // pcb1.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
+    // obj.push(pcb1)
+    // scene.add(pcb1)
   })
 }
 
 function animate() {
   requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+  renderer && renderer.render(scene, camera);
 }
 
 function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
   const [renderMode, setRenderMode] = useState('2d')
 
   useEffect(() => {
-    if (renderMode === '3d') render3DKeyboard('3d')
+    if (renderMode === '3d') render3DKeyboard(renderMode)
   }, [colorway])
+
+  useEffect(() => {
+    setRenderMode('2d')
+    renderer = undefined
+  }, [keyboard])
 
   const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
@@ -256,7 +273,14 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
                 className="display-center"
               >
                 <Radio.Button value={'2d'}>2D</Radio.Button>
-                <Radio.Button value={'3d'}>3D (WIP)</Radio.Button>
+                <Radio.Button value={'3d'}>
+                  <Popover
+                    placement="bottom"
+                    content="This feature is being developed. It may cause your browser to be slow due to heavy load, so please consider before starting it."
+                  >
+                    <WarningFilled style={{ color: "orange" }} />
+                  </Popover> 3D
+                </Radio.Button>
               </Radio.Group>
             </Card>
             <Card id="keyboard-3d" className="display-center hidden" bordered={false}></Card>
