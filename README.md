@@ -22,7 +22,6 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 - [ ] Keyboard cases
 - [ ] 3D keycap render
     - [ ] Display keycap per row profile
-    - [ ] Better material render
     - [ ] Display controls box inside canvas
 - [ ] Filter by layout type
 - [ ] Auto deploy

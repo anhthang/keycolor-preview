@@ -13,16 +13,16 @@ import sppbt from '../scss/color/sp-pbt.scss'
 
 import {
   Color,
+  DirectionalLight,
   GammaEncoding,
   GridHelper,
   HemisphereLight,
   Mesh,
   MeshStandardMaterial,
-  PerspectiveCamera,
+  OrthographicCamera,
   Scene,
   Texture,
   WebGLRenderer,
-  DirectionalLight,
 } from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import { TDSLoader } from 'three/examples/jsm/loaders/TDSLoader.js';
@@ -105,13 +105,30 @@ function init(keymaps, colorway, kit) {
     scene.remove(obj.shift())
   }
 
+  // prevent multiple render
   if (!renderer) {
-    // prevent multiple render
-    camera = new PerspectiveCamera(45, width / height, 0.1, 2000);
+    // camera
+    var frustumSize = 150
+    var aspect = width / height;
+    camera = new OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 1, 1000);
     camera.position.set(0, 200, 0);
-    
+
+    // scene and light
     scene = new Scene();
+    scene.background = new Color(0xf0f0f0)
   
+    scene.add(new HemisphereLight());
+
+    var directionalLight = new DirectionalLight(0xffeedd);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    // grid
+    const plane = new GridHelper(1900, 100, 0x888888, 0x888888)
+    plane.position.y = -20
+    scene.add(plane)
+
+    // renderer
     renderer = new WebGLRenderer({ antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(width, height)
@@ -123,18 +140,6 @@ function init(keymaps, colorway, kit) {
   
     var controls = new OrbitControls(camera, renderer.domElement)
     controls.target.set(0, 0.5, 0)
-  
-    scene.background = new Color(0xf0f0f0)
-  
-    scene.add(new HemisphereLight());
-
-    var directionalLight = new DirectionalLight(0xffeedd);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-  
-    const plane = new GridHelper(1900, 100, 0x888888, 0x888888)
-    plane.position.y = -20
-    scene.add(plane)
   }
 
   keymaps.layout.forEach((k) => {
@@ -149,7 +154,7 @@ function init(keymaps, colorway, kit) {
     let size = 125
     if (keycodeMap[key.code] && keycodeMap[key.code].name.length > 1) {
       if (rg.test(keycodeMap[key.code].name.charAt(0))) {
-        size = 50
+        size = 80
       }
     }
 
@@ -157,17 +162,27 @@ function init(keymaps, colorway, kit) {
     var canvas = document.createElement("canvas")
     canvas.height = 256
     canvas.width = 256
+
     var context = canvas.getContext("2d")
-    // var size = 15 * key.f
     context.fillStyle = colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
     context.fillRect(0, 0, canvas.width, canvas.height)
     context.font = `bold ${size}px Montserrat`
     context.textAlign = "center"
     context.textBaseline = "middle"
     context.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
-    context.fillText(legend, canvas.width / 2, canvas.height / 2)
+    if (legend) {
+      const lines = legend.split('\n')
+      if (lines.length > 1) {
+        lines.forEach((line, i) => {
+          context.font = "bold 80px Montserrat"
+          context.fillText(line.toUpperCase(), canvas.width / 2, canvas.height / 2 + (i - 0.5) * 110)
+        })
+      } else {
+        context.fillText(legend.toUpperCase(), canvas.width / 2, canvas.height / 2)
+      }
+    }
+
     var texture = new Texture(canvas)
-    // texture.offset = new THREE.Vector2(0.5, 0.5)
     texture.needsUpdate = true
 
     // Keycap model
@@ -179,7 +194,6 @@ function init(keymaps, colorway, kit) {
       map : texture, 
       metalness: 0.5, 
       roughness: 0.6,
-      color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
     })
     kc.traverse(function(child) {
       if (child instanceof Mesh) {
