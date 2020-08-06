@@ -38,62 +38,40 @@ const keyWidth = 55;
 const keySpacing = 4;
 const keyboardBezel = 15;
 
+let maxWidth, maxHeight;
+let width, height;
+
 const stlLoader = new STLLoader();
 stlLoader.setPath('./models/')
-
-// let pcb
-// stlLoader.load('pcb.stl', stl => {
-//   pcb = stl
-// })
 
 const tdsLoader = new TDSLoader();
 tdsLoader.setPath('./models/')
 
-const keycapModels = {
-  'DSA': 'dsa.3ds',
-  'XDA': 'xda.3ds',
-  // 'SA R1': 'sa-1u-r1.stl',
-  // 'SA R2': 'sa-1u-r2.stl',
-  // 'SA R3': 'sa-1u-r3.3ds',
-  // 'SA R4': 'sa-1u-r4.stl',
-  // 'SA SPACE': 'sa-7u-space.stl',
-  // 'Cherry R1': 'cherry-r1.stl',
-  // 'Cherry R2': 'cherry-r2.stl',
-  // 'Cherry R3': 'cherry-r3.stl',
-  // 'Cherry R4': 'cherry-r4.stl',
-  // 'Cherry SPACE': 'cherry-space.stl'
+const models = [
+  'r1_100', 'r1_200', 'r2_100', 'r2_150', 'r2-3_200vert',
+  'r3_100_bar', 'r3_100_sculpted', 'r3_100', 'r3_125', 'r3_150', 'r3_175_stepped', 'r3_175', 'r3_200', 'r3_225', 'r3_iso', 'r3-4_200vert',
+  'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275', 'r4_600', 'r4_625', 'r4_700'
+]
+
+let keycapModels = {
+  cherry: {},
+  sa: {}
 }
 
-Object.keys(keycapModels).forEach(kc => {
-  tdsLoader.load(keycapModels[kc], obj => {
-    obj.traverse(function (child) {
-      if (child instanceof Mesh) {
-        child.geometry.computeBoundingBox()
-      }
+Object.keys(keycapModels).forEach(profile => {
+  models.forEach(name => {
+    tdsLoader.load(`${profile}/${name}.3DS`, obj => {
+      obj.traverse(function (child) {
+        if (child instanceof Mesh) {
+          child.geometry.computeBoundingBox()
+        }
+      })
+  
+      keycapModels[profile][name] = obj
     })
-
-    keycapModels[kc] = obj
   })
 })
 
-const centerX = ({w = 1, h = 1, z = 0, x = 0, y = 0}) => {
-  return x + Math.cos(z) * w / 2 - Math.sin(z) * h / 2
-}
-
-const centerY = ({w = 1, h = 1, z = 0, x = 0, y = 0}) => {
-  return y + Math.sin(z) * w / 2 + Math.cos(z) * h / 2
-}
-
-const scaleW = ({w = 1, h = 1, z = 0, x = 0, y = 0}) => {
-  return w * 19 / 18.5 - 1 / 18.5
-}
-
-const scaleH = ({w = 1, h = 1, z = 0, x = 0, y = 0}) => {
-  return h * 19 / 18.5 - 1 / 18.5
-}
-
-const width = 1153.5;
-const height = 383.5;
 let camera, scene, renderer;
 const obj = []
 
@@ -169,7 +147,7 @@ function init(keymaps, colorway, kit) {
     context.font = `bold ${size}px Montserrat`
     context.textAlign = "center"
     context.textBaseline = "middle"
-    context.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
+    // context.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
     if (legend) {
       const lines = legend.split('\n')
       if (lines.length > 1) {
@@ -186,13 +164,23 @@ function init(keymaps, colorway, kit) {
     texture.needsUpdate = true
 
     // Keycap model
-    var geometry = keycapModels["DSA"]
+    keyset.row = keyset.row || [1, 1, 2, 3, 4, 4]
+    keyset.profile = (keyset.name.startsWith('gmk') || keyset.name.startsWith('jtk')) ? 'cherry' : 'sa'
+
+    // Keycap model (fix below later, all key have to have row_idx)
+    const modelName = 'r' + keyset.row[keycodeMap[key.code] ? keycodeMap[key.code].row_idx : 0] + `_${(key.w || 1) * 100}`
+    var geometry = keycapModels[keyset.profile][modelName]
+    if (!geometry) {
+      console.log(key.code, modelName)
+      return
+    }
+
     var kc = geometry.clone()
 
     // apply texture on keycap
     var material = new MeshStandardMaterial({
-      map : texture, 
-      metalness: 0.5, 
+      map: texture,
+      metalness: 0.5,
       roughness: 0.6,
     })
     kc.traverse(function(child) {
@@ -202,26 +190,19 @@ function init(keymaps, colorway, kit) {
     })
 
     // allocate keycap
-    kc.position.x = centerX(key) * 19 - width/6
-    kc.position.z = centerY(key) * 19 - height/6
-    kc.scale.x = scaleW(key)
-    kc.scale.z = scaleH(key)
+
+    if (keyset.profile === 'cherry') {
+      // NOTE: geometry x = 0.71, so I consider 0.75 as 1u
+      kc.position.x = key.x * 0.75 - maxWidth * 0.75 / 2
+      kc.position.z = (key.y + 1) * 0.75 - maxHeight * 0.75 / 2
+    } else {
+      kc.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
+      kc.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
+    }
+
     // kc.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
     obj.push(kc)
     scene.add(kc)
-
-    // var pcbMmaterial = new MeshStandardMaterial({color: 0x533d45, metalness: 0.5, roughness: 0.7})
-    // var pcb1 = new Mesh(pcb, pcbMmaterial)
-    // var sx = (key.w || 1) * 19 / 23 + 4 / 23
-    // var sz = (key.h || 1) * 19 / 23 + 4 / 23
-    // pcb1.position.x = centerX(key) * 19 - width/6
-    // pcb1.position.y = -7
-    // pcb1.position.z = centerY(key) * 19 - height/6
-    // pcb1.scale.x = sx
-    // pcb1.scale.z = sz
-    // // pcb1.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
-    // obj.push(pcb1)
-    // scene.add(pcb1)
   })
 }
 
@@ -242,12 +223,15 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
     renderer = undefined
   }, [keyboard])
 
-  const maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
+  maxWidth = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.x + (k.w || 1)))
     : 0
-  const maxHeight = Array.isArray(keymaps.layout) && keymaps.layout.length
+  maxHeight = Array.isArray(keymaps.layout) && keymaps.layout.length
     ? _.max(keymaps.layout.map(k => k.y + (k.h || 1)))
     : 0
+
+  width = keyWidth * maxWidth + keyboardBezel * 2 - keySpacing
+  height = keyWidth * maxHeight + keyboardBezel * 2 - keySpacing
 
   const render3DKeyboard = (mode) => {
     setRenderMode(mode)
@@ -301,8 +285,8 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
             <Card
               id="keyboard-2d"
               style={{
-                width: keyWidth * maxWidth + keyboardBezel * 2 - keySpacing,
-                height: keyWidth * maxHeight + keyboardBezel * 2 - keySpacing,
+                width,
+                height,
                 border: `${keyboardBezel}px solid ${caseColor}`,
                 borderRadius: 6,
                 backgroundColor: `${caseColor}`
