@@ -21,8 +21,10 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 ## 🎨 TODO
 - [ ] Keyboard cases
 - [ ] 3D keycap render
-    - [ ] Display keycap per row profile
     - [ ] Display controls box inside canvas
+    - [ ] Zoom camera to near the keyboard
+    - [ ] Display correct legend text position
+    - [ ] Darker canvas color to match the design color or real color
 - [ ] Filter by layout type
 - [ ] Auto deploy
 - [ ] Auto resize in small screens

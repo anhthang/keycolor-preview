@@ -12,6 +12,7 @@ import spabs from '../scss/color/sp-abs.scss'
 import sppbt from '../scss/color/sp-pbt.scss'
 
 import {
+  AxesHelper,
   Color,
   DirectionalLight,
   GammaEncoding,
@@ -50,7 +51,7 @@ tdsLoader.setPath('./models/')
 const models = [
   'r1_100', 'r1_200', 'r2_100', 'r2_150', 'r2-3_200vert',
   'r3_100_bar', 'r3_100_sculpted', 'r3_100', 'r3_125', 'r3_150', 'r3_175_stepped', 'r3_175', 'r3_200', 'r3_225', 'r3_iso', 'r3-4_200vert',
-  'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275', 'r4_600', 'r4_625', 'r4_700'
+  'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275', 'r4_600', 'r4_625', 'r4_700', 'r3_625', 'r3_700'
 ]
 
 let keycapModels = {
@@ -86,8 +87,8 @@ function init(keymaps, colorway, kit) {
   // prevent multiple render
   if (!renderer) {
     // camera
-    var frustumSize = 150
-    var aspect = width / height;
+    const frustumSize = 150
+    const aspect = width / height;
     camera = new OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 1, 1000);
     camera.position.set(0, 200, 0);
 
@@ -97,7 +98,7 @@ function init(keymaps, colorway, kit) {
   
     scene.add(new HemisphereLight());
 
-    var directionalLight = new DirectionalLight(0xffeedd);
+    const directionalLight = new DirectionalLight(0xffeedd);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
@@ -116,8 +117,11 @@ function init(keymaps, colorway, kit) {
     const container = document.getElementById("keyboard-3d")
     container && container.appendChild(renderer.domElement)
   
-    var controls = new OrbitControls(camera, renderer.domElement)
+    const controls = new OrbitControls(camera, renderer.domElement)
     controls.target.set(0, 0.5, 0)
+
+    const axes = new AxesHelper(10)
+    scene.add(axes)
   }
 
   keymaps.layout.forEach((k) => {
@@ -137,51 +141,71 @@ function init(keymaps, colorway, kit) {
     }
 
     // create keycap texture
-    var canvas = document.createElement("canvas")
+    const canvas = document.createElement("canvas")
     canvas.height = 256
     canvas.width = 256
 
-    var context = canvas.getContext("2d")
-    context.fillStyle = colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
-    context.fillRect(0, 0, canvas.width, canvas.height)
-    context.font = `bold ${size}px Montserrat`
-    context.textAlign = "center"
-    context.textBaseline = "middle"
-    // context.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
+    const ctx = canvas.getContext("2d")
+    ctx.fillStyle = colorCodeMap[codes[0]] || codes[0] || '#2e3b51'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.font = `bold ${size}px Montserrat`
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    // ctx.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
     if (legend) {
       const lines = legend.split('\n')
       if (lines.length > 1) {
         lines.forEach((line, i) => {
-          context.font = "bold 80px Montserrat"
-          context.fillText(line.toUpperCase(), canvas.width / 2, canvas.height / 2 + (i - 0.5) * 110)
+          ctx.font = "bold 80px Montserrat"
+          ctx.fillText(line.toUpperCase(), canvas.width / 2, canvas.height / 2 + (i - 0.5) * 110)
         })
       } else {
-        context.fillText(legend.toUpperCase(), canvas.width / 2, canvas.height / 2)
+        ctx.fillText(legend.toUpperCase(), canvas.width / 2, canvas.height / 2)
       }
     }
 
-    var texture = new Texture(canvas)
+    const texture = new Texture(canvas)
     texture.needsUpdate = true
 
     // Keycap model
-    keyset.row = keyset.row || [1, 1, 2, 3, 4, 4]
-    keyset.profile = (keyset.name.startsWith('gmk') || keyset.name.startsWith('jtk')) ? 'cherry' : 'sa'
+    if (keyset.name.startsWith('gmk') || keyset.name.startsWith('jtk')) {
+      keyset.profile = 'cherry'
+      keyset.row = keyset.row || [1, 1, 2, 3, 4, 4]
+    } else {
+      keyset.profile = 'sa'
+      keyset.row = keyset.row || [1, 1, 2, 3, 4, 3]
+    }
 
     // Keycap model (fix below later, all key have to have row_idx)
-    const modelName = 'r' + keyset.row[keycodeMap[key.code] ? keycodeMap[key.code].row_idx : 0] + `_${(key.w || 1) * 100}`
-    var geometry = keycapModels[keyset.profile][modelName]
+    const rowIdx = keycodeMap[key.code] ? keycodeMap[key.code].row_idx : 0
+
+    let modelName
+    switch (key.code) {
+      case 'KC_PPLS':
+        modelName = 'r2-3_200vert';
+        break;
+      case 'KC_PENT':
+        modelName = 'r3-4_200vert';
+        break;
+      default:
+        modelName = 'r' + keyset.row[rowIdx] + `_${(key.w || 1) * 100}`
+        break;
+    }
+
+    const geometry = keycapModels[keyset.profile][modelName]
     if (!geometry) {
       console.log(key.code, modelName)
       return
     }
 
-    var kc = geometry.clone()
+    const kc = geometry.clone()
 
     // apply texture on keycap
-    var material = new MeshStandardMaterial({
+    const material = new MeshStandardMaterial({
       map: texture,
       metalness: 0.5,
       roughness: 0.6,
+      color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51' // FIXME: until canvas issue fixed
     })
     kc.traverse(function(child) {
       if (child instanceof Mesh) {
@@ -189,12 +213,26 @@ function init(keymaps, colorway, kit) {
       }
     })
 
+    if (keyset.profile === 'sa') {
+      // rotate row 4 180 degree since it's using same models with row 2
+      if (rowIdx === 4) {
+        kc.rotateY(Math.PI)
+      }
+      // rotate spaces
+      if (key.code === 'KC_SPC') {
+        kc.rotateY(Math.PI / 2)
+      }
+    }
+
     // allocate keycap
 
     if (keyset.profile === 'cherry') {
       // NOTE: geometry x = 0.71, so I consider 0.75 as 1u
       kc.position.x = key.x * 0.75 - maxWidth * 0.75 / 2
       kc.position.z = (key.y + 1) * 0.75 - maxHeight * 0.75 / 2
+      if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
+        kc.position.x += 0.75 / 2
+      }
     } else {
       kc.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
       kc.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2

@@ -185,6 +185,21 @@ export default {
         mod: ['#2d394c', '#f54730'],
         accent: ['#f54730', '#2d394c'],
     },
+    'jtk-avocado': {
+        key: ['color-pantone-600C', 'color-pantone-2264C'],
+        mod: ['color-pantone-Black5C', 'color-pantone-2264C'],
+        accent: ['color-pantone-2264C', 'color-pantone-600C']
+    },
+    'jtk-classic-fc': {
+        key: ['#f6ebda', '#74242a'],
+        mod: ['#74242a', '#f6ebda'],
+        accent: ['#1b1918', '#f6ebda']
+    },
+    'jtk-suited-assassin': {
+        key: ['#312c2b', '#a79373'],
+        mod: ['#312c2b', '#a79373'],
+        accent: ['#a79373', '#312c2b']
+    },
     'sa-arcane': {
         key: ['color-sp-abs-WFK', 'color-sp-abs-RDA'],
         mod: ['color-sp-abs-RDA', 'color-sp-abs-WFK'],
