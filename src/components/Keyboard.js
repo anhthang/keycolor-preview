@@ -48,27 +48,35 @@ stlLoader.setPath('./models/')
 const tdsLoader = new TDSLoader();
 tdsLoader.setPath('./models/')
 
-const models = [
-  'r1_100', 'r1_200', 'r2_100', 'r2_150', 'r2-3_200vert',
-  'r3_100_bar', 'r3_100_sculpted', 'r3_100', 'r3_125', 'r3_150', 'r3_175_stepped', 'r3_175', 'r3_200', 'r3_225', 'r3_iso', 'r3-4_200vert',
-  'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275', 'r4_600', 'r4_625', 'r4_700', 'r3_625', 'r3_700'
-]
+const modelNames = {
+  cherry: [
+    'r1_100', 'r1_200', 'r2_100', 'r2_150', 'r2-3_200vert',
+    'r3_100_bar', 'r3_100_sculpted', 'r3_100', 'r3_125', 'r3_150', 'r3_175_stepped', 'r3_175', 'r3_200', 'r3_225', 'r3_iso', 'r3-4_200vert',
+    'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275', 'r4_600', 'r4_625', 'r4_700'
+  ],
+  dsa: ['1u', '1.25u', '1.5u', '1.75u', '2u', '2.25u', '2.75u', '6.25u', '7u'], // 7u using same model as 6.25u, since I dont have
+  sa: [
+    'r1_100', 'r1_125', 'r1_150', 'r1_175', 'r1_200', 'r1_225', 'r1_275', 'r2_100', 'r2_125', 'r2_150', 'r2_175', 'r2_200', 'r2_225', 'r2_275',
+    'r3_100', 'r3_125', 'r3_150', 'r3_175', 'r3_200', 'r3_225', 'r3_275', 'r3_625', 'r3_700', 'r4_100', 'r4_125', 'r4_150', 'r4_175', 'r4_200', 'r4_225', 'r4_275'
+  ]
+}
 
 let keycapModels = {
   cherry: {},
-  sa: {}
+  dsa: {},
+  sa: {},
 }
 
 Object.keys(keycapModels).forEach(profile => {
-  models.forEach(name => {
-    tdsLoader.load(`${profile}/${name}.3DS`, obj => {
-      obj.traverse(function (child) {
+  modelNames[profile].forEach(name => {
+    tdsLoader.load(`${profile}/${name}.3ds`, geometry => {
+      geometry.traverse(function (child) {
         if (child instanceof Mesh) {
           child.geometry.computeBoundingBox()
         }
       })
   
-      keycapModels[profile][name] = obj
+      keycapModels[profile][name] = geometry
     })
   })
 })
@@ -90,7 +98,7 @@ function init(keymaps, colorway, kit) {
     const frustumSize = 150
     const aspect = width / height;
     camera = new OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 1, 1000);
-    camera.position.set(0, 200, 0);
+    camera.position.set(0, 20, 0);
 
     // scene and light
     scene = new Scene();
@@ -172,23 +180,27 @@ function init(keymaps, colorway, kit) {
       keyset.profile = 'cherry'
       keyset.row = keyset.row || [1, 1, 2, 3, 4, 4]
     } else {
-      keyset.profile = 'sa'
+      keyset.profile = keyset.name.split('-')[0]
       keyset.row = keyset.row || [1, 1, 2, 3, 4, 3]
     }
 
     // Keycap model (fix below later, all key have to have row_idx)
     const rowIdx = keycodeMap[key.code] ? keycodeMap[key.code].row_idx : 0
 
-    let modelName
-    switch (key.code) {
-      case 'KC_PPLS':
-        modelName = 'r2-3_200vert';
+    let modelName = 'r' + keyset.row[rowIdx] + `_${(key.w || 1) * (key.h || 1) * 100}`
+    switch (keyset.profile) {
+      case 'cherry':
+        if (key.code === 'KC_PPLS') modelName = 'r2-3_200vert';
+        if (key.code === 'KC_PENT') modelName = 'r3-4_200vert';
         break;
-      case 'KC_PENT':
-        modelName = 'r3-4_200vert';
+      case 'dsa':
+        modelName = (key.w || 1) * (key.h || 1) + 'u'
+        break;
+      case 'sa':
+        if (key.code === 'KC_PPLS') modelName = 'r2_200';
+        if (key.code === 'KC_PENT') modelName = 'r3_200';
         break;
       default:
-        modelName = 'r' + keyset.row[rowIdx] + `_${(key.w || 1) * 100}`
         break;
     }
 
@@ -213,29 +225,44 @@ function init(keymaps, colorway, kit) {
       }
     })
 
-    if (keyset.profile === 'sa') {
-      // rotate row 4 180 degree since it's using same models with row 2
-      if (rowIdx === 4) {
-        kc.rotateY(Math.PI)
-      }
-      // rotate spaces
-      if (key.code === 'KC_SPC') {
-        kc.rotateY(Math.PI / 2)
-      }
-    }
-
-    // allocate keycap
-
-    if (keyset.profile === 'cherry') {
-      // NOTE: geometry x = 0.71, so I consider 0.75 as 1u
-      kc.position.x = key.x * 0.75 - maxWidth * 0.75 / 2
-      kc.position.z = (key.y + 1) * 0.75 - maxHeight * 0.75 / 2
-      if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
-        kc.position.x += 0.75 / 2
-      }
-    } else {
-      kc.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
-      kc.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
+    // allocate keycap and rotate if needed
+    switch (keyset.profile) {
+      case 'cherry':
+        kc.position.x = key.x * 0.75 - maxWidth * 0.75 / 2
+        kc.position.z = (key.y + 1) * 0.75 - maxHeight * 0.75 / 2
+        if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
+          kc.position.x += 0.75 / 2
+        }
+        break;
+      case 'dsa':
+        if (key.code )
+        kc.position.x = (key.x + (key.w || 1) / 2) * 19 - maxWidth * 19 / 2
+        kc.position.z = (key.y + (key.h || 1) / 2) * 19 - maxHeight * 19 / 2
+        if (key.w === 1.75) {
+          // keycap center not correct like other keys
+          kc.position.x += 1 * 19 / 2
+        }
+        if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
+          kc.rotateY(Math.PI / 2)
+        }
+        break;
+      case 'sa':
+        kc.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
+        kc.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
+        // rotate row 4 180 degree since it's using same models with row 2
+        if (rowIdx === 4) {
+          kc.rotateY(Math.PI)
+        }
+        // rotate spaces
+        if (key.code === 'KC_SPC') {
+          kc.rotateY(Math.PI / 2)
+        }
+        if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
+          kc.rotateY(Math.PI / 2)
+        }
+        break;
+      default:
+        break;
     }
 
     // kc.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
@@ -270,6 +297,8 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
 
   width = keyWidth * maxWidth + keyboardBezel * 2 - keySpacing
   height = keyWidth * maxHeight + keyboardBezel * 2 - keySpacing
+
+  const only2D = colorway.key.name.startsWith('kat')
 
   const render3DKeyboard = (mode) => {
     setRenderMode(mode)
@@ -309,7 +338,7 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
                 className="display-center"
               >
                 <Radio.Button value={'2d'}>2D</Radio.Button>
-                <Radio.Button value={'3d'}>
+                <Radio.Button value={'3d'} disabled={only2D}>
                   <Popover
                     placement="bottom"
                     content="This feature is being developed. It may cause your browser to be slow due to heavy load, so please consider before starting it."

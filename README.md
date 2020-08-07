@@ -10,6 +10,7 @@ Keyboard information, layouts, styles are based on the data from the [QMK Config
 This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see what it looks like when combined with the keysets I have. So if you have the same concern, here it is for you. Hope this helps people who are in the mechanical keyboard community in order to build a favorite keyboard.
 
 ## 🎉 Feature
+- [x] **3D keycap viewer** (except KAT profile)
 - [x] Different font, text display per keycap profile
 - [x] Support displaying characters of other languages
     - Hiragana (GMK Bento, Mecha-01, Sumi...)
@@ -21,7 +22,6 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 ## 🎨 TODO
 - [ ] Keyboard cases
 - [ ] 3D keycap render
-    - [ ] Display controls box inside canvas
     - [ ] Zoom camera to near the keyboard
     - [ ] Display correct legend text position
     - [ ] Darker canvas color to match the design color or real color
@@ -29,6 +29,7 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 - [ ] Auto deploy
 - [ ] Auto resize in small screens
 - [ ] Dark mode toggle
+- [ ] Artisan keycap on 3D mode 😆
 
 ## 📬 Pull Request
 You are welcome.
