@@ -42,6 +42,8 @@ const keyboardBezel = 15;
 let maxWidth, maxHeight;
 let width, height;
 
+const unit = 19;
+
 const stlLoader = new STLLoader();
 stlLoader.setPath('./models/')
 
@@ -68,15 +70,25 @@ let keycapModels = {
 }
 
 Object.keys(keycapModels).forEach(profile => {
-  modelNames[profile].forEach(name => {
-    tdsLoader.load(`${profile}/${name}.3ds`, geometry => {
-      geometry.traverse(function (child) {
-        if (child instanceof Mesh) {
-          child.geometry.computeBoundingBox()
-        }
+  if (profile === 'sa') {
+    modelNames[profile].forEach(name => {
+      tdsLoader.load(`${profile}/${name}.3ds`, geometry => {
+        geometry.traverse(function (child) {
+          if (child instanceof Mesh) {
+            child.geometry.computeBoundingBox()
+          }
+        })
+    
+        keycapModels[profile][name] = geometry
       })
-  
+    })
+    return
+  }
+  modelNames[profile].forEach(name => {
+    stlLoader.load(`${profile}/${name}.stl`, geometry => {
       keycapModels[profile][name] = geometry
+    }, null, err => {
+      console.log('3d model missing', `${profile}/${name}.stl`)
     })
   })
 })
@@ -210,64 +222,66 @@ function init(keymaps, colorway, kit) {
       return
     }
 
-    const kc = geometry.clone()
-
     // apply texture on keycap
     const material = new MeshStandardMaterial({
       map: texture,
       metalness: 0.5,
       roughness: 0.6,
-      color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51' // FIXME: until canvas issue fixed
-    })
-    kc.traverse(function(child) {
-      if (child instanceof Mesh) {
-        child.material = material
-      }
-    })
+      color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51',
+    });
+
+    const mesh = keyset.profile === 'sa'
+      ? geometry.clone()
+      : new Mesh(geometry.clone(), material);
 
     // allocate keycap and rotate if needed
     switch (keyset.profile) {
       case 'cherry':
-        kc.position.x = key.x * 0.75 - maxWidth * 0.75 / 2
-        kc.position.z = (key.y + 1) * 0.75 - maxHeight * 0.75 / 2
-        if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
-          kc.position.x += 0.75 / 2
-        }
+        mesh.position.x = key.x * unit - maxWidth * unit / 2
+        mesh.position.z = key.y * unit - maxHeight * unit / 2
+        // if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
+        //   mesh.position.x += unit / 2
+        // }
         break;
       case 'dsa':
-        if (key.code )
-        kc.position.x = (key.x + (key.w || 1) / 2) * 19 - maxWidth * 19 / 2
-        kc.position.z = (key.y + (key.h || 1) / 2) * 19 - maxHeight * 19 / 2
+        mesh.position.x = (key.x + (key.w || 1) / 2) * unit - maxWidth * unit / 2
+        mesh.position.z = (key.y + (key.h || 1) / 2) * unit - maxHeight * unit / 2
         if (key.w === 1.75) {
           // keycap center not correct like other keys
-          kc.position.x += 1 * 19 / 2
+          mesh.position.x += 1 * unit / 2
         }
         if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
-          kc.rotateY(Math.PI / 2)
+          mesh.rotateY(Math.PI / 2)
         }
         break;
       case 'sa':
-        kc.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
-        kc.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
+        // for 3ds only
+        mesh.traverse(function(child) {
+          if (child instanceof Mesh) {
+            child.material = material
+          }
+        })
+
+        mesh.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
+        mesh.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
         // rotate row 4 180 degree since it's using same models with row 2
         if (rowIdx === 4) {
-          kc.rotateY(Math.PI)
+          mesh.rotateY(Math.PI)
         }
         // rotate spaces
         if (key.code === 'KC_SPC') {
-          kc.rotateY(Math.PI / 2)
+          mesh.rotateY(Math.PI / 2)
         }
         if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
-          kc.rotateY(Math.PI / 2)
+          mesh.rotateY(Math.PI / 2)
         }
         break;
       default:
         break;
     }
 
-    // kc.rotation.y = -key.z // if dont have z, have to comment, or maybe find another way
-    obj.push(kc)
-    scene.add(kc)
+    obj.push(mesh)
+    scene.add(mesh)
   })
 }
 

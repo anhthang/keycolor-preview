@@ -47,7 +47,9 @@ You are welcome.
 
 
 ## 📝 Credits
-- SA, Cherry keycap models are Copyright (c) 2017 [Josh Hinnebusch](https://github.com/hineybush)
+- SA, Cherry keycap models are Copyright (c) 2017 [Josh Hinnebusch](https://github.com/hineybush) (thanks eli#1111 for helping me convert .sldprt to .stl)
+- DSA keycap models are Copyright (c) 2017 [Kael Ruland](https://www.reddit.com/user/the_television)
+
 - [Logo], [Favicon] made by [Flat Icons](https://www.flaticon.com)
 
 [Logo]: https://www.flaticon.com/free-icon/keyboard_2867576
