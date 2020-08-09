@@ -26,7 +26,6 @@ import {
   WebGLRenderer,
 } from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
-import { TDSLoader } from 'three/examples/jsm/loaders/TDSLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import keycodes from './keycodes';
 import keysets from './keysets';
@@ -46,9 +45,6 @@ const unit = 19;
 
 const stlLoader = new STLLoader();
 stlLoader.setPath('./models/')
-
-const tdsLoader = new TDSLoader();
-tdsLoader.setPath('./models/')
 
 const modelNames = {
   cherry: [
@@ -70,20 +66,6 @@ let keycapModels = {
 }
 
 Object.keys(keycapModels).forEach(profile => {
-  if (profile === 'sa') {
-    modelNames[profile].forEach(name => {
-      tdsLoader.load(`${profile}/${name}.3ds`, geometry => {
-        geometry.traverse(function (child) {
-          if (child instanceof Mesh) {
-            child.geometry.computeBoundingBox()
-          }
-        })
-    
-        keycapModels[profile][name] = geometry
-      })
-    })
-    return
-  }
   modelNames[profile].forEach(name => {
     stlLoader.load(`${profile}/${name}.stl`, geometry => {
       keycapModels[profile][name] = geometry
@@ -230,9 +212,7 @@ function init(keymaps, colorway, kit) {
       color: colorCodeMap[codes[0]] || codes[0] || '#2e3b51',
     });
 
-    const mesh = keyset.profile === 'sa'
-      ? geometry.clone()
-      : new Mesh(geometry.clone(), material);
+    const mesh = new Mesh(geometry.clone(), material);
 
     // allocate keycap and rotate if needed
     switch (keyset.profile) {
@@ -255,25 +235,56 @@ function init(keymaps, colorway, kit) {
         }
         break;
       case 'sa':
-        // for 3ds only
-        mesh.traverse(function(child) {
-          if (child instanceof Mesh) {
-            child.material = material
-          }
-        })
-
-        mesh.position.x = (key.x + (key.w || 1) / 2) * 0.75 - maxWidth * 0.75 / 2
-        mesh.position.z = (key.y + (key.h || 1) / 2) * 0.75 - maxHeight * 0.75 / 2
+        mesh.position.x = (key.x + (key.w || 1) / 2) * unit - maxWidth * unit / 2
+        mesh.position.z = (key.y + (key.h || 1) / 2) * unit - maxHeight * unit / 2
         // rotate row 4 180 degree since it's using same models with row 2
         if (rowIdx === 4) {
           mesh.rotateY(Math.PI)
+          mesh.position.x += unit
+          mesh.position.z += unit
         }
         // rotate spaces
         if (key.code === 'KC_SPC') {
           mesh.rotateY(Math.PI / 2)
+          mesh.position.x -= ((key.w - 1) / 2) * unit
+          mesh.position.z += unit
         }
         if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
           mesh.rotateY(Math.PI / 2)
+        }
+        if (key.h >= 2) {
+          mesh.position.x -= unit / 2 - unit / 8
+          mesh.position.z += unit * 3 / 2
+        }
+        if (key.w === 1.5) {
+          mesh.position.x -= unit / 4
+          mesh.position.z -= unit / 8
+        }
+        if (key.w === 1.75) {
+          if (modelName.startsWith('r4')) {
+            // because we rotated
+            mesh.position.x += unit * 3 / 8
+            mesh.position.z += unit / 4
+          } else {
+            mesh.position.x -= unit * 3 / 8
+            mesh.position.z -= unit / 4
+          }
+        }
+        if (key.w === 2) {
+          mesh.position.x -= unit / 2
+          mesh.position.z -= unit * 3 / 8
+        }
+        if (modelName === 'r4_225') {
+          mesh.position.x += unit * 5 / 8
+          mesh.position.z += unit / 2
+        }
+        if (modelName === 'r4_275') {
+          mesh.position.x += unit * 3 / 4 + unit * 1 / 8
+          mesh.position.z += unit * 3 / 4
+        }
+        if (modelName === 'r3_225') {
+          mesh.position.x -= unit * 5 / 8
+          mesh.position.z -= unit / 2
         }
         break;
       default:
