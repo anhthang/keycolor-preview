@@ -440,6 +440,10 @@
 .gmk-taro-key {
   background: #8E71A2;
   color: #170B19;
+  &.boba {
+    background: #170B19;
+    color: #8E71A2;
+  }
 }
 .gmk-taro-mod {
   background: #170B19;

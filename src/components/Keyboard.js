@@ -132,7 +132,12 @@ function init(keymaps, colorway, kit) {
     const { type, modifier } = keycodeMap[key.code] || {}
     const keyset = modifier ? colorway.mod : colorway[type || 'key']
 
-    const codes = keysets[keyset.name] ? keysets[keyset.name][(keyset.override && keyset.override[key.code]) || type || 'key'] : []
+    let colorCodes = keysets[keyset.name]
+    if (colorCodes && colorCodes.kits && colorCodes.kits[kit]) {
+      colorCodes = {...colorCodes, ...colorCodes.kits[kit]}
+    }
+
+    const codes = colorCodes ? colorCodes[(keyset.override && keyset.override[key.code]) || type || 'key'] : []
     const legend = keycodeMap[key.code] && keycodeMap[key.code].name
   
     let size = 125

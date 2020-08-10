@@ -33,6 +33,11 @@ export default {
         key: ['#fff3ef', '#3e728f'],
         mod: ['#3e728f', '#fb7279'],
         accent: ['#fb7279', '#fff3ef'],
+        kits: {
+            revival: {
+                key: ['#3e728f', '#fb7279']
+            }
+        }
     },
     'gmk-bingsu': {
         key: ['#946777', 'color-gmk-abs-CP'],
@@ -71,6 +76,11 @@ export default {
         key: ['color-pantone-533C', 'color-pantone-3258C'],
         mod: ['color-pantone-2378C', 'color-pantone-3258C'],
         accent: ['color-pantone-3258C', 'color-pantone-2378C'],
+        kits: {
+            light: {
+                key: ['color-pantone-536C', 'color-pantone-2378C'],
+            }
+        }
     },
     'gmk-hanguk': {
         key: ['color-gmk-abs-WS1', 'color-pantone-294C'],
@@ -87,6 +97,11 @@ export default {
         mod: ['color-gmk-abs-CR', 'color-pantone-802C'],
         accent: ['color-gmk-abs-CR', 'color-gmk-abs-RO2'],
         accent2: ['color-gmk-abs-CR', 'color-gmk-abs-V2'],
+        kits: {
+            berserk: {
+                key: ['color-pantone-267C', 'color-gmk-abs-RO2'],
+            }
+        }
     },
     'gmk-merlin': {
         key: ['color-gmk-abs-CP', 'color-gmk-abs-TU1'],
@@ -117,6 +132,11 @@ export default {
         key: ['color-sp-abs-GD', 'color-sp-abs-GAL'],
         mod: ['color-sp-abs-GQM', 'color-sp-abs-GAL'],
         accent: ['color-sp-abs-BFP', 'color-sp-abs-BFN'],
+        kits: {
+            hagoromo: {
+                key: ['color-gmk-abs-CP', 'color-sp-abs-GD']
+            }
+        }
     },
     'gmk-olivetti': {
         key: ['color-gmk-abs-CP', 'color-gmk-abs-V4'],
@@ -170,6 +190,14 @@ export default {
         mod: ['#170B19', '#8E71A2'],
         accent: ['color-gmk-abs-TU2', '#170B19'],
         accent2: ['color-gmk-abs-CV', '#170B19'],
+        kits: {
+            boba: {
+                key: ['#170B19', '#8E71A2']
+            },
+            'milk-tea': {
+                mod: ['#8E71A2', '#170B19']
+            }
+        }
     },
     'gmk-terminal': {
         key: ['color-gmk-abs-N9', 'color-gmk-abs-AE'],
@@ -188,7 +216,13 @@ export default {
     'jtk-avocado': {
         key: ['color-pantone-600C', 'color-pantone-2264C'],
         mod: ['color-pantone-Black5C', 'color-pantone-2264C'],
-        accent: ['color-pantone-2264C', 'color-pantone-600C']
+        accent: ['color-pantone-2264C', 'color-pantone-600C'],
+        kits: {
+            green: {
+                key: ['color-pantone-2264C', 'color-pantone-600C'],
+                accent: ['color-pantone-600C', 'color-pantone-2264C'],
+            }
+        }
     },
     'jtk-classic-fc': {
         key: ['#f6ebda', '#74242a'],
@@ -266,6 +300,11 @@ export default {
         key: ['color-sp-abs-GD', 'color-sp-abs-GAL'],
         mod: ['color-sp-abs-GQM', 'color-sp-abs-GAL'],
         accent: ['color-sp-abs-RAS', 'color-sp-abs-GAL'],
+        kits: {
+            hagoromo: {
+                key: ['color-sp-abs-WFK', 'color-sp-abs-GD']
+            }
+        }
     },
     'sa-sail': {
         key: ['color-pantone-7717C', 'color-sp-abs-WCK'],
@@ -275,6 +314,11 @@ export default {
         key: ['color-pantone-487C', 'color-pantone-202C'],
         mod: ['color-pantone-202C', 'color-pantone-487C'],
         accent: ['color-pantone-6C', 'color-pantone-487C'],
+        kits: {
+            maroon: {
+                key: ['color-pantone-202C', 'color-pantone-487C']
+            }
+        }
     },
     'sa-vilebloom': {
         key: ['color-pantone-7699C', 'color-sp-abs-WFK'],
