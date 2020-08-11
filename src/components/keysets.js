@@ -72,6 +72,10 @@ export default {
         key: ['color-gmk-abs-CC', 'color-gmk-abs-WS1'],
         mod: ['color-gmk-abs-N9', 'color-gmk-abs-WS1'],
     },
+    'gmk-evil-dolch': {
+        key: ['color-gmk-abs-N9', 'color-gmk-abs-WS1'],
+        mod: ['color-gmk-abs-CR', 'color-gmk-abs-RO1'],
+    },
     'gmk-hammerhead': {
         key: ['color-pantone-533C', 'color-pantone-3258C'],
         mod: ['color-pantone-2378C', 'color-pantone-3258C'],
@@ -86,6 +90,16 @@ export default {
         key: ['color-gmk-abs-WS1', 'color-pantone-294C'],
         mod: ['color-pantone-186C', 'color-pantone-294C'],
         accent: ['color-pantone-294C', 'color-gmk-abs-WS1'],
+    },
+    'gmk-ishtar': {
+        key: ['color-ral-1015', 'color-ral-3020'],
+        mod: ['color-ral-9017', 'color-ral-3020'],
+        accent: ['color-ral-1017', 'color-ral-3020'],
+        kits: {
+            kuro: {
+                key: ['color-ral-9017', 'color-ral-3020'],
+            }
+        }
     },
     'gmk-jamon': {
         key: ['#84172c', '#ece4d0'],

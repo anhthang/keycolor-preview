@@ -166,6 +166,16 @@
   background: $color-gmk-abs-N9;
   color: $color-gmk-abs-WS1;
 }
+
+.gmk-evil-dolch-key {
+  background: $color-gmk-abs-N9;
+  color: $color-gmk-abs-WS1;
+}
+.gmk-evil-dolch-mod {
+  background: $color-gmk-abs-CR;
+  color: $color-gmk-abs-RO1;
+}
+
 .gmk-hammerhead-key {
   background: $color-pantone-533C;
   color: $color-pantone-3258C;
@@ -196,6 +206,23 @@
   color: $color-gmk-abs-WS1;
 }
 
+.gmk-ishtar-key {
+  background: $color-ral-1015;
+  color: $color-ral-3020;
+  &.kuro {
+    background: $color-ral-9017;
+    color: $color-ral-3020;
+  }
+}
+.gmk-ishtar-mod {
+  background: $color-ral-9017;
+  color: $color-ral-3020;
+}
+.gmk-ishtar-accent {
+  background: $color-ral-1017;
+  color: $color-ral-3020;
+}
+
 .gmk-jamon-key {
   background: #84172c;
   color: #ece4d0;
@@ -208,6 +235,7 @@
   background: #ece4d0;
   color: #313337;
 }
+
 .gmk-mecha-01-key {
   background: $color-pantone-267C;
   color: $color-pantone-802C;

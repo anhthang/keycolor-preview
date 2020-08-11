@@ -12,7 +12,6 @@ import spabs from '../scss/color/sp-abs.scss'
 import sppbt from '../scss/color/sp-pbt.scss'
 
 import {
-  AxesHelper,
   Color,
   DirectionalLight,
   GammaEncoding,
@@ -121,9 +120,6 @@ function init(keymaps, colorway, kit) {
   
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.target.set(0, 0.5, 0)
-
-    const axes = new AxesHelper(10)
-    scene.add(axes)
   }
 
   keymaps.layout.forEach((k) => {
@@ -158,7 +154,7 @@ function init(keymaps, colorway, kit) {
     ctx.font = `bold ${size}px Montserrat`
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    // ctx.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
+    ctx.fillStyle = colorCodeMap[codes[1]] || codes[1] || '#22aabc'
     if (legend) {
       const lines = legend.split('\n')
       if (lines.length > 1) {
@@ -240,8 +236,8 @@ function init(keymaps, colorway, kit) {
         }
         break;
       case 'sa':
-        mesh.position.x = (key.x + (key.w || 1) / 2) * unit - maxWidth * unit / 2
-        mesh.position.z = (key.y + (key.h || 1) / 2) * unit - maxHeight * unit / 2
+        mesh.position.x = key.x * unit - maxWidth * unit / 2
+        mesh.position.z = key.y * unit - maxHeight * unit / 2
         // rotate row 4 180 degree since it's using same models with row 2
         if (rowIdx === 4) {
           mesh.rotateY(Math.PI)
@@ -251,44 +247,39 @@ function init(keymaps, colorway, kit) {
         // rotate spaces
         if (key.code === 'KC_SPC') {
           mesh.rotateY(Math.PI / 2)
-          mesh.position.x -= ((key.w - 1) / 2) * unit
           mesh.position.z += unit
         }
         if (key.code === 'KC_PPLS' || key.code === 'KC_PENT') {
           mesh.rotateY(Math.PI / 2)
         }
         if (key.h >= 2) {
-          mesh.position.x -= unit / 2 - unit / 8
-          mesh.position.z += unit * 3 / 2
+          mesh.position.x -= unit * 3 / 8
+          mesh.position.z += unit * 2
         }
         if (key.w === 1.5) {
-          mesh.position.x -= unit / 4
           mesh.position.z -= unit / 8
         }
         if (key.w === 1.75) {
           if (modelName.startsWith('r4')) {
             // because we rotated
-            mesh.position.x += unit * 3 / 8
+            mesh.position.x += unit * 3 / 4
             mesh.position.z += unit / 4
           } else {
-            mesh.position.x -= unit * 3 / 8
             mesh.position.z -= unit / 4
           }
         }
         if (key.w === 2) {
-          mesh.position.x -= unit / 2
           mesh.position.z -= unit * 3 / 8
         }
         if (modelName === 'r4_225') {
-          mesh.position.x += unit * 5 / 8
+          mesh.position.x += unit * 5 / 4
           mesh.position.z += unit / 2
         }
         if (modelName === 'r4_275') {
-          mesh.position.x += unit * 3 / 4 + unit * 1 / 8
+          mesh.position.x += unit * 7 / 4
           mesh.position.z += unit * 3 / 4
         }
         if (modelName === 'r3_225') {
-          mesh.position.x -= unit * 5 / 8
           mesh.position.z -= unit / 2
         }
         break;
