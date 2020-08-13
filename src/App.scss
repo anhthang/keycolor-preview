@@ -100,11 +100,20 @@
   padding-right: 6px;
 }
 
+.display-center {
+  display: flex;
+  justify-content: center;
+}
+
 .keyboard-box {
   min-height: 750px;
 }
 
-.keyboard-drawer {
+.hidden {
+  display: none;
+}
+
+#keyboard-2d {
   left: 50%;
   transform: translateX(-50%);
 }

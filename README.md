@@ -10,6 +10,7 @@ Keyboard information, layouts, styles are based on the data from the [QMK Config
 This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see what it looks like when combined with the keysets I have. So if you have the same concern, here it is for you. Hope this helps people who are in the mechanical keyboard community in order to build a favorite keyboard.
 
 ## 🎉 Feature
+- [x] **3D keycap viewer** (except KAT profile)
 - [x] Different font, text display per keycap profile
 - [x] Support displaying characters of other languages
     - Hiragana (GMK Bento, Mecha-01, Sumi...)
@@ -20,10 +21,13 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 
 ## 🎨 TODO
 - [ ] Keyboard cases
-- [ ] 3D keycap render with three.js
 - [ ] Filter by layout type
 - [ ] Auto deploy
 - [ ] Auto resize in small screens
+- [ ] Dark mode toggle
+- [ ] 3D features
+    - [ ] Artisan keycaps 😆
+    - [ ] Keycap legend
 
 ## 📬 Pull Request
 You are welcome.
@@ -40,7 +44,10 @@ You are welcome.
     - Clone a new colorway from QMK or look at `src/scss/colorways.scss` and other files in the same folder
 
 
-## 📝 Notes
+## 📝 Credits
+- SA, Cherry keycap models are Copyright (c) 2017 [Josh Hinnebusch](https://github.com/hineybush) (thanks eli#1111 for helping me convert .sldprt to .stl)
+- DSA keycap models are Copyright (c) 2017 [Kael Ruland](https://www.reddit.com/user/the_television)
+
 - [Logo], [Favicon] made by [Flat Icons](https://www.flaticon.com)
 
 [Logo]: https://www.flaticon.com/free-icon/keyboard_2867576

@@ -5,36 +5,18 @@
 .kat-hyperfuse-key {
   background: #dadbd6;
   color: #7f55a2;
-  input,
-  .key-contents {
-    background: darken(#dadbd6, 10%);
-    color: lighten(#7f55a2, 5%);
-    border-color: mix(#dadbd6, lighten(#7f55a2, 5%));
-  }
 }
 .kat-hyperfuse-mod {
   background: #7b8788;
   color: #75bdaa;
-  input,
-  .key-contents {
-    background: darken(#7b8788, 10%);
-    color: #75bdaa;
-    border-color: mix(#7b8788, #75bdaa);
-  }
 }
 .kat-hyperfuse-accent {
   background: #75bdaa;
   color: #7f55a2;
-  input {
-    background: lighten(#75bdaa, 40%);
-  }
 }
 .kat-hyperfuse-accent2 {
   background: #7f55a2;
   color: #75bdaa;
-  input {
-    background: lighten(#7f55a2, 40%);
-  }
 }
 
 .kat-lich-key {
@@ -42,59 +24,29 @@
   text-transform: lowercase !important;
   background: $color-pantone-2085C;
   color: $color-pantone-4119C;
-  input,
-  .key-contents {
-    background: darken($color-pantone-2085C, 10%);
-    color: lighten($color-pantone-4119C, 5%);
-    border-color: mix($color-pantone-2085C, lighten($color-pantone-4119C, 5%));
-  }
 }
 .kat-lich-mod {
   font-family: 'Signika', sans-serif !important;
   text-transform: lowercase !important;
   background: $color-pantone-4126C;
   color: $color-pantone-2008C;
-  input,
-  .key-contents {
-    background: darken($color-pantone-4126C, 10%);
-    color: $color-pantone-2008C;
-    border-color: mix($color-pantone-4126C, $color-pantone-2008C);
-  }
 }
 .kat-lich-accent {
   font-family: 'Signika', sans-serif !important;
   text-transform: lowercase !important;
   background: $color-pantone-2008C;
   color: $color-pantone-4119C;
-  input {
-    background: lighten($color-pantone-2008C, 40%);
-  }
 }
 
 .kat-oasis-key {
   background: $color-pantone-155C;
   color: $color-pantone-7617C;
-  input,
-  .key-contents {
-    background: darken($color-pantone-155C, 10%);
-    color: lighten($color-pantone-7617C, 5%);
-    border-color: mix($color-pantone-155C, lighten($color-pantone-7617C, 5%));
-  }
 }
 .kat-oasis-mod {
   background: $color-pantone-317C;
   color: $color-pantone-7617C;
-  input,
-  .key-contents {
-    background: darken($color-pantone-317C, 10%);
-    color: $color-pantone-7617C;
-    border-color: mix($color-pantone-317C, $color-pantone-7617C);
-  }
 }
 .kat-oasis-accent {
   background: $color-pantone-7617C;
   color: $color-pantone-155C;
-  input {
-    background: lighten($color-pantone-7617C, 40%);
-  }
 }
