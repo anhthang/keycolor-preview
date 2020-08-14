@@ -113,6 +113,31 @@
   color: $color-pantone-2085C;
 }
 
+.sa-jadeite-key {
+  background: $color-sp-pbt-WAN;
+  color: $color-sp-pbt-VS;
+}
+
+.sa-jadeite-mod {
+  background: $color-sp-pbt-WAN;
+  color: $color-sp-pbt-VS;
+}
+
+.sa-jadeite-accent1 {
+  background: $color-sp-pbt-VS;
+  color: $color-sp-pbt-WAN;
+}
+
+.sa-jadeite-accent2 {
+  background: $color-sp-pbt-VAZ;
+  color: $color-sp-pbt-WAN;
+}
+
+.sa-jadeite-accent3 {
+  background: $color-sp-pbt-VCB;
+  color: $color-sp-pbt-VS;
+}
+
 .sa-jukebox-key {
   background: $color-sp-abs-TM;
   color: $color-sp-abs-RN;
@@ -125,6 +150,7 @@
   background: $color-sp-abs-RN;
   color: $color-sp-abs-TM;
 }
+
 .sa-lime-key {
   background: $color-pantone-5455C;
   color: $color-sp-abs-VBQ;

@@ -1,20 +1,26 @@
 import gmk_8008 from './8008';
 import gmk_9009 from './9009';
 import gmk_analog_dreams from './analog_dreams';
+import gmk_apollo from './apollo';
 import gmk_ascii from './ascii';
+import gmk_ashes from './ashes';
 import gmk_bento from './bento';
 import gmk_bingsu from './bingsu';
+import gmk_botanica from './botanica';
 import gmk_bread from './bread';
 import gmk_cafe from './cafe';
 import gmk_calm_depths from './calm_depths';
 import gmk_camping from './camping';
+import gmk_copper from './copper';
 import gmk_deku from './deku';
 import gmk_dolch from './dolch';
 import gmk_evil_dolch from './evil_dolch';
 import gmk_hammerhead from './hammerhead';
 import gmk_hanguk from './hanguk';
+import gmk_honey from './honey';
 import gmk_ishtar from './ishtar';
 import gmk_jamon from './jamon';
+import gmk_kaiju from './kaiju';
 import gmk_mecha_01 from './mecha_01';
 import gmk_merlin from './merlin';
 import gmk_metaverse from './metaverse';
@@ -30,9 +36,11 @@ import gmk_serika from './serika';
 import gmk_space_cadet from './space_cadet';
 import gmk_striker from './striker';
 import gmk_sumi from './sumi';
-import gmk_terminal from './terminal';
 import gmk_ta_royal_alpha from './ta_royal_alpha';
 import gmk_taro from './taro';
+import gmk_terminal from './terminal';
+import gmk_ursa from './ursa';
+import gmk_wild from './wild';
 import gmk_wob from './wob';
 import gmk_yuri from './yuri';
 
@@ -40,20 +48,26 @@ export default [
   gmk_8008,
   gmk_9009,
   gmk_analog_dreams,
+  gmk_apollo,
   gmk_ascii,
+  gmk_ashes,
   gmk_bento,
   gmk_bingsu,
+  gmk_botanica,
   gmk_bread,
   gmk_cafe,
   gmk_calm_depths,
   gmk_camping,
+  gmk_copper,
   gmk_deku,
   gmk_dolch,
   gmk_evil_dolch,
   gmk_hammerhead,
   gmk_hanguk,
+  gmk_honey,
   gmk_ishtar,
   gmk_jamon,
+  gmk_kaiju,
   gmk_mecha_01,
   gmk_merlin,
   gmk_metaverse,
@@ -72,6 +86,8 @@ export default [
   gmk_ta_royal_alpha,
   gmk_taro,
   gmk_terminal,
+  gmk_ursa,
+  gmk_wild,
   gmk_wob,
   gmk_yuri
 ];

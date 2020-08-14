@@ -36,6 +36,7 @@ $color-gmk-abs-V1: rgb(208, 47, 28);    // #d02f1c
 $color-gmk-abs-V2: rgb(238, 105, 0);    // #ee6900
 $color-gmk-abs-V4: rgb(0, 88, 159);     // #00589f
 $color-gmk-abs-WS1: rgb(247, 242, 234); // #f7f2ea
+$color-gmk-abs-WS2: rgb(247, 242, 234); // FIXME: unable to find WS2 color code, so I used WS1 color here
 $color-gmk-abs-WS4: rgb(238, 226, 208); // #eee2d0
 
 :export {
@@ -73,5 +74,6 @@ $color-gmk-abs-WS4: rgb(238, 226, 208); // #eee2d0
     color-gmk-abs-V2: $color-gmk-abs-V2;
     color-gmk-abs-V4: $color-gmk-abs-V4;
     color-gmk-abs-WS1: $color-gmk-abs-WS1;
+    color-gmk-abs-WS2: $color-gmk-abs-WS2;
     color-gmk-abs-WS4: $color-gmk-abs-WS4;
 }

@@ -25,9 +25,19 @@ export default {
         esc: ['#f2f0a1', '#ac4fc6'],
         enter: ['#f1b2dc', '#ac4fc6'],
     },
+    'gmk-apollo': {
+        key: ['color-pantone-431C', 'color-pantone-CoolGray2C'],
+        mod: ['color-pantone-4140C', 'color-pantone-CoolGray2C'],
+        accent: ['color-pantone-CoolGray2C', 'color-pantone-4140C'],
+    },
     'gmk-ascii': {
         key: ['color-gmk-abs-2B', 'color-gmk-abs-2M'],
         mod: ['color-gmk-abs-2B', 'color-gmk-abs-2M'],
+    },
+    'gmk-ashes': {
+        key: ['color-ral-H260L40C05', 'color-ral-H250L85C05'],
+        mod: ['color-ral-H250L85C05', 'color-ral-H260L60C05'],
+        accent: ['color-gmk-abs-CR', 'color-ral-H250L85C05'],
     },
     'gmk-bento': {
         key: ['#fff3ef', '#3e728f'],
@@ -44,6 +54,11 @@ export default {
         mod: ['#533d45', 'color-gmk-abs-CP'],
         accent: ['color-gmk-abs-CP', '#533d45'],
     },
+    'gmk-botanica': {
+        key: ['color-pantone-656C', 'color-pantone-5575C'],
+        mod: ['color-pantone-5477C', 'color-pantone-5575C'],
+        accent: ['color-pantone-5575C', 'color-pantone-5477C'],
+    },
     'gmk-bread': {
         key: ['color-ral-1015', 'color-ral-8008'],
         mod: ['color-ral-8008', 'color-ral-1015'],
@@ -58,6 +73,11 @@ export default {
         key: ['color-sp-abs-WCK', 'color-sp-abs-VF'],
         mod: ['color-sp-abs-VF', 'color-sp-abs-WCK'],
         accent: ['color-sp-abs-RBC', 'color-sp-abs-WCK'],
+    },
+    'gmk-copper': {
+        key: ['color-pantone-7522C', 'color-ral-8017'],
+        mod: ['color-ral-8017', 'color-pantone-7522C'],
+        accent: ['color-ral-6027', 'color-ral-8017'],
     },
     'gmk-calm-depths': {
         key: ['#2e3b51', '#22aabc'],
@@ -91,6 +111,16 @@ export default {
         mod: ['color-pantone-186C', 'color-pantone-294C'],
         accent: ['color-pantone-294C', 'color-gmk-abs-WS1'],
     },
+    'gmk-honey': {
+        key: ['color-pantone-2001C', 'color-pantone-123C'],
+        mod: ['color-pantone-123C', 'color-pantone-2001C'],
+        accent: ['color-pantone-7570C', 'color-pantone-2001C'],
+        kits: {
+            'alt-alphas': {
+                key: ['color-pantone-123C', 'color-pantone-2001C'],
+            }
+        }
+    },
     'gmk-ishtar': {
         key: ['color-ral-1015', 'color-ral-3020'],
         mod: ['color-ral-9017', 'color-ral-3020'],
@@ -105,6 +135,11 @@ export default {
         key: ['#84172c', '#ece4d0'],
         mod: ['#ac2c32', '#ece4d0'],
         accent: ['#ece4d0', '#313337'],
+    },
+    'gmk-kaiju': {
+        key: ['color-gmk-abs-L9', 'color-ral-H170L40C20'],
+        mod: ['color-ral-H170L40C20', 'color-gmk-abs-L9'],
+        accent: ['color-pantone-172C', 'color-gmk-abs-L9'],
     },
     'gmk-mecha-01': {
         key: ['color-pantone-267C', 'color-pantone-802C'],
@@ -218,6 +253,17 @@ export default {
         mod: ['color-gmk-abs-N9', 'color-gmk-abs-AE'],
         accent: ['color-gmk-abs-AE', 'color-gmk-abs-N9'],
     },
+    'gmk-ursa': {
+        key: ['color-gmk-abs-CP', 'color-ral-7006'],
+        mod: ['color-ral-7006', 'color-gmk-abs-CP'],
+        accent: ['color-gmk-abs-3A', 'color-gmk-abs-CP'],
+    },
+    'gmk-wild': {
+        key: ['color-gmk-abs-N9', 'color-gmk-abs-U9'],
+        mod: ['color-gmk-abs-U9', 'color-gmk-abs-N9'],
+        accent1: ['color-pantone-8721C', 'color-gmk-abs-U9'],
+        accent2: ['color-pantone-4100C', 'color-gmk-abs-U9'],
+    },
     'gmk-wob': {
         key: ['color-gmk-abs-CR', 'color-gmk-abs-WS1'],
         mod: ['color-gmk-abs-CR', 'color-gmk-abs-WS1'],
@@ -286,6 +332,13 @@ export default {
         key: ['color-pantone-2085C', 'color-sp-abs-BFU'],
         mod: ['color-sp-abs-BFU', 'color-pantone-2085C'],
         accent: ['color-sp-abs-RDE', 'color-pantone-2085C'],
+    },
+    'sa-jadeite': {
+        key: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
+        mod: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
+        accent1: ['color-sp-pbt-VS', 'color-sp-pbt-WAN'],
+        accent2: ['color-sp-pbt-VAZ', 'color-sp-pbt-VS'],
+        accent3: ['color-sp-pbt-VCB', 'color-sp-pbt-VS'],
     },
     'sa-jukebox': {
         key: ['color-sp-abs-TM', 'color-sp-abs-RN'],

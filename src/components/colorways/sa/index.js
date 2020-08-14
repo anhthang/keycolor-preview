@@ -5,6 +5,7 @@ import sa_carbon from './carbon';
 import sa_danger_zone from './danger_zone';
 import sa_dream_eater from './dream_eater';
 import sa_hunter_killua from './hunter_killua';
+import sa_jadeite from './jadeite';
 import sa_jukebox from './jukebox';
 import sa_lime from './lime';
 import sa_magic_city from './magic_city';
@@ -23,6 +24,7 @@ export default [
   sa_danger_zone,
   sa_dream_eater,
   sa_hunter_killua,
+  sa_jadeite,
   sa_jukebox,
   sa_lime,
   sa_magic_city,
