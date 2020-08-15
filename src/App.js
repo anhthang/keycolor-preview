@@ -22,6 +22,14 @@ const getName = (name) => {
   return name.split('-').map(n => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
 }
 
+const profileMap = {
+  dsa: 'dsa',
+  gmk: 'cherry',
+  jtk: 'cherry',
+  kat: 'kat',
+  sa: 'sa',
+}
+
 const colorwayNames = _(colorways.list)
   .groupBy(i => i.name.split('-')[0])
   .map((list, manufacturer) => {
@@ -121,10 +129,11 @@ function App() {
   const changeColorway = (name, isModifier) => {
     const base = name.slice(0, 2).join('-')
     const keyset = colorways.list.find(c => c.name === base)
+    const profileChanged = profileMap[colorway.key.name.split('-')[0]] !== profileMap[name[0]]
 
     setColorway({
       key: isModifier ? colorway.key : keyset,
-      mod: (isModifier || !changeModifier) ? keyset : colorway.mod
+      mod: (profileChanged || isModifier || !changeModifier) ? keyset : colorway.mod
     })
 
     if (!isModifier) {
@@ -153,7 +162,7 @@ function App() {
                     <Form.Item label="Case Color">
                       <Select
                         showSearch
-                        defaultValue={caseColor}
+                        value={caseColor}
                         defaultActiveFirstOption
                         onSelect={(e) => setCaseColor(e)}
                         placeholder="Select Case Color">
@@ -183,22 +192,29 @@ function App() {
                   />
                 </Form.Item>
                 <Form.Item>
-                  <Checkbox defaultChecked={false} onChange={(e) => {
-                    setChangeModifier(e.target.checked)
-                    if (!e.target.checked) {
-                      setColorway({
-                        key: colorway.key,
-                        mod: colorway.key
-                      })
+                  <Checkbox
+                    checked={changeModifier}
+                    defaultChecked={false}
+                    onChange={(e) => {
+                      setChangeModifier(e.target.checked)
+                      if (!e.target.checked) {
+                        setColorway({
+                          key: colorway.key,
+                          mod: colorway.key
+                        })
+                      }
                     }
-                  }}>Change Modifier Keyset</Checkbox>
+                  }>
+                    Change Modifier Keyset
+                  </Checkbox>
                 </Form.Item>
                 {
                   changeModifier && (
                     <Form.Item label="Modifier Keyset">
                       <Cascader
                         showSearch
-                        options={colorwayNames}
+                        value={colorway.mod.name.replace('-', '/').split('/')}
+                        options={colorwayNames.filter(c => profileMap[c.value] === profileMap[colorway.key.name.split('-')[0]])}
                         placeholder="Select Modifier Keyset"
                         onChange={e => changeColorway(e, true)}
                       />
