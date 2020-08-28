@@ -21,7 +21,6 @@ This project popped up in my mind when I ordered Canoe Gen 2 and wanted to see w
 
 ## 🎨 TODO
 - [ ] Keyboard cases
-- [ ] Filter by layout type
 - [ ] Auto deploy
 - [ ] Auto resize in small screens
 - [ ] Dark mode toggle
