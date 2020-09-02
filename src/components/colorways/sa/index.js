@@ -4,6 +4,8 @@ import sa_bubble from './bubble';
 import sa_carbon from './carbon';
 import sa_danger_zone from './danger_zone';
 import sa_dream_eater from './dream_eater';
+import sa_forgive from './forgive';
+import sa_honeywell from './honeywell';
 import sa_hunter_killua from './hunter_killua';
 import sa_jadeite from './jadeite';
 import sa_jukebox from './jukebox';
@@ -23,6 +25,8 @@ export default [
   sa_carbon,
   sa_danger_zone,
   sa_dream_eater,
+  sa_forgive,
+  sa_honeywell,
   sa_hunter_killua,
   sa_jadeite,
   sa_jukebox,

@@ -5,6 +5,7 @@ import gmk_apollo from './apollo';
 import gmk_ascii from './ascii';
 import gmk_ashes from './ashes';
 import gmk_bento from './bento';
+import gmk_beta from './beta';
 import gmk_bingsu from './bingsu';
 import gmk_botanica from './botanica';
 import gmk_bread from './bread';
@@ -31,8 +32,11 @@ import gmk_oblivion from './oblivion';
 import gmk_olivetti from './olivetti';
 import gmk_olivia from './olivia';
 import gmk_plum from './plum';
+import gmk_posh from './posh';
+import gmk_rainy_day from './rainy_day';
 import gmk_rouge from './rouge';
 import gmk_serika from './serika';
+import gmk_shoko from './shoko';
 import gmk_space_cadet from './space_cadet';
 import gmk_striker from './striker';
 import gmk_sumi from './sumi';
@@ -52,6 +56,7 @@ export default [
   gmk_ascii,
   gmk_ashes,
   gmk_bento,
+  gmk_beta,
   gmk_bingsu,
   gmk_botanica,
   gmk_bread,
@@ -78,8 +83,11 @@ export default [
   gmk_olivetti,
   gmk_olivia,
   gmk_plum,
+  gmk_posh,
+  gmk_rainy_day,
   gmk_rouge,
   gmk_serika,
+  gmk_shoko,
   gmk_space_cadet,
   gmk_striker,
   gmk_sumi,

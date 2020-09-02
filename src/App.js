@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 import './App.scss';
 import 'antd/dist/antd.css';
 
@@ -11,6 +12,9 @@ import BasicLayout, { PageContainer } from '@ant-design/pro-layout';
 import Footer from './components/Footer';
 import Keyboard from './components/Keyboard';
 import colorways from './components/colorways';
+
+ReactGA.initialize('UA-108075000-2');
+ReactGA.pageview(window.location.pathname);
 
 const defaultCaseColor = '#e0e0e0'
 

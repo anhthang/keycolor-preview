@@ -40,12 +40,22 @@ export default {
         accent: ['color-gmk-abs-CR', 'color-ral-H250L85C05'],
     },
     'gmk-bento': {
-        key: ['#fff3ef', '#3e728f'],
-        mod: ['#3e728f', '#fb7279'],
-        accent: ['#fb7279', '#fff3ef'],
+        key: ['color-gmk-abs-WS1', 'color-ral-H240L50C25'],
+        mod: ['color-ral-H240L50C25', '#fb7279'],
+        accent: ['#fb7279', 'color-gmk-abs-WS1'],
         kits: {
             revival: {
-                key: ['#3e728f', '#fb7279']
+                key: ['color-ral-H240L50C25', '#fb7279']
+            }
+        }
+    },
+    'gmk-beta': {
+        key: ['color-gmk-abs-L9', 'color-gmk-abs-CR'],
+        mod: ['color-gmk-abs-2B', 'color-gmk-abs-CR'],
+        accent: ['color-gmk-abs-V2', 'color-gmk-abs-CR'],
+        kits: {
+            js: {
+                accent: ['color-gmk-abs-RO2', 'color-gmk-abs-CR']
             }
         }
     },
@@ -202,6 +212,24 @@ export default {
         mod: ['#736b7c', '#ded0af'],
         accent: ['#863f48', '#ded0af'],
     },
+    'gmk-posh': {
+        key: ['color-gmk-abs-CP', 'color-ral-5022'],
+        mod: ['color-ral-5022', 'color-ral-3015'],
+        accent: ['color-ral-3015', 'color-ral-5022'],
+        kits: {
+            'alt-alphas': {
+                key: ['color-gmk-abs-CP', 'color-ral-3015']
+            },
+            'alt-mods': {
+                mod: ['color-ral-3015', 'color-ral-5022']
+            }
+        }
+    },
+    'gmk-rainy-day': {
+        key: ['color-pantone-15-4101TCX', 'color-pantone-10393C'],
+        mod: ['color-pantone-10393C', 'color-pantone-9481C'],
+        accent: ['color-pantone-9481C', 'color-pantone-10393C'],
+    },
     'gmk-rouge': {
         key: ['color-ral-H290L20C15', 'color-ral-H320L50C20'],
         mod: ['color-ral-H290L20C15', 'color-ral-H320L50C20'],
@@ -214,6 +242,11 @@ export default {
         key: ['#ece4d0', '#333732'],
         mod: ['#ffcd00', '#333732'],
         accent: ['#333732', '#ece4d0'],
+    },
+    'gmk-shoko': {
+        key: ['color-pantone-656C', 'color-pantone-5425C'],
+        mod: ['color-pantone-5425C', 'color-pantone-656C'],
+        accent: ['color-pantone-2975C', 'color-pantone-656C'],
     },
     'gmk-space-cadet': {
         key: ['color-sp-abs-GD', 'color-gmk-abs-CP'],
@@ -327,6 +360,16 @@ export default {
         accent2: ['color-sp-abs-BFL', 'color-sp-abs-BBI'],
         accent3: ['#3b6f75', 'color-sp-abs-BBI'],
         accent4: ['color-sp-abs-BED', 'color-sp-abs-RCJ'],
+    },
+    'sa-forgive': {
+        key: ['color-sp-abs-VCO', 'color-sp-abs-NN'],
+        mod: ['color-sp-abs-VAF', 'color-sp-abs-VCO'],
+        accent: ['color-sp-abs-RCU', 'color-sp-abs-VCO'],
+    },
+    'sa-honeywell': {
+        key: ['color-sp-abs-WFK', 'color-sp-abs-NN'],
+        mod: ['color-sp-abs-GPA', 'color-sp-abs-WFK'],
+        accent: ['color-sp-abs-RAS', 'color-sp-abs-WFK'],
     },
     'sa-hunter-killua': {
         key: ['color-pantone-2085C', 'color-sp-abs-BFU'],

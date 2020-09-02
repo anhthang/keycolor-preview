@@ -82,24 +82,36 @@
 }
 
 .gmk-bento-key {
-  background: #fff3ef;
-  color: #3e728f;
-  // &.traditional {
-  //   background: #fff3ef;
-  //   color: #3e728f;
-  // }
+  background: $color-gmk-abs-WS1;
+  color: $color-ral-H240L50C25;
   &.revival {
-    background: #3e728f;
+    background: $color-ral-H240L50C25;
     color: #fb7279;
   }
 }
 .gmk-bento-mod {
-  background: #3e728f;
+  background: $color-ral-H240L50C25;
   color: #fb7279;
 }
 .gmk-bento-accent {
   background: #fb7279;
-  color: #fff3ef;
+  color: $color-gmk-abs-WS1;
+}
+
+.gmk-beta-key {
+  background: $color-gmk-abs-L9;
+  color: $color-gmk-abs-CR;
+}
+.gmk-beta-mod {
+  background: $color-gmk-abs-2B;
+  color: $color-gmk-abs-CR;
+}
+.gmk-beta-accent {
+  background: $color-gmk-abs-V2;
+  color: $color-gmk-abs-CR;
+  &.js {
+    background: $color-gmk-abs-RO2;
+  }
 }
 
 .gmk-bingsu-key {
@@ -429,6 +441,7 @@
   background: $color-gmk-abs-V4;
   color: $color-gmk-abs-CP;
 }
+
 .gmk-olivia-key {
   background: $color-gmk-abs-CP;
   color: #363434;
@@ -441,6 +454,7 @@
   background: #e8c4b8;
   color: #363434;
 }
+
 .gmk-plum-key {
   background: #ded0af;
   color: #736b7c;
@@ -452,6 +466,39 @@
 .gmk-plum-accent {
   background: #863f48;
   color: #ded0af;
+}
+
+.gmk-posh-key {
+  background: $color-gmk-abs-CP;
+  color: $color-ral-5022;
+  &.alt-alphas {
+    color: $color-ral-3015;
+  }
+}
+.gmk-posh-mod {
+  background: $color-ral-5022;
+  color: $color-ral-3015;
+  &.alt-mods {
+    background: $color-ral-3015;
+    color: $color-ral-5022;
+  }
+}
+.gmk-posh-accent {
+  background: $color-ral-3015;
+  color: $color-ral-5022;
+}
+
+.gmk-rainy-day-key {
+  background: $color-pantone-15-4101TCX;
+  color: $color-pantone-10393C;
+}
+.gmk-rainy-day-mod {
+  background: $color-pantone-10393C;
+  color: $color-pantone-9481C;
+}
+.gmk-rainy-day-accent {
+  background: $color-pantone-9481C;
+  color: $color-pantone-10393C;
 }
 
 .gmk-rouge-key {
@@ -490,6 +537,19 @@
 .gmk-serika-accent {
   background: #333732;
   color: #ece4d0;
+}
+
+.gmk-shoko-key {
+  background: $color-pantone-656C;
+  color: $color-pantone-5425C;
+}
+.gmk-shoko-mod {
+  background: $color-pantone-5425C;
+  color: $color-pantone-656C;
+}
+.gmk-shoko-accent {
+  background: $color-pantone-2975C;
+  color: $color-pantone-656C;
 }
 
 .gmk-space-cadet-key {
