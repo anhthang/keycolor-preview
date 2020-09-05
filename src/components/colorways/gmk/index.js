@@ -37,6 +37,7 @@ import gmk_rainy_day from './rainy_day';
 import gmk_rouge from './rouge';
 import gmk_serika from './serika';
 import gmk_shoko from './shoko';
+import gmk_shorebound from './shorebound';
 import gmk_space_cadet from './space_cadet';
 import gmk_striker from './striker';
 import gmk_sumi from './sumi';
@@ -47,6 +48,7 @@ import gmk_ursa from './ursa';
 import gmk_wild from './wild';
 import gmk_wob from './wob';
 import gmk_yuri from './yuri';
+import gmk_yuru from './yuru';
 
 export default [
   gmk_8008,
@@ -88,6 +90,7 @@ export default [
   gmk_rouge,
   gmk_serika,
   gmk_shoko,
+  gmk_shorebound,
   gmk_space_cadet,
   gmk_striker,
   gmk_sumi,
@@ -97,5 +100,6 @@ export default [
   gmk_ursa,
   gmk_wild,
   gmk_wob,
-  gmk_yuri
+  gmk_yuri,
+  gmk_yuru,
 ];

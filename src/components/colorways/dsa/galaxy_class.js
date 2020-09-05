@@ -1,13 +1,13 @@
 export default {
   name: 'dsa-galaxy-class',
   color_codes: {
-    key: ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
-    mod: ['color-pantone-141C', 'color-sp-pbt-BLACK'],
-    purple: ['color-sp-pbt-RCB', 'color-sp-pbt-BLACK'],
-    'darker-blue': ['color-sp-pbt-BDJ', 'color-sp-pbt-BLACK'],
-    pink: ['color-sp-pbt-RCA', 'color-sp-pbt-BLACK'],
-    'light-blue': ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
-    gray: ['color-sp-pbt-GQT', 'color-sp-pbt-BLACK'],
+    key: ['sp-pbt-BFE', 'sp-pbt-BLACK'],
+    mod: ['pantone-141C', 'sp-pbt-BLACK'],
+    purple: ['sp-pbt-RCB', 'sp-pbt-BLACK'],
+    'darker-blue': ['sp-pbt-BDJ', 'sp-pbt-BLACK'],
+    pink: ['sp-pbt-RCA', 'sp-pbt-BLACK'],
+    'light-blue': ['sp-pbt-BFE', 'sp-pbt-BLACK'],
+    gray: ['sp-pbt-GQT', 'sp-pbt-BLACK'],
   },
   override: {
     KC_ESC: 'pink',

@@ -1,9 +1,9 @@
 export default {
   name: 'kat-oasis',
   color_codes: {
-    key: ['color-pantone-155C', 'color-pantone-7617C'],
-    mod: ['color-pantone-317C', 'color-pantone-7617C'],
-    accent: ['color-pantone-7617C', 'color-pantone-155C']
+    key: ['pantone-155C', 'pantone-7617C'],
+    mod: ['pantone-317C', 'pantone-7617C'],
+    accent: ['pantone-7617C', 'pantone-155C']
   }
 };
   

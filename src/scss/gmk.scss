@@ -16,24 +16,24 @@
 }
 
 .gmk-9009-key {
-  background: $color-gmk-abs-L9;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-L9;
+  color: $gmk-abs-CR;
 }
 .gmk-9009-mod {
-  background: $color-gmk-abs-U9;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-U9;
+  color: $gmk-abs-CR;
 }
 .gmk-9009-esc {
-  background: $color-gmk-abs-3C;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-3C;
+  color: $gmk-abs-CR;
 }
 .gmk-9009-enter {
-  background: $color-gmk-abs-3B;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-3B;
+  color: $gmk-abs-CR;
 }
 
 .gmk-analog-dreams-key {
-  background: $color-gmk-abs-L9;
+  background: $gmk-abs-L9;
   color: #ac4fc6;
 }
 .gmk-analog-dreams-mod {
@@ -50,116 +50,116 @@
 }
 
 .gmk-apollo-key {
-  background: $color-pantone-431C;
-  color: $color-pantone-CoolGray2C;
+  background: $pantone-431C;
+  color: $pantone-CoolGray2C;
 }
 .gmk-apollo-mod {
-  background: $color-pantone-4140C;
-  color: $color-pantone-CoolGray2C;
+  background: $pantone-4140C;
+  color: $pantone-CoolGray2C;
 }
 .gmk-apollo-accent {
-  background: $color-pantone-CoolGray2C;
-  color: $color-pantone-4140C;
+  background: $pantone-CoolGray2C;
+  color: $pantone-4140C;
 }
 
 .gmk-ascii-key,
 .gmk-ascii-mod {
-  background: $color-gmk-abs-2B;
-  color: $color-gmk-abs-2M;
+  background: $gmk-abs-2B;
+  color: $gmk-abs-2M;
 }
 
 .gmk-ashes-key {
-  background: $color-ral-H260L40C05;
-  color: $color-ral-H250L85C05;
+  background: $ral-260-40-05;
+  color: $ral-250-85-05;
 }
 .gmk-ashes-mod {
-  background: $color-ral-H250L85C05;
-  color: $color-ral-H260L60C05;
+  background: $ral-250-85-05;
+  color: $ral-260-60-05;
 }
 .gmk-ashes-accent {
-  background: $color-gmk-abs-CR;
-  color: $color-ral-H250L85C05;
+  background: $gmk-abs-CR;
+  color: $ral-250-85-05;
 }
 
 .gmk-bento-key {
-  background: $color-gmk-abs-WS1;
-  color: $color-ral-H240L50C25;
+  background: $gmk-abs-WS1;
+  color: $ral-240-50-25;
   &.revival {
-    background: $color-ral-H240L50C25;
+    background: $ral-240-50-25;
     color: #fb7279;
   }
 }
 .gmk-bento-mod {
-  background: $color-ral-H240L50C25;
+  background: $ral-240-50-25;
   color: #fb7279;
 }
 .gmk-bento-accent {
   background: #fb7279;
-  color: $color-gmk-abs-WS1;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-beta-key {
-  background: $color-gmk-abs-L9;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-L9;
+  color: $gmk-abs-CR;
 }
 .gmk-beta-mod {
-  background: $color-gmk-abs-2B;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-2B;
+  color: $gmk-abs-CR;
 }
 .gmk-beta-accent {
-  background: $color-gmk-abs-V2;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-V2;
+  color: $gmk-abs-CR;
   &.js {
-    background: $color-gmk-abs-RO2;
+    background: $gmk-abs-RO2;
   }
 }
 
 .gmk-bingsu-key {
   background: #946777;
-  color: $color-gmk-abs-CP;
+  color: $gmk-abs-CP;
 }
 .gmk-bingsu-mod {
   background: #533d45;
-  color: $color-gmk-abs-CP;
+  color: $gmk-abs-CP;
 }
 .gmk-bingsu-accent {
-  background: $color-gmk-abs-CP;
+  background: $gmk-abs-CP;
   color: #533d45;
 }
 
 .gmk-botanica-key {
-  background: $color-pantone-656C;
-  color: $color-pantone-5575C;
+  background: $pantone-656C;
+  color: $pantone-5575C;
 }
 .gmk-botanica-mod {
-  background: $color-pantone-5477C;
-  color: $color-pantone-5575C;
+  background: $pantone-5477C;
+  color: $pantone-5575C;
 }
 .gmk-botanica-accent {
-  background: $color-pantone-5575C;
-  color: $color-pantone-5477C;
+  background: $pantone-5575C;
+  color: $pantone-5477C;
 }
 
 .gmk-bread-key {
-  background: $color-ral-1015;
-  color: $color-ral-8008;
+  background: $ral-1015;
+  color: $ral-8008;
 }
 .gmk-bread-mod {
-  background: $color-ral-8008;
-  color: $color-ral-1015;
+  background: $ral-8008;
+  color: $ral-1015;
 }
 .gmk-bread-accent {
-  background: $color-ral-1011;
-  color: $color-ral-8008;
+  background: $ral-1011;
+  color: $ral-8008;
 }
 
 .gmk-cafe-key {
-  background: $color-gmk-abs-L9;
+  background: $gmk-abs-L9;
   color: #3d3635;
 }
 .gmk-cafe-mod {
   background: #3d3635;
-  color: $color-gmk-abs-L9;
+  color: $gmk-abs-L9;
 }
 .gmk-cafe-accent {
   background: #d0b084;
@@ -167,16 +167,16 @@
 }
 
 .gmk-camping-key {
-  background: $color-sp-abs-WCK;
-  color: $color-sp-abs-VF;
+  background: $sp-abs-WCK;
+  color: $sp-abs-VF;
 }
 .gmk-camping-mod {
-  background: $color-sp-abs-VF;
-  color: $color-sp-abs-WCK;
+  background: $sp-abs-VF;
+  color: $sp-abs-WCK;
 }
 .gmk-camping-accent {
-  background: $color-sp-abs-RBC;
-  color: $color-sp-abs-WCK;
+  background: $sp-abs-RBC;
+  color: $sp-abs-WCK;
 }
 
 .gmk-calm-depths-key {
@@ -189,16 +189,16 @@
 }
 
 .gmk-copper-key {
-  background: $color-pantone-7522C;
-  color: $color-ral-8017;
+  background: $pantone-7522C;
+  color: $ral-8017;
 }
 .gmk-copper-mod {
-  background: $color-ral-8017;
-  color: $color-pantone-7522C;
+  background: $ral-8017;
+  color: $pantone-7522C;
 }
 .gmk-copper-accent {
-  background: $color-ral-6027;
-  color: $color-ral-8017;
+  background: $ral-6027;
+  color: $ral-8017;
 }
 
 .gmk-deku-key {
@@ -215,85 +215,85 @@
 }
 
 .gmk-dolch-key {
-  background: $color-gmk-abs-CC;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-CC;
+  color: $gmk-abs-WS1;
 }
 .gmk-dolch-mod {
-  background: $color-gmk-abs-N9;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-N9;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-evil-dolch-key {
-  background: $color-gmk-abs-N9;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-N9;
+  color: $gmk-abs-WS1;
 }
 .gmk-evil-dolch-mod {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-RO1;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-RO1;
 }
 
 .gmk-hammerhead-key {
-  background: $color-pantone-533C;
-  color: $color-pantone-3258C;
+  background: $pantone-533C;
+  color: $pantone-3258C;
   &.light {
-    background: $color-pantone-536C;
-    color: $color-pantone-2378C;
+    background: $pantone-536C;
+    color: $pantone-2378C;
   }
 }
 .gmk-hammerhead-mod {
-  background: $color-pantone-2378C;
-  color: $color-pantone-3258C;
+  background: $pantone-2378C;
+  color: $pantone-3258C;
 }
 .gmk-hammerhead-accent {
-  background: $color-pantone-3258C;
-  color: $color-pantone-2378C;
+  background: $pantone-3258C;
+  color: $pantone-2378C;
 }
 
 .gmk-hanguk-key {
-  background: $color-gmk-abs-WS1;
-  color: $color-pantone-294C;
+  background: $gmk-abs-WS1;
+  color: $pantone-294C;
 }
 .gmk-hanguk-mod {
-  background: $color-pantone-186C;
-  color: $color-pantone-294C;
+  background: $pantone-186C;
+  color: $pantone-294C;
 }
 .gmk-hanguk-accent {
-  background: $color-pantone-294C;
-  color: $color-gmk-abs-WS1;
+  background: $pantone-294C;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-honey-key {
-  background: $color-pantone-2001C;
-  color: $color-pantone-123C;
+  background: $pantone-2001C;
+  color: $pantone-123C;
   &.alt-alphas {
-    background: $color-pantone-123C;
-    color: $color-pantone-2001C;
+    background: $pantone-123C;
+    color: $pantone-2001C;
   }
 }
 .gmk-honey-mod {
-  background: $color-pantone-123C;
-  color: $color-pantone-2001C;
+  background: $pantone-123C;
+  color: $pantone-2001C;
 }
 .gmk-honey-accent {
-  background: $color-pantone-7570C;
-  color: $color-pantone-2001C;
+  background: $pantone-7570C;
+  color: $pantone-2001C;
 }
 
 .gmk-ishtar-key {
-  background: $color-ral-1015;
-  color: $color-ral-3020;
+  background: $ral-1015;
+  color: $ral-3020;
   &.kuro {
-    background: $color-ral-9017;
-    color: $color-ral-3020;
+    background: $ral-9017;
+    color: $ral-3020;
   }
 }
 .gmk-ishtar-mod {
-  background: $color-ral-9017;
-  color: $color-ral-3020;
+  background: $ral-9017;
+  color: $ral-3020;
 }
 .gmk-ishtar-accent {
-  background: $color-ral-1017;
-  color: $color-ral-3020;
+  background: $ral-1017;
+  color: $ral-3020;
 }
 
 .gmk-jamon-key {
@@ -310,67 +310,67 @@
 }
 
 .gmk-kaiju-key {
-  background: $color-gmk-abs-L9;
-  color: $color-pantone-172C;
+  background: $gmk-abs-L9;
+  color: $pantone-172C;
   // &.translations {
-  //   background: $color-gmk-abs-L9;
-  //   color: $color-pantone-172C;
+  //   background: $gmk-abs-L9;
+  //   color: $pantone-172C;
   // }
 }
 .gmk-kaiju-mod {
-  background: $color-ral-H170L40C20;
-  color: $color-gmk-abs-L9;
+  background: $ral-170-40-20;
+  color: $gmk-abs-L9;
 }
 .gmk-kaiju-accent {
-  background: $color-pantone-172C;
-  color: $color-gmk-abs-L9;
+  background: $pantone-172C;
+  color: $gmk-abs-L9;
 }
 
 .gmk-mecha-01-key {
-  background: $color-pantone-267C;
-  color: $color-pantone-802C;
+  background: $pantone-267C;
+  color: $pantone-802C;
 
   &.berserk {
-    color: $color-gmk-abs-RO2;
+    color: $gmk-abs-RO2;
   }
 }
 .gmk-mecha-01-mod {
-  background: $color-gmk-abs-CR;
-  color: $color-pantone-802C;
+  background: $gmk-abs-CR;
+  color: $pantone-802C;
 }
 .gmk-mecha-01-accent {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-RO2;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-RO2;
 }
 .gmk-mecha-01-accent2 {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-V2;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-V2;
 }
 
 .gmk-merlin-key {
-  background: $color-gmk-abs-CP;
-  color: $color-gmk-abs-TU1;
+  background: $gmk-abs-CP;
+  color: $gmk-abs-TU1;
 }
 .gmk-merlin-mod {
-  background: $color-gmk-abs-TU1;
-  color: $color-gmk-abs-N6;
+  background: $gmk-abs-TU1;
+  color: $gmk-abs-N6;
 }
 .gmk-merlin-accent {
-  background: $color-gmk-abs-N6;
-  color: $color-gmk-abs-TU1;
+  background: $gmk-abs-N6;
+  color: $gmk-abs-TU1;
 }
 
 .gmk-metaverse-key {
-  background: $color-gmk-abs-WS1;
-  color: $color-gmk-abs-CR;
+  background: $gmk-abs-WS1;
+  color: $gmk-abs-CR;
 }
 .gmk-metaverse-mod {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-WS1;
 }
 .gmk-metaverse-accent {
-  background: $color-gmk-abs-RO2;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-RO2;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-mizu-key {
@@ -387,63 +387,63 @@
 }
 
 .gmk-nautilus-key {
-  background: $color-pantone-534C;
-  color: $color-gmk-abs-TU2;
+  background: $pantone-534C;
+  color: $gmk-abs-TU2;
 }
 .gmk-nautilus-mod {
-  background: $color-pantone-533C;
-  color: $color-gmk-abs-N6;
+  background: $pantone-533C;
+  color: $gmk-abs-N6;
 }
 .gmk-nautilus-accent {
-  background: $color-gmk-abs-N6;
-  color: $color-pantone-533C;
+  background: $gmk-abs-N6;
+  color: $pantone-533C;
 }
 
 .gmk-noel-key {
-  background: $color-gmk-abs-WS2;
-  color: $color-ral-H230L70C30;
+  background: $gmk-abs-WS2;
+  color: $ral-230-70-30;
 }
 .gmk-noel-mod {
-  background: $color-ral-H210L85C15;
-  color: $color-ral-H230L70C30;
+  background: $ral-210-85-15;
+  color: $ral-230-70-30;
 }
 .gmk-noel-accent {
-  background: $color-ral-H010L80C20;
-  color: $color-gmk-abs-WS2;
+  background: $ral-010-80-20;
+  color: $gmk-abs-WS2;
 }
 
 .gmk-oblivion-key {
-  background: $color-sp-abs-GD;
-  color: $color-sp-abs-GAL;
+  background: $sp-abs-GD;
+  color: $sp-abs-GAL;
   &.hagoromo {
-    background: $color-gmk-abs-CP;
-    color: $color-sp-abs-GD;
+    background: $gmk-abs-CP;
+    color: $sp-abs-GD;
   }
 }
 .gmk-oblivion-mod {
-  background: $color-sp-abs-GQM;
-  color: $color-sp-abs-GAL;
+  background: $sp-abs-GQM;
+  color: $sp-abs-GAL;
 }
 .gmk-oblivion-accent {
-  background: $color-sp-abs-BFP;
-  color: $color-sp-abs-BFN;
+  background: $sp-abs-BFP;
+  color: $sp-abs-BFN;
 }
 
 .gmk-olivetti-key {
-  background: $color-gmk-abs-CP;
-  color: $color-gmk-abs-V4;
+  background: $gmk-abs-CP;
+  color: $gmk-abs-V4;
 }
 .gmk-olivetti-mod {
-  background: $color-gmk-abs-U9;
-  color: $color-gmk-abs-V4;
+  background: $gmk-abs-U9;
+  color: $gmk-abs-V4;
 }
 .gmk-olivetti-accent {
-  background: $color-gmk-abs-V4;
-  color: $color-gmk-abs-CP;
+  background: $gmk-abs-V4;
+  color: $gmk-abs-CP;
 }
 
 .gmk-olivia-key {
-  background: $color-gmk-abs-CP;
+  background: $gmk-abs-CP;
   color: #363434;
 }
 .gmk-olivia-mod {
@@ -469,137 +469,150 @@
 }
 
 .gmk-posh-key {
-  background: $color-gmk-abs-CP;
-  color: $color-ral-5022;
+  background: $gmk-abs-CP;
+  color: $ral-5022;
   &.alt-alphas {
-    color: $color-ral-3015;
+    color: $ral-3015;
   }
 }
 .gmk-posh-mod {
-  background: $color-ral-5022;
-  color: $color-ral-3015;
+  background: $ral-5022;
+  color: $ral-3015;
   &.alt-mods {
-    background: $color-ral-3015;
-    color: $color-ral-5022;
+    background: $ral-3015;
+    color: $ral-5022;
   }
 }
 .gmk-posh-accent {
-  background: $color-ral-3015;
-  color: $color-ral-5022;
+  background: $ral-3015;
+  color: $ral-5022;
 }
 
 .gmk-rainy-day-key {
-  background: $color-pantone-15-4101TCX;
-  color: $color-pantone-10393C;
+  background: $pantone-15-4101TCX;
+  color: $pantone-10393C;
 }
 .gmk-rainy-day-mod {
-  background: $color-pantone-10393C;
-  color: $color-pantone-9481C;
+  background: $pantone-10393C;
+  color: $pantone-9481C;
 }
 .gmk-rainy-day-accent {
-  background: $color-pantone-9481C;
-  color: $color-pantone-10393C;
+  background: $pantone-9481C;
+  color: $pantone-10393C;
 }
 
 .gmk-rouge-key {
-  background: $color-ral-H290L20C15;
-  color: $color-ral-H320L50C20;
+  background: $ral-290-20-15;
+  color: $ral-320-50-20;
 }
 .gmk-rouge-mod {
-  background: $color-ral-H290L20C15;
-  color: $color-ral-H320L50C20;
+  background: $ral-290-20-15;
+  color: $ral-320-50-20;
 }
 .gmk-rouge-accent1 {
-  background: $color-ral-H310L20C20;
-  color: $color-ral-H320L50C20;
+  background: $ral-310-20-20;
+  color: $ral-320-50-20;
 }
 .gmk-rouge-accent2 {
-  background: $color-ral-H310L30C20;
-  color: $color-ral-H320L50C20;
+  background: $ral-310-30-20;
+  color: $ral-320-50-20;
 }
 .gmk-rouge-accent3 {
-  background: $color-ral-H300L30C20;
-  color: $color-ral-H320L50C20;
+  background: $ral-300-30-20;
+  color: $ral-320-50-20;
 }
 .gmk-rouge-accent4 {
-  background: $color-ral-H300L30C15;
-  color: $color-ral-H320L50C20;
+  background: $ral-300-30-15;
+  color: $ral-320-50-20;
 }
 
 .gmk-serika-key {
-  background: #ece4d0;
-  color: #333732;
+  background: $ral-090-90-10;
+  color: $gmk-abs-N9;
 }
 .gmk-serika-mod {
-  background: #ffcd00;
-  color: #333732;
+  background: $pantone-116C;
+  color: $gmk-abs-N9;
 }
 .gmk-serika-accent {
-  background: #333732;
-  color: #ece4d0;
+  background: $gmk-abs-N9;
+  color: $ral-090-90-10;
 }
 
 .gmk-shoko-key {
-  background: $color-pantone-656C;
-  color: $color-pantone-5425C;
+  background: $pantone-656C;
+  color: $pantone-5425C;
 }
 .gmk-shoko-mod {
-  background: $color-pantone-5425C;
-  color: $color-pantone-656C;
+  background: $pantone-5425C;
+  color: $pantone-656C;
 }
 .gmk-shoko-accent {
-  background: $color-pantone-2975C;
-  color: $color-pantone-656C;
+  background: $pantone-2975C;
+  color: $pantone-656C;
+}
+
+.gmk-shorebound-key {
+  background: $pantone-636C;
+  color: $ral-290-20-35;
+}
+.gmk-shorebound-mod {
+  background: $pantone-149C;
+  color: $ral-040-30-40;
+}
+.gmk-shorebound-accent {
+  background: $pantone-7462C;
+  color: $pantone-149C;
 }
 
 .gmk-space-cadet-key {
-  background: $color-sp-abs-GD;
-  color: $color-gmk-abs-CP;
+  background: $sp-abs-GD;
+  color: $gmk-abs-CP;
 }
 
 .gmk-space-cadet-mod {
-  background: $color-sp-abs-BFP;
-  color: $color-gmk-abs-CP;
+  background: $sp-abs-BFP;
+  color: $gmk-abs-CP;
 }
 
 .gmk-striker-key {
   background: #004d7c;
-  color: $color-gmk-abs-WS1;
+  color: $gmk-abs-WS1;
 }
 .gmk-striker-mod {
   background: #004d7c;
-  color: $color-gmk-abs-WS1;
+  color: $gmk-abs-WS1;
 }
 .gmk-striker-accent {
   background: #002e51;
-  color: $color-gmk-abs-WS1;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-sumi-key {
-  background: $color-ral-5004;
-  color: $color-gmk-abs-WS1;
+  background: $ral-5004;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-sumi-mod {
-  background: $color-gmk-abs-WS1;
-  color: $color-ral-5004;
+  background: $gmk-abs-WS1;
+  color: $ral-5004;
 }
 .gmk-sumi-accent {
-  background: $color-ral-3028;
-  color: $color-gmk-abs-WS1;
+  background: $ral-3028;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-ta-royal-alpha-key {
-  background: $color-gmk-abs-3K;
-  color: $color-gmk-abs-N7;
+  background: $gmk-abs-3K;
+  color: $gmk-abs-N7;
 }
 .gmk-ta-royal-alpha-mod {
-  background: $color-gmk-abs-AE;
-  color: $color-gmk-abs-CP;
+  background: $gmk-abs-AE;
+  color: $gmk-abs-CP;
 }
 .gmk-ta-royal-alpha-accent {
-  background: $color-gmk-abs-N7;
-  color: $color-gmk-abs-CP;
+  background: $gmk-abs-N7;
+  color: $gmk-abs-CP;
 }
 
 .gmk-taro-key {
@@ -619,61 +632,61 @@
   }
 }
 .gmk-taro-accent {
-  background: $color-gmk-abs-TU2;
+  background: $gmk-abs-TU2;
   color: #170B19;
 }
 .gmk-taro-accent2 {
-  background: $color-gmk-abs-CV;
+  background: $gmk-abs-CV;
   color: #170B19;
 }
 
 .gmk-terminal-key,
 .gmk-terminal-mod {
-  background: $color-gmk-abs-N9;
-  color: $color-gmk-abs-AE;
+  background: $gmk-abs-N9;
+  color: $gmk-abs-AE;
 }
 .gmk-terminal-accent {
-  background: $color-gmk-abs-AE;
-  color: $color-gmk-abs-N9;
+  background: $gmk-abs-AE;
+  color: $gmk-abs-N9;
 }
 
 .gmk-ursa-key {
-  background: $color-gmk-abs-CP;
-  color: $color-ral-7006;
+  background: $gmk-abs-CP;
+  color: $ral-7006;
 }
 .gmk-ursa-mod {
-  background: $color-ral-7006;
-  color: $color-gmk-abs-CP;
+  background: $ral-7006;
+  color: $gmk-abs-CP;
 }
 .gmk-ursa-accent {
-  background: $color-gmk-abs-3A;
-  color: $color-gmk-abs-CP;
+  background: $gmk-abs-3A;
+  color: $gmk-abs-CP;
 }
 
 .gmk-wild-key {
-  background: $color-gmk-abs-N9;
-  color: $color-gmk-abs-U9;
+  background: $gmk-abs-N9;
+  color: $gmk-abs-U9;
 }
 .gmk-wild-mod {
-  background: $color-gmk-abs-U9;
-  color: $color-gmk-abs-N9;
+  background: $gmk-abs-U9;
+  color: $gmk-abs-N9;
 }
 .gmk-wild-accent1 {
-  background: $color-pantone-8721C;
-  color: $color-gmk-abs-U9;
+  background: $pantone-8721C;
+  color: $gmk-abs-U9;
 }
 .gmk-wild-accent2 {
-  background: $color-pantone-4100C;
-  color: $color-gmk-abs-U9;
+  background: $pantone-4100C;
+  color: $gmk-abs-U9;
 }
 
 .gmk-wob-key {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-WS1;
 }
 .gmk-wob-mod {
-  background: $color-gmk-abs-CR;
-  color: $color-gmk-abs-WS1;
+  background: $gmk-abs-CR;
+  color: $gmk-abs-WS1;
 }
 
 .gmk-yuri-key {
@@ -687,4 +700,17 @@
 .gmk-yuri-accent {
   background: #f54730;
   color: #2d394c;
+}
+
+.gmk-yuru-key {
+  background: $gmk-abs-CP;
+  color: $ral-010-30-30;
+}
+.gmk-yuru-mod {
+  background: $ral-010-30-30;
+  color: $gmk-abs-CP;
+}
+.gmk-yuru-accent {
+  background: $ral-190-80-25;
+  color: $gmk-abs-WS2;
 }

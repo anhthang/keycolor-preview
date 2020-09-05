@@ -1,11 +1,11 @@
 export default {
   name: 'sa-jadeite',
   color_codes: {
-    key: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
-    mod: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
-    accent1: ['color-sp-pbt-VS', 'color-sp-pbt-WAN'],
-    accent2: ['color-sp-pbt-VAZ', 'color-sp-pbt-VS'],
-    accent3: ['color-sp-pbt-VCB', 'color-sp-pbt-VS'],
+    key: ['sp-pbt-WAN', 'sp-pbt-VS'],
+    mod: ['sp-pbt-WAN', 'sp-pbt-VS'],
+    accent1: ['sp-pbt-VS', 'sp-pbt-WAN'],
+    accent2: ['sp-pbt-VAZ', 'sp-pbt-VS'],
+    accent3: ['sp-pbt-VCB', 'sp-pbt-VS'],
   },
   override: {
     KC_ESC: 'accent1',

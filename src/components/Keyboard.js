@@ -302,7 +302,7 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
 
   useEffect(() => {
     if (renderMode === '3d') render3DKeyboard(renderMode)
-  }, [colorway])
+  }, [colorway]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setRenderMode('2d')

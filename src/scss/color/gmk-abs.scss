@@ -2,78 +2,78 @@
  * GMK Standard Color Codes
  * https://matrixzj.github.io/docs/gmk-keycaps/ColorCodes/
  */
-$color-gmk-abs-2B: rgb(114, 116, 116);  // #727474
-$color-gmk-abs-2M: rgb(198, 201, 199);  // #c6c9c7
-$color-gmk-abs-3A: rgb(127, 165, 128);  // #7fa580
-$color-gmk-abs-3B: rgb(118, 142, 114);  // #768e72
-$color-gmk-abs-3C: rgb(200, 126, 116);  // #c87e74
-$color-gmk-abs-3K: rgb(204, 198, 192);  // #ccc6c0
-$color-gmk-abs-AE: rgb(104, 155, 52);   // #689b34
-$color-gmk-abs-BJ: rgb(145, 134, 122);  // #91867a
-$color-gmk-abs-BR1: rgb(101, 60, 37);   // #653c25
-$color-gmk-abs-CB: rgb(155, 146, 132);  // #9b9284
-$color-gmk-abs-CC: rgb(103, 99, 91);    // #67635b
-$color-gmk-abs-CP: rgb(225, 219, 209);  // #e1dbd1
-$color-gmk-abs-CR: rgb(23, 23, 24);     // #171718
-$color-gmk-abs-CV: rgb(248, 194, 0);    // #f8c200
-$color-gmk-abs-DY: rgb(93, 67, 126);    // #5d437e
-$color-gmk-abs-GE1: rgb(235, 212, 0);   // #ebd400
-$color-gmk-abs-GR1: rgb(197, 199, 202); // #c5c7ca
-$color-gmk-abs-L9: rgb(216, 210, 195);  // #d8d2c3
-$color-gmk-abs-MG1: rgb(203, 61, 110);  // #cb3d6e
-$color-gmk-abs-N5: rgb(0, 132, 194);    // #0084c2
-$color-gmk-abs-N6: rgb(229, 161, 0);    // #e5a100
-$color-gmk-abs-N7: rgb(0, 119, 58);     // #00773a
-$color-gmk-abs-N9: rgb(57, 59, 59);     // #393b3b
-$color-gmk-abs-P3: rgb(188, 37, 30);    // #bc251e
-$color-gmk-abs-RO1: rgb(141, 36, 47);   // #8d242f
-$color-gmk-abs-RO2: rgb(221, 17, 38);   // #dd1126
-$color-gmk-abs-T9: rgb(195, 195, 186);  // #c3c3ba
-$color-gmk-abs-TU1: rgb(0, 98, 122);    // #00627a
-$color-gmk-abs-TU2: rgb(0, 164, 169);   // #00a4a9
-$color-gmk-abs-U9: rgb(172, 166, 147);  // #aca693
-$color-gmk-abs-V1: rgb(208, 47, 28);    // #d02f1c
-$color-gmk-abs-V2: rgb(238, 105, 0);    // #ee6900
-$color-gmk-abs-V4: rgb(0, 88, 159);     // #00589f
-$color-gmk-abs-WS1: rgb(247, 242, 234); // #f7f2ea
-$color-gmk-abs-WS2: rgb(247, 242, 234); // FIXME: unable to find WS2 color code, so I used WS1 color here
-$color-gmk-abs-WS4: rgb(238, 226, 208); // #eee2d0
+$gmk-abs-2B: rgb(114, 116, 116);  // #727474
+$gmk-abs-2M: rgb(198, 201, 199);  // #c6c9c7
+$gmk-abs-3A: rgb(127, 165, 128);  // #7fa580
+$gmk-abs-3B: rgb(118, 142, 114);  // #768e72
+$gmk-abs-3C: rgb(200, 126, 116);  // #c87e74
+$gmk-abs-3K: rgb(204, 198, 192);  // #ccc6c0
+$gmk-abs-AE: rgb(104, 155, 52);   // #689b34
+$gmk-abs-BJ: rgb(145, 134, 122);  // #91867a
+$gmk-abs-BR1: rgb(101, 60, 37);   // #653c25
+$gmk-abs-CB: rgb(155, 146, 132);  // #9b9284
+$gmk-abs-CC: rgb(103, 99, 91);    // #67635b
+$gmk-abs-CP: rgb(225, 219, 209);  // #e1dbd1
+$gmk-abs-CR: rgb(23, 23, 24);     // #171718
+$gmk-abs-CV: rgb(248, 194, 0);    // #f8c200
+$gmk-abs-DY: rgb(93, 67, 126);    // #5d437e
+$gmk-abs-GE1: rgb(235, 212, 0);   // #ebd400
+$gmk-abs-GR1: rgb(197, 199, 202); // #c5c7ca
+$gmk-abs-L9: rgb(216, 210, 195);  // #d8d2c3
+$gmk-abs-MG1: rgb(203, 61, 110);  // #cb3d6e
+$gmk-abs-N5: rgb(0, 132, 194);    // #0084c2
+$gmk-abs-N6: rgb(229, 161, 0);    // #e5a100
+$gmk-abs-N7: rgb(0, 119, 58);     // #00773a
+$gmk-abs-N9: rgb(57, 59, 59);     // #393b3b
+$gmk-abs-P3: rgb(188, 37, 30);    // #bc251e
+$gmk-abs-RO1: rgb(141, 36, 47);   // #8d242f
+$gmk-abs-RO2: rgb(221, 17, 38);   // #dd1126
+$gmk-abs-T9: rgb(195, 195, 186);  // #c3c3ba
+$gmk-abs-TU1: rgb(0, 98, 122);    // #00627a
+$gmk-abs-TU2: rgb(0, 164, 169);   // #00a4a9
+$gmk-abs-U9: rgb(172, 166, 147);  // #aca693
+$gmk-abs-V1: rgb(208, 47, 28);    // #d02f1c
+$gmk-abs-V2: rgb(238, 105, 0);    // #ee6900
+$gmk-abs-V4: rgb(0, 88, 159);     // #00589f
+$gmk-abs-WS1: rgb(247, 242, 234); // #f7f2ea
+$gmk-abs-WS2: rgb(247, 242, 234); // FIXME: unable to find WS2 color code, so I used WS1 color here
+$gmk-abs-WS4: rgb(238, 226, 208); // #eee2d0
 
 :export {
-    color-gmk-abs-2B: $color-gmk-abs-2B;
-    color-gmk-abs-2M: $color-gmk-abs-2M;
-    color-gmk-abs-3A: $color-gmk-abs-3A;
-    color-gmk-abs-3B: $color-gmk-abs-3B;
-    color-gmk-abs-3C: $color-gmk-abs-3C;
-    color-gmk-abs-3K: $color-gmk-abs-3K;
-    color-gmk-abs-AE: $color-gmk-abs-AE;
-    color-gmk-abs-BJ: $color-gmk-abs-BJ;
-    color-gmk-abs-BR1: $color-gmk-abs-BR1;
-    color-gmk-abs-CB: $color-gmk-abs-CB;
-    color-gmk-abs-CC: $color-gmk-abs-CC;
-    color-gmk-abs-CP: $color-gmk-abs-CP;
-    color-gmk-abs-CR: $color-gmk-abs-CR;
-    color-gmk-abs-CV: $color-gmk-abs-CV;
-    color-gmk-abs-DY: $color-gmk-abs-DY;
-    color-gmk-abs-GE1: $color-gmk-abs-GE1;
-    color-gmk-abs-GR1: $color-gmk-abs-GR1;
-    color-gmk-abs-L9: $color-gmk-abs-L9;
-    color-gmk-abs-MG1: $color-gmk-abs-MG1;
-    color-gmk-abs-N5: $color-gmk-abs-N5;
-    color-gmk-abs-N6: $color-gmk-abs-N6;
-    color-gmk-abs-N7: $color-gmk-abs-N7;
-    color-gmk-abs-N9: $color-gmk-abs-N9;
-    color-gmk-abs-P3: $color-gmk-abs-P3;
-    color-gmk-abs-RO1: $color-gmk-abs-RO1;
-    color-gmk-abs-RO2: $color-gmk-abs-RO2;
-    color-gmk-abs-T9: $color-gmk-abs-T9;
-    color-gmk-abs-TU1: $color-gmk-abs-TU1;
-    color-gmk-abs-TU2: $color-gmk-abs-TU2;
-    color-gmk-abs-U9: $color-gmk-abs-U9;
-    color-gmk-abs-V1: $color-gmk-abs-V1;
-    color-gmk-abs-V2: $color-gmk-abs-V2;
-    color-gmk-abs-V4: $color-gmk-abs-V4;
-    color-gmk-abs-WS1: $color-gmk-abs-WS1;
-    color-gmk-abs-WS2: $color-gmk-abs-WS2;
-    color-gmk-abs-WS4: $color-gmk-abs-WS4;
+    gmk-abs-2B: $gmk-abs-2B;
+    gmk-abs-2M: $gmk-abs-2M;
+    gmk-abs-3A: $gmk-abs-3A;
+    gmk-abs-3B: $gmk-abs-3B;
+    gmk-abs-3C: $gmk-abs-3C;
+    gmk-abs-3K: $gmk-abs-3K;
+    gmk-abs-AE: $gmk-abs-AE;
+    gmk-abs-BJ: $gmk-abs-BJ;
+    gmk-abs-BR1: $gmk-abs-BR1;
+    gmk-abs-CB: $gmk-abs-CB;
+    gmk-abs-CC: $gmk-abs-CC;
+    gmk-abs-CP: $gmk-abs-CP;
+    gmk-abs-CR: $gmk-abs-CR;
+    gmk-abs-CV: $gmk-abs-CV;
+    gmk-abs-DY: $gmk-abs-DY;
+    gmk-abs-GE1: $gmk-abs-GE1;
+    gmk-abs-GR1: $gmk-abs-GR1;
+    gmk-abs-L9: $gmk-abs-L9;
+    gmk-abs-MG1: $gmk-abs-MG1;
+    gmk-abs-N5: $gmk-abs-N5;
+    gmk-abs-N6: $gmk-abs-N6;
+    gmk-abs-N7: $gmk-abs-N7;
+    gmk-abs-N9: $gmk-abs-N9;
+    gmk-abs-P3: $gmk-abs-P3;
+    gmk-abs-RO1: $gmk-abs-RO1;
+    gmk-abs-RO2: $gmk-abs-RO2;
+    gmk-abs-T9: $gmk-abs-T9;
+    gmk-abs-TU1: $gmk-abs-TU1;
+    gmk-abs-TU2: $gmk-abs-TU2;
+    gmk-abs-U9: $gmk-abs-U9;
+    gmk-abs-V1: $gmk-abs-V1;
+    gmk-abs-V2: $gmk-abs-V2;
+    gmk-abs-V4: $gmk-abs-V4;
+    gmk-abs-WS1: $gmk-abs-WS1;
+    gmk-abs-WS2: $gmk-abs-WS2;
+    gmk-abs-WS4: $gmk-abs-WS4;
 }

@@ -1,12 +1,12 @@
 export default {
     'dsa-galaxy-class': {
-        key: ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
-        mod: ['color-pantone-141C', 'color-sp-pbt-BLACK'],
-        purple: ['color-sp-pbt-RCB', 'color-sp-pbt-BLACK'],
-        'darker-blue': ['color-sp-pbt-BDJ', 'color-sp-pbt-BLACK'],
-        pink: ['color-sp-pbt-RCA', 'color-sp-pbt-BLACK'],
-        'light-blue': ['color-sp-pbt-BFE', 'color-sp-pbt-BLACK'],
-        gray: ['color-sp-pbt-GQT', 'color-sp-pbt-BLACK'],
+        key: ['sp-pbt-BFE', 'sp-pbt-BLACK'],
+        mod: ['pantone-141C', 'sp-pbt-BLACK'],
+        purple: ['sp-pbt-RCB', 'sp-pbt-BLACK'],
+        'darker-blue': ['sp-pbt-BDJ', 'sp-pbt-BLACK'],
+        pink: ['sp-pbt-RCA', 'sp-pbt-BLACK'],
+        'light-blue': ['sp-pbt-BFE', 'sp-pbt-BLACK'],
+        gray: ['sp-pbt-GQT', 'sp-pbt-BLACK'],
     },
     'gmk-8008': {
         key: ['#8d98a7', '#313943'],
@@ -14,80 +14,80 @@ export default {
         accent: ['#fe5487', '#313943'],
     },
     'gmk-9009': {
-        key: ['color-gmk-abs-L9', 'color-gmk-abs-CR'],
-        mod: ['color-gmk-abs-U9', 'color-gmk-abs-CR'],
-        esc: ['color-gmk-abs-3C', 'color-gmk-abs-CR'],
-        enter: ['color-gmk-abs-3B', 'color-gmk-abs-CR'],
+        key: ['gmk-abs-L9', 'gmk-abs-CR'],
+        mod: ['gmk-abs-U9', 'gmk-abs-CR'],
+        esc: ['gmk-abs-3C', 'gmk-abs-CR'],
+        enter: ['gmk-abs-3B', 'gmk-abs-CR'],
     },
     'gmk-analog-dreams': {
-        key: ['color-gmk-abs-L9', '#ac4fc6'],
+        key: ['gmk-abs-L9', '#ac4fc6'],
         mod: ['#9de7d7', '#ac4fc6'],
         esc: ['#f2f0a1', '#ac4fc6'],
         enter: ['#f1b2dc', '#ac4fc6'],
     },
     'gmk-apollo': {
-        key: ['color-pantone-431C', 'color-pantone-CoolGray2C'],
-        mod: ['color-pantone-4140C', 'color-pantone-CoolGray2C'],
-        accent: ['color-pantone-CoolGray2C', 'color-pantone-4140C'],
+        key: ['pantone-431C', 'pantone-CoolGray2C'],
+        mod: ['pantone-4140C', 'pantone-CoolGray2C'],
+        accent: ['pantone-CoolGray2C', 'pantone-4140C'],
     },
     'gmk-ascii': {
-        key: ['color-gmk-abs-2B', 'color-gmk-abs-2M'],
-        mod: ['color-gmk-abs-2B', 'color-gmk-abs-2M'],
+        key: ['gmk-abs-2B', 'gmk-abs-2M'],
+        mod: ['gmk-abs-2B', 'gmk-abs-2M'],
     },
     'gmk-ashes': {
-        key: ['color-ral-H260L40C05', 'color-ral-H250L85C05'],
-        mod: ['color-ral-H250L85C05', 'color-ral-H260L60C05'],
-        accent: ['color-gmk-abs-CR', 'color-ral-H250L85C05'],
+        key: ['ral-260-40-05', 'ral-250-85-05'],
+        mod: ['ral-250-85-05', 'ral-260-60-05'],
+        accent: ['gmk-abs-CR', 'ral-250-85-05'],
     },
     'gmk-bento': {
-        key: ['color-gmk-abs-WS1', 'color-ral-H240L50C25'],
-        mod: ['color-ral-H240L50C25', '#fb7279'],
-        accent: ['#fb7279', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-WS1', 'ral-240-50-25'],
+        mod: ['ral-240-50-25', '#fb7279'],
+        accent: ['#fb7279', 'gmk-abs-WS1'],
         kits: {
             revival: {
-                key: ['color-ral-H240L50C25', '#fb7279']
+                key: ['ral-240-50-25', '#fb7279']
             }
         }
     },
     'gmk-beta': {
-        key: ['color-gmk-abs-L9', 'color-gmk-abs-CR'],
-        mod: ['color-gmk-abs-2B', 'color-gmk-abs-CR'],
-        accent: ['color-gmk-abs-V2', 'color-gmk-abs-CR'],
+        key: ['gmk-abs-L9', 'gmk-abs-CR'],
+        mod: ['gmk-abs-2B', 'gmk-abs-CR'],
+        accent: ['gmk-abs-V2', 'gmk-abs-CR'],
         kits: {
             js: {
-                accent: ['color-gmk-abs-RO2', 'color-gmk-abs-CR']
+                accent: ['gmk-abs-RO2', 'gmk-abs-CR']
             }
         }
     },
     'gmk-bingsu': {
-        key: ['#946777', 'color-gmk-abs-CP'],
-        mod: ['#533d45', 'color-gmk-abs-CP'],
-        accent: ['color-gmk-abs-CP', '#533d45'],
+        key: ['#946777', 'gmk-abs-CP'],
+        mod: ['#533d45', 'gmk-abs-CP'],
+        accent: ['gmk-abs-CP', '#533d45'],
     },
     'gmk-botanica': {
-        key: ['color-pantone-656C', 'color-pantone-5575C'],
-        mod: ['color-pantone-5477C', 'color-pantone-5575C'],
-        accent: ['color-pantone-5575C', 'color-pantone-5477C'],
+        key: ['pantone-656C', 'pantone-5575C'],
+        mod: ['pantone-5477C', 'pantone-5575C'],
+        accent: ['pantone-5575C', 'pantone-5477C'],
     },
     'gmk-bread': {
-        key: ['color-ral-1015', 'color-ral-8008'],
-        mod: ['color-ral-8008', 'color-ral-1015'],
-        accent: ['color-ral-1011', 'color-ral-8008'],
+        key: ['ral-1015', 'ral-8008'],
+        mod: ['ral-8008', 'ral-1015'],
+        accent: ['ral-1011', 'ral-8008'],
     },
     'gmk-cafe': {
-        key: ['color-gmk-abs-L9', '#3d3635'],
-        mod: ['#3d3635', 'color-gmk-abs-L9'],
+        key: ['gmk-abs-L9', '#3d3635'],
+        mod: ['#3d3635', 'gmk-abs-L9'],
         accent: ['#d0b084', '#3d3635'],
     },
     'gmk-camping': {
-        key: ['color-sp-abs-WCK', 'color-sp-abs-VF'],
-        mod: ['color-sp-abs-VF', 'color-sp-abs-WCK'],
-        accent: ['color-sp-abs-RBC', 'color-sp-abs-WCK'],
+        key: ['sp-abs-WCK', 'sp-abs-VF'],
+        mod: ['sp-abs-VF', 'sp-abs-WCK'],
+        accent: ['sp-abs-RBC', 'sp-abs-WCK'],
     },
     'gmk-copper': {
-        key: ['color-pantone-7522C', 'color-ral-8017'],
-        mod: ['color-ral-8017', 'color-pantone-7522C'],
-        accent: ['color-ral-6027', 'color-ral-8017'],
+        key: ['pantone-7522C', 'ral-8017'],
+        mod: ['ral-8017', 'pantone-7522C'],
+        accent: ['ral-6027', 'ral-8017'],
     },
     'gmk-calm-depths': {
         key: ['#2e3b51', '#22aabc'],
@@ -99,45 +99,45 @@ export default {
         accent: ['rgb(176, 50, 50)', 'rgb(229, 225, 222)'],
     },
     'gmk-dolch': {
-        key: ['color-gmk-abs-CC', 'color-gmk-abs-WS1'],
-        mod: ['color-gmk-abs-N9', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-CC', 'gmk-abs-WS1'],
+        mod: ['gmk-abs-N9', 'gmk-abs-WS1'],
     },
     'gmk-evil-dolch': {
-        key: ['color-gmk-abs-N9', 'color-gmk-abs-WS1'],
-        mod: ['color-gmk-abs-CR', 'color-gmk-abs-RO1'],
+        key: ['gmk-abs-N9', 'gmk-abs-WS1'],
+        mod: ['gmk-abs-CR', 'gmk-abs-RO1'],
     },
     'gmk-hammerhead': {
-        key: ['color-pantone-533C', 'color-pantone-3258C'],
-        mod: ['color-pantone-2378C', 'color-pantone-3258C'],
-        accent: ['color-pantone-3258C', 'color-pantone-2378C'],
+        key: ['pantone-533C', 'pantone-3258C'],
+        mod: ['pantone-2378C', 'pantone-3258C'],
+        accent: ['pantone-3258C', 'pantone-2378C'],
         kits: {
             light: {
-                key: ['color-pantone-536C', 'color-pantone-2378C'],
+                key: ['pantone-536C', 'pantone-2378C'],
             }
         }
     },
     'gmk-hanguk': {
-        key: ['color-gmk-abs-WS1', 'color-pantone-294C'],
-        mod: ['color-pantone-186C', 'color-pantone-294C'],
-        accent: ['color-pantone-294C', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-WS1', 'pantone-294C'],
+        mod: ['pantone-186C', 'pantone-294C'],
+        accent: ['pantone-294C', 'gmk-abs-WS1'],
     },
     'gmk-honey': {
-        key: ['color-pantone-2001C', 'color-pantone-123C'],
-        mod: ['color-pantone-123C', 'color-pantone-2001C'],
-        accent: ['color-pantone-7570C', 'color-pantone-2001C'],
+        key: ['pantone-2001C', 'pantone-123C'],
+        mod: ['pantone-123C', 'pantone-2001C'],
+        accent: ['pantone-7570C', 'pantone-2001C'],
         kits: {
             'alt-alphas': {
-                key: ['color-pantone-123C', 'color-pantone-2001C'],
+                key: ['pantone-123C', 'pantone-2001C'],
             }
         }
     },
     'gmk-ishtar': {
-        key: ['color-ral-1015', 'color-ral-3020'],
-        mod: ['color-ral-9017', 'color-ral-3020'],
-        accent: ['color-ral-1017', 'color-ral-3020'],
+        key: ['ral-1015', 'ral-3020'],
+        mod: ['ral-9017', 'ral-3020'],
+        accent: ['ral-1017', 'ral-3020'],
         kits: {
             kuro: {
-                key: ['color-ral-9017', 'color-ral-3020'],
+                key: ['ral-9017', 'ral-3020'],
             }
         }
     },
@@ -147,30 +147,30 @@ export default {
         accent: ['#ece4d0', '#313337'],
     },
     'gmk-kaiju': {
-        key: ['color-gmk-abs-L9', 'color-ral-H170L40C20'],
-        mod: ['color-ral-H170L40C20', 'color-gmk-abs-L9'],
-        accent: ['color-pantone-172C', 'color-gmk-abs-L9'],
+        key: ['gmk-abs-L9', 'ral-170-40-20'],
+        mod: ['ral-170-40-20', 'gmk-abs-L9'],
+        accent: ['pantone-172C', 'gmk-abs-L9'],
     },
     'gmk-mecha-01': {
-        key: ['color-pantone-267C', 'color-pantone-802C'],
-        mod: ['color-gmk-abs-CR', 'color-pantone-802C'],
-        accent: ['color-gmk-abs-CR', 'color-gmk-abs-RO2'],
-        accent2: ['color-gmk-abs-CR', 'color-gmk-abs-V2'],
+        key: ['pantone-267C', 'pantone-802C'],
+        mod: ['gmk-abs-CR', 'pantone-802C'],
+        accent: ['gmk-abs-CR', 'gmk-abs-RO2'],
+        accent2: ['gmk-abs-CR', 'gmk-abs-V2'],
         kits: {
             berserk: {
-                key: ['color-pantone-267C', 'color-gmk-abs-RO2'],
+                key: ['pantone-267C', 'gmk-abs-RO2'],
             }
         }
     },
     'gmk-merlin': {
-        key: ['color-gmk-abs-CP', 'color-gmk-abs-TU1'],
-        mod: ['color-gmk-abs-TU1', 'color-gmk-abs-N6'],
-        accent: ['color-gmk-abs-N6', 'color-gmk-abs-TU1'],
+        key: ['gmk-abs-CP', 'gmk-abs-TU1'],
+        mod: ['gmk-abs-TU1', 'gmk-abs-N6'],
+        accent: ['gmk-abs-N6', 'gmk-abs-TU1'],
     },
     'gmk-metaverse': {
-        key: ['color-gmk-abs-WS1', 'color-gmk-abs-CR'],
-        mod: ['color-gmk-abs-CR', 'color-gmk-abs-WS1'],
-        accent: ['color-gmk-abs-RO2', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-WS1', 'gmk-abs-CR'],
+        mod: ['gmk-abs-CR', 'gmk-abs-WS1'],
+        accent: ['gmk-abs-RO2', 'gmk-abs-WS1'],
     },
     'gmk-mizu': {
         key: ['#c2d9e4', '#444f58'],
@@ -178,32 +178,32 @@ export default {
         accent: ['#f7eee3', '#444f58'],
     },
     'gmk-nautilus': {
-        key: ['color-pantone-534C', 'color-gmk-abs-TU2'],
-        mod: ['color-pantone-533C', 'color-gmk-abs-N6'],
-        accent: ['color-gmk-abs-N6', 'color-pantone-533C'],
+        key: ['pantone-534C', 'gmk-abs-TU2'],
+        mod: ['pantone-533C', 'gmk-abs-N6'],
+        accent: ['gmk-abs-N6', 'pantone-533C'],
     },
     'gmk-noel': {
-        key: ['color-gmk-abs-WS1', 'color-ral-H230L70C30'],
-        mod: ['color-ral-H210L85C15', 'color-ral-H230L70C30'],
-        accent: ['color-ral-H010L80C20', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-WS1', 'ral-230-70-30'],
+        mod: ['ral-210-85-15', 'ral-230-70-30'],
+        accent: ['ral-010-80-20', 'gmk-abs-WS1'],
     },
     'gmk-oblivion': {
-        key: ['color-sp-abs-GD', 'color-sp-abs-GAL'],
-        mod: ['color-sp-abs-GQM', 'color-sp-abs-GAL'],
-        accent: ['color-sp-abs-BFP', 'color-sp-abs-BFN'],
+        key: ['sp-abs-GD', 'sp-abs-GAL'],
+        mod: ['sp-abs-GQM', 'sp-abs-GAL'],
+        accent: ['sp-abs-BFP', 'sp-abs-BFN'],
         kits: {
             hagoromo: {
-                key: ['color-gmk-abs-CP', 'color-sp-abs-GD']
+                key: ['gmk-abs-CP', 'sp-abs-GD']
             }
         }
     },
     'gmk-olivetti': {
-        key: ['color-gmk-abs-CP', 'color-gmk-abs-V4'],
-        mod: ['color-gmk-abs-U9', 'color-gmk-abs-V4'],
-        accent: ['color-gmk-abs-V4', 'color-gmk-abs-CP'],
+        key: ['gmk-abs-CP', 'gmk-abs-V4'],
+        mod: ['gmk-abs-U9', 'gmk-abs-V4'],
+        accent: ['gmk-abs-V4', 'gmk-abs-CP'],
     },
     'gmk-olivia': {
-        key: ['color-gmk-abs-CP', '#363434'],
+        key: ['gmk-abs-CP', '#363434'],
         mod: ['#363434', '#e8c4b8'],
         accent: ['#e8c4b8', '#363434'],
     },
@@ -213,65 +213,70 @@ export default {
         accent: ['#863f48', '#ded0af'],
     },
     'gmk-posh': {
-        key: ['color-gmk-abs-CP', 'color-ral-5022'],
-        mod: ['color-ral-5022', 'color-ral-3015'],
-        accent: ['color-ral-3015', 'color-ral-5022'],
+        key: ['gmk-abs-CP', 'ral-5022'],
+        mod: ['ral-5022', 'ral-3015'],
+        accent: ['ral-3015', 'ral-5022'],
         kits: {
             'alt-alphas': {
-                key: ['color-gmk-abs-CP', 'color-ral-3015']
+                key: ['gmk-abs-CP', 'ral-3015']
             },
             'alt-mods': {
-                mod: ['color-ral-3015', 'color-ral-5022']
+                mod: ['ral-3015', 'ral-5022']
             }
         }
     },
     'gmk-rainy-day': {
-        key: ['color-pantone-15-4101TCX', 'color-pantone-10393C'],
-        mod: ['color-pantone-10393C', 'color-pantone-9481C'],
-        accent: ['color-pantone-9481C', 'color-pantone-10393C'],
+        key: ['pantone-15-4101TCX', 'pantone-10393C'],
+        mod: ['pantone-10393C', 'pantone-9481C'],
+        accent: ['pantone-9481C', 'pantone-10393C'],
     },
     'gmk-rouge': {
-        key: ['color-ral-H290L20C15', 'color-ral-H320L50C20'],
-        mod: ['color-ral-H290L20C15', 'color-ral-H320L50C20'],
-        accent1: ['color-ral-H310L20C20', 'color-ral-H320L50C20'],
-        accent2: ['color-ral-H310L30C20', 'color-ral-H320L50C20'],
-        accent3: ['color-ral-H300L30C20', 'color-ral-H320L50C20'],
-        accent4: ['color-ral-H300L30C15', 'color-ral-H320L50C20'],
+        key: ['ral-290-20-15', 'ral-320-50-20'],
+        mod: ['ral-290-20-15', 'ral-320-50-20'],
+        accent1: ['ral-310-20-20', 'ral-320-50-20'],
+        accent2: ['ral-310-30-20', 'ral-320-50-20'],
+        accent3: ['ral-300-30-20', 'ral-320-50-20'],
+        accent4: ['ral-300-30-15', 'ral-320-50-20'],
     },
     'gmk-serika': {
-        key: ['#ece4d0', '#333732'],
-        mod: ['#ffcd00', '#333732'],
-        accent: ['#333732', '#ece4d0'],
+        key: ['ral-090-90-10', 'gmk-abs-N9'],
+        mod: ['pantone-116C', 'gmk-abs-N9'],
+        accent: ['gmk-abs-N9', 'ral-090-90-10'],
     },
     'gmk-shoko': {
-        key: ['color-pantone-656C', 'color-pantone-5425C'],
-        mod: ['color-pantone-5425C', 'color-pantone-656C'],
-        accent: ['color-pantone-2975C', 'color-pantone-656C'],
+        key: ['pantone-656C', 'pantone-5425C'],
+        mod: ['pantone-5425C', 'pantone-656C'],
+        accent: ['pantone-2975C', 'pantone-656C'],
+    },
+    'gmk-shorebound': {
+        key: ['pantone-636C', 'ral-290-20-35'],
+        mod: ['pantone-149C', 'ral-040-30-40'],
+        accent: ['pantone-7462C', 'pantone-149C'],
     },
     'gmk-space-cadet': {
-        key: ['color-sp-abs-GD', 'color-gmk-abs-CP'],
-        mod: ['color-sp-abs-BFP', 'color-gmk-abs-CP'],
+        key: ['sp-abs-GD', 'gmk-abs-CP'],
+        mod: ['sp-abs-BFP', 'gmk-abs-CP'],
     },
     'gmk-striker': {
-        key: ['#004d7c', 'color-gmk-abs-WS1'],
-        mod: ['#004d7c', 'color-gmk-abs-WS1'],
-        accent: ['#002e51', 'color-gmk-abs-WS1'],
+        key: ['#004d7c', 'gmk-abs-WS1'],
+        mod: ['#004d7c', 'gmk-abs-WS1'],
+        accent: ['#002e51', 'gmk-abs-WS1'],
     },
     'gmk-sumi': {
-        key: ['color-ral-5004', 'color-gmk-abs-WS1'],
-        mod: ['color-gmk-abs-WS1', 'color-ral-5004'],
-        accent: ['color-ral-3028', 'color-gmk-abs-WS1'],
+        key: ['ral-5004', 'gmk-abs-WS1'],
+        mod: ['gmk-abs-WS1', 'ral-5004'],
+        accent: ['ral-3028', 'gmk-abs-WS1'],
     },
     'gmk-ta-royal-alpha': {
-        key: ['color-gmk-abs-3K', 'color-gmk-abs-N7'],
-        mod: ['color-gmk-abs-AE', 'color-gmk-abs-CP'],
-        accent: ['color-gmk-abs-N7', 'color-gmk-abs-CP'],
+        key: ['gmk-abs-3K', 'gmk-abs-N7'],
+        mod: ['gmk-abs-AE', 'gmk-abs-CP'],
+        accent: ['gmk-abs-N7', 'gmk-abs-CP'],
     },
     'gmk-taro': {
         key: ['#8E71A2', '#170B19'],
         mod: ['#170B19', '#8E71A2'],
-        accent: ['color-gmk-abs-TU2', '#170B19'],
-        accent2: ['color-gmk-abs-CV', '#170B19'],
+        accent: ['gmk-abs-TU2', '#170B19'],
+        accent2: ['gmk-abs-CV', '#170B19'],
         kits: {
             boba: {
                 key: ['#170B19', '#8E71A2']
@@ -282,38 +287,43 @@ export default {
         }
     },
     'gmk-terminal': {
-        key: ['color-gmk-abs-N9', 'color-gmk-abs-AE'],
-        mod: ['color-gmk-abs-N9', 'color-gmk-abs-AE'],
-        accent: ['color-gmk-abs-AE', 'color-gmk-abs-N9'],
+        key: ['gmk-abs-N9', 'gmk-abs-AE'],
+        mod: ['gmk-abs-N9', 'gmk-abs-AE'],
+        accent: ['gmk-abs-AE', 'gmk-abs-N9'],
     },
     'gmk-ursa': {
-        key: ['color-gmk-abs-CP', 'color-ral-7006'],
-        mod: ['color-ral-7006', 'color-gmk-abs-CP'],
-        accent: ['color-gmk-abs-3A', 'color-gmk-abs-CP'],
+        key: ['gmk-abs-CP', 'ral-7006'],
+        mod: ['ral-7006', 'gmk-abs-CP'],
+        accent: ['gmk-abs-3A', 'gmk-abs-CP'],
     },
     'gmk-wild': {
-        key: ['color-gmk-abs-N9', 'color-gmk-abs-U9'],
-        mod: ['color-gmk-abs-U9', 'color-gmk-abs-N9'],
-        accent1: ['color-pantone-8721C', 'color-gmk-abs-U9'],
-        accent2: ['color-pantone-4100C', 'color-gmk-abs-U9'],
+        key: ['gmk-abs-N9', 'gmk-abs-U9'],
+        mod: ['gmk-abs-U9', 'gmk-abs-N9'],
+        accent1: ['pantone-8721C', 'gmk-abs-U9'],
+        accent2: ['pantone-4100C', 'gmk-abs-U9'],
     },
     'gmk-wob': {
-        key: ['color-gmk-abs-CR', 'color-gmk-abs-WS1'],
-        mod: ['color-gmk-abs-CR', 'color-gmk-abs-WS1'],
+        key: ['gmk-abs-CR', 'gmk-abs-WS1'],
+        mod: ['gmk-abs-CR', 'gmk-abs-WS1'],
     },
     'gmk-yuri': {
         key: ['#c7e6f5', '#f54730'],
         mod: ['#2d394c', '#f54730'],
         accent: ['#f54730', '#2d394c'],
     },
+    'gmk-yuru': {
+        key: ['gmk-abs-CP', 'ral-010-30-30'],
+        mod: ['ral-010-30-30', 'gmk-abs-CP'],
+        accent: ['ral-190-80-25', 'gmk-abs-WS2'],
+    },
     'jtk-avocado': {
-        key: ['color-pantone-600C', 'color-pantone-2264C'],
-        mod: ['color-pantone-Black5C', 'color-pantone-2264C'],
-        accent: ['color-pantone-2264C', 'color-pantone-600C'],
+        key: ['pantone-600C', 'pantone-2264C'],
+        mod: ['pantone-Black5C', 'pantone-2264C'],
+        accent: ['pantone-2264C', 'pantone-600C'],
         kits: {
             green: {
-                key: ['color-pantone-2264C', 'color-pantone-600C'],
-                accent: ['color-pantone-600C', 'color-pantone-2264C'],
+                key: ['pantone-2264C', 'pantone-600C'],
+                accent: ['pantone-600C', 'pantone-2264C'],
             }
         }
     },
@@ -328,114 +338,114 @@ export default {
         accent: ['#a79373', '#312c2b']
     },
     'sa-arcane': {
-        key: ['color-sp-abs-WFK', 'color-sp-abs-RDA'],
-        mod: ['color-sp-abs-RDA', 'color-sp-abs-WFK'],
-        accent: ['color-sp-abs-BBJ', 'color-sp-abs-RDA'],
+        key: ['sp-abs-WFK', 'sp-abs-RDA'],
+        mod: ['sp-abs-RDA', 'sp-abs-WFK'],
+        accent: ['sp-abs-BBJ', 'sp-abs-RDA'],
     },
     'sa-bliss': {
-        key: ['color-sp-abs-GC', 'color-pantone-13-1406'],
-        mod: ['color-sp-abs-GC', 'color-pantone-13-1406'],
-        accent: ['color-pantone-13-1406', 'color-sp-abs-GC'],
+        key: ['sp-abs-GC', 'pantone-13-1406'],
+        mod: ['sp-abs-GC', 'pantone-13-1406'],
+        accent: ['pantone-13-1406', 'sp-abs-GC'],
     },
     'sa-bubble': {
-        key: ['color-sp-abs-WCK', 'color-pantone-13-1520'],
-        mod: ['color-pantone-15-3919', 'color-sp-abs-WCK'],
-        accent: ['color-pantone-13-1520', 'color-sp-abs-WCK'],
+        key: ['sp-abs-WCK', 'pantone-13-1520'],
+        mod: ['pantone-15-3919', 'sp-abs-WCK'],
+        accent: ['pantone-13-1520', 'sp-abs-WCK'],
     },
     'sa-carbon': {
-        key: ['color-sp-abs-WBO', 'color-sp-abs-GQM'],
-        mod: ['color-sp-abs-GQM', 'color-sp-abs-OBC'],
-        accent: ['color-sp-abs-OBC', 'color-sp-abs-GQM'],
+        key: ['sp-abs-WBO', 'sp-abs-GQM'],
+        mod: ['sp-abs-GQM', 'sp-abs-OBC'],
+        accent: ['sp-abs-OBC', 'sp-abs-GQM'],
     },
     'sa-danger-zone': {
-        key: ['color-sp-abs-BFU', 'color-sp-abs-YY'],
-        mod: ['color-sp-abs-GSM', 'color-sp-abs-YY'],
-        'accent-yellow': ['color-sp-abs-YY', 'color-sp-abs-BFU'],
-        'accent-red': ['color-sp-abs-RAS', 'color-sp-abs-YY'],
+        key: ['sp-abs-BFU', 'sp-abs-YY'],
+        mod: ['sp-abs-GSM', 'sp-abs-YY'],
+        'accent-yellow': ['sp-abs-YY', 'sp-abs-BFU'],
+        'accent-red': ['sp-abs-RAS', 'sp-abs-YY'],
     },
     'sa-dream-eater': {
-        key: ['color-sp-abs-BBI', 'color-sp-abs-RCJ'],
-        mod: ['color-sp-abs-BBI', 'color-sp-abs-RCJ'],
-        accent1: ['color-sp-abs-VBV', 'color-sp-abs-BBI'],
-        accent2: ['color-sp-abs-BFL', 'color-sp-abs-BBI'],
-        accent3: ['#3b6f75', 'color-sp-abs-BBI'],
-        accent4: ['color-sp-abs-BED', 'color-sp-abs-RCJ'],
+        key: ['sp-abs-BBI', 'sp-abs-RCJ'],
+        mod: ['sp-abs-BBI', 'sp-abs-RCJ'],
+        accent1: ['sp-abs-VBV', 'sp-abs-BBI'],
+        accent2: ['sp-abs-BFL', 'sp-abs-BBI'],
+        accent3: ['#3b6f75', 'sp-abs-BBI'],
+        accent4: ['sp-abs-BED', 'sp-abs-RCJ'],
     },
     'sa-forgive': {
-        key: ['color-sp-abs-VCO', 'color-sp-abs-NN'],
-        mod: ['color-sp-abs-VAF', 'color-sp-abs-VCO'],
-        accent: ['color-sp-abs-RCU', 'color-sp-abs-VCO'],
+        key: ['sp-abs-VCO', 'sp-abs-NN'],
+        mod: ['sp-abs-VAF', 'sp-abs-VCO'],
+        accent: ['sp-abs-RCU', 'sp-abs-VCO'],
     },
     'sa-honeywell': {
-        key: ['color-sp-abs-WFK', 'color-sp-abs-NN'],
-        mod: ['color-sp-abs-GPA', 'color-sp-abs-WFK'],
-        accent: ['color-sp-abs-RAS', 'color-sp-abs-WFK'],
+        key: ['sp-abs-WFK', 'sp-abs-NN'],
+        mod: ['sp-abs-GPA', 'sp-abs-WFK'],
+        accent: ['sp-abs-RAS', 'sp-abs-WFK'],
     },
     'sa-hunter-killua': {
-        key: ['color-pantone-2085C', 'color-sp-abs-BFU'],
-        mod: ['color-sp-abs-BFU', 'color-pantone-2085C'],
-        accent: ['color-sp-abs-RDE', 'color-pantone-2085C'],
+        key: ['pantone-2085C', 'sp-abs-BFU'],
+        mod: ['sp-abs-BFU', 'pantone-2085C'],
+        accent: ['sp-abs-RDE', 'pantone-2085C'],
     },
     'sa-jadeite': {
-        key: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
-        mod: ['color-sp-pbt-WAN', 'color-sp-pbt-VS'],
-        accent1: ['color-sp-pbt-VS', 'color-sp-pbt-WAN'],
-        accent2: ['color-sp-pbt-VAZ', 'color-sp-pbt-VS'],
-        accent3: ['color-sp-pbt-VCB', 'color-sp-pbt-VS'],
+        key: ['sp-pbt-WAN', 'sp-pbt-VS'],
+        mod: ['sp-pbt-WAN', 'sp-pbt-VS'],
+        accent1: ['sp-pbt-VS', 'sp-pbt-WAN'],
+        accent2: ['sp-pbt-VAZ', 'sp-pbt-VS'],
+        accent3: ['sp-pbt-VCB', 'sp-pbt-VS'],
     },
     'sa-jukebox': {
-        key: ['color-sp-abs-TM', 'color-sp-abs-RN'],
-        mod: ['color-sp-abs-VCO', 'color-sp-abs-RN'],
-        accent: ['color-sp-abs-RN', 'color-sp-abs-TM'],
+        key: ['sp-abs-TM', 'sp-abs-RN'],
+        mod: ['sp-abs-VCO', 'sp-abs-RN'],
+        accent: ['sp-abs-RN', 'sp-abs-TM'],
     },
     'sa-lime': {
-        key: ['color-pantone-5455C', 'color-sp-abs-VBQ'],
-        mod: ['color-pantone-430C', 'color-sp-abs-VAT'],
-        accent: ['color-sp-abs-VAT', 'color-sp-abs-WFK'],
+        key: ['pantone-5455C', 'sp-abs-VBQ'],
+        mod: ['pantone-430C', 'sp-abs-VAT'],
+        accent: ['sp-abs-VAT', 'sp-abs-WFK'],
     },
     'sa-magic-city': {
-        key: ['color-sp-abs-TBT', 'color-sp-abs-TAA'],
-        mod: ['color-sp-abs-TAA', 'color-sp-abs-TBT'],
-        accent: ['color-sp-abs-RDD', 'color-sp-abs-TBT'],
+        key: ['sp-abs-TBT', 'sp-abs-TAA'],
+        mod: ['sp-abs-TAA', 'sp-abs-TBT'],
+        accent: ['sp-abs-RDD', 'sp-abs-TBT'],
     },
     'sa-modern-selectric': {
-        key: ['color-sp-abs-NN', 'color-sp-abs-WFK'],
-        mod: ['color-sp-abs-BDH', 'color-sp-abs-WFK'],
+        key: ['sp-abs-NN', 'sp-abs-WFK'],
+        mod: ['sp-abs-BDH', 'sp-abs-WFK'],
     },
     'sa-nantucket-selectric': {
-        key: ['color-sp-abs-WV', 'color-sp-abs-BBI'],
-        mod: ['color-sp-abs-BBI', 'color-sp-abs-YCF'],
+        key: ['sp-abs-WV', 'sp-abs-BBI'],
+        mod: ['sp-abs-BBI', 'sp-abs-YCF'],
     },
     'sa-oblivion': {
-        key: ['color-sp-abs-GD', 'color-sp-abs-GAL'],
-        mod: ['color-sp-abs-GQM', 'color-sp-abs-GAL'],
-        accent: ['color-sp-abs-RAS', 'color-sp-abs-GAL'],
+        key: ['sp-abs-GD', 'sp-abs-GAL'],
+        mod: ['sp-abs-GQM', 'sp-abs-GAL'],
+        accent: ['sp-abs-RAS', 'sp-abs-GAL'],
         kits: {
             hagoromo: {
-                key: ['color-sp-abs-WFK', 'color-sp-abs-GD']
+                key: ['sp-abs-WFK', 'sp-abs-GD']
             }
         }
     },
     'sa-sail': {
-        key: ['color-pantone-7717C', 'color-sp-abs-WCK'],
-        mod: ['color-pantone-7717C', 'color-sp-abs-WCK'],
+        key: ['pantone-7717C', 'sp-abs-WCK'],
+        mod: ['pantone-7717C', 'sp-abs-WCK'],
     },
     'sa-sunday-morning': {
-        key: ['color-pantone-487C', 'color-pantone-202C'],
-        mod: ['color-pantone-202C', 'color-pantone-487C'],
-        accent: ['color-pantone-6C', 'color-pantone-487C'],
+        key: ['pantone-487C', 'pantone-202C'],
+        mod: ['pantone-202C', 'pantone-487C'],
+        accent: ['pantone-6C', 'pantone-487C'],
         kits: {
             maroon: {
-                key: ['color-pantone-202C', 'color-pantone-487C']
+                key: ['pantone-202C', 'pantone-487C']
             }
         }
     },
     'sa-vilebloom': {
-        key: ['color-pantone-7699C', 'color-sp-abs-WFK'],
-        mod: ['color-pantone-7699C', 'color-sp-abs-WFK'],
-        accent1: ['color-pantone-474U', 'color-pantone-7699C'],
-        accent2: ['color-pantone-177C', 'color-sp-abs-WFK'],
-        accent3: ['color-pantone-2046U', 'color-sp-abs-WFK'],
+        key: ['pantone-7699C', 'sp-abs-WFK'],
+        mod: ['pantone-7699C', 'sp-abs-WFK'],
+        accent1: ['pantone-474U', 'pantone-7699C'],
+        accent2: ['pantone-177C', 'sp-abs-WFK'],
+        accent3: ['pantone-2046U', 'sp-abs-WFK'],
     },
     'kat-hyperfuse': {
         key: ['#dadbd6', '#7f55a2'],
@@ -443,8 +453,8 @@ export default {
         accent: ['#75bdaa', '#7f55a2']
     },
     'kat-oasis': {
-        key: ['color-pantone-155C', 'color-pantone-7617C'],
-        mod: ['color-pantone-317C', 'color-pantone-7617C'],
-        accent: ['color-pantone-7617C', 'color-pantone-155C']
+        key: ['pantone-155C', 'pantone-7617C'],
+        mod: ['pantone-317C', 'pantone-7617C'],
+        accent: ['pantone-7617C', 'pantone-155C']
     }
 }
