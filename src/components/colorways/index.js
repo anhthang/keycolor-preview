@@ -5,7 +5,7 @@ import kat from './kat';
 import sa from './sa';
 
 export default {
-  list: [...dsa, ...gmk, ...jtk, ...kat, ...sa],
+  list: { dsa, gmk, jtk, kat, sa },
   /*
    * List of codes we should use icons for instead of text
    */

@@ -23,7 +23,7 @@ const { Option } = Select
 const apiUrl = process.env.PUBLIC_URL
 
 const getName = (name) => {
-  return name.split('-').map(n => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
+  return name.split('_').map(n => n.replace(n.charAt(0), n.charAt(0).toUpperCase())).join(' ')
 }
 
 const profileMap = {
@@ -34,26 +34,22 @@ const profileMap = {
   sa: 'sa',
 }
 
-const colorwayNames = _(colorways.list)
-  .groupBy(i => i.name.split('-')[0])
-  .map((list, manufacturer) => {
-    return {
-      value: manufacturer,
-      label: manufacturer.toUpperCase(),
-      children: list.map(c => {
-        const parts = c.name.split('-')
-        parts.shift()
-        const display = parts.map((n) => getName(n)).join(' ')
+const keysets = []
 
-        return {
-          value: parts.join('-'),
-          label: display,
-          children: c.kits ? Object.keys(c.kits).map(k => ({ value: k, label: getName(k) })) : []
-        }
-      })
-    }
-  })
-  .value()
+const colorwayNames = Object.entries(colorways.list).map(([manufacturer, sets]) => {
+  keysets.push(...Object.values(sets))
+  return {
+    value: manufacturer,
+    label: manufacturer.toUpperCase(),
+    children: Object.entries(sets).map(([name, c]) => {
+      return {
+        value: name.replaceAll('_', '-'),
+        label: getName(name),
+        children: c.kits ? Object.keys(c.kits).map(k => ({ value: k, label: getName(k) })) : []
+      }
+    })
+  }
+})
 
 function App() {
   const [keyboardNames, setKeyboardNames] = useState([])
@@ -61,7 +57,7 @@ function App() {
   const [caseColor, setCaseColor] = useState(null)
   const [keymaps, setKeymaps] = useState({ layout: [] })
 
-  const randomKeyset = _.sample(colorways.list)
+  const randomKeyset = _.sample(keysets)
   const [colorway, setColorway] = useState({
     key: randomKeyset,
     mod: randomKeyset
@@ -132,7 +128,7 @@ function App() {
 
   const changeColorway = (name, isModifier) => {
     const base = name.slice(0, 2).join('-')
-    const keyset = colorways.list.find(c => c.name === base)
+    const keyset = keysets.find(c => c.name === base)
     const profileChanged = profileMap[colorway.key.name.split('-')[0]] !== profileMap[name[0]]
 
     setColorway({

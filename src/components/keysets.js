@@ -98,6 +98,11 @@ export default {
         mod: ['rgb(229, 225, 222)', 'rgb(41, 130, 134)'],
         accent: ['rgb(176, 50, 50)', 'rgb(229, 225, 222)'],
     },
+    'gmk-dolch-r5': {
+        key: ['gmk-abs-CC', 'gmk-abs-CP'],
+        mod: ['gmk-abs-N9', 'gmk-abs-CP'],
+        accent: ['gmk-abs-P3', 'gmk-abs-CP'],
+    },
     'gmk-dolch': {
         key: ['gmk-abs-CC', 'gmk-abs-WS1'],
         mod: ['gmk-abs-N9', 'gmk-abs-WS1'],

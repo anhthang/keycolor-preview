@@ -202,16 +202,29 @@
 }
 
 .gmk-deku-key {
-  background: rgb(41, 130, 134);
-  color: rgb(229, 225, 222);
+  background: #298286;
+  color:#e5e1de;
 }
 .gmk-deku-mod {
-  background: rgb(229, 225, 222);
-  color: rgb(41, 130, 134);
+  background:#e5e1de;
+  color: #298286;
 }
 .gmk-deku-accent {
-  background: rgb(176, 50, 50);
-  color: rgb(229, 225, 222);
+  background: #b03232;
+  color:#e5e1de;
+}
+
+.gmk-dolch-r5-key {
+  background: $gmk-abs-CC;
+  color: $gmk-abs-CP;
+}
+.gmk-dolch-r5-mod {
+  background: $gmk-abs-N9;
+  color: $gmk-abs-CP;
+}
+.gmk-dolch-r5-accent {
+  background: $gmk-abs-P3;
+  color: $gmk-abs-CP;
 }
 
 .gmk-dolch-key {

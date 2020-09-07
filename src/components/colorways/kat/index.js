@@ -1,13 +1,15 @@
-import kat_eternal from './eternal';
-import kat_hyperfuse from './hyperfuse';
-import kat_iron from './iron';
-import kat_lich from './lich';
-import kat_oasis from './oasis';
+import eternal from './eternal';
+import hyperfuse from './hyperfuse';
+import iron from './iron';
+import lich from './lich';
+import oasis from './oasis';
+import specimen from './specimen';
 
-export default [
-  kat_eternal,
-  kat_hyperfuse,
-  kat_iron,
-  kat_lich,
-  kat_oasis
-];
+export default {
+  eternal,
+  hyperfuse,
+  iron,
+  lich,
+  oasis,
+  specimen,
+};
