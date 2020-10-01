@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Radio, Empty, Popover } from 'antd';
+import { Card, Radio, Empty, Popover, Descriptions } from 'antd';
 import { WarningFilled } from '@ant-design/icons';
 import _ from 'lodash';
 import Key from './Key';
@@ -349,6 +349,11 @@ function Keyboard({keyboard, caseColor, colorway, kit, keymaps, loading}) {
       {keyboard && keyboard.keyboard_name
         ? (
           <>
+            <Descriptions>
+              <Descriptions.Item label="Name">{keyboard.keyboard_name}</Descriptions.Item>
+              <Descriptions.Item label="Manufacturer">{keyboard.manufacturer}</Descriptions.Item>
+              <Descriptions.Item label="Bootloader">{keyboard.bootloader}</Descriptions.Item>
+            </Descriptions>
             <Card className="display-center" bordered={false}>
               <Radio.Group
                 disabled={!keyboard || !keyboard.keyboard_name}

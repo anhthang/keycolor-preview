@@ -71,19 +71,16 @@ function App() {
     fetch(`${apiUrl}/keyboards.json`)
       .then(res => res.json())
       .then(res => {
-        const keyboards = _(res)
-          .groupBy('manufacturer')
-          .map((list, manufacturer) => {
-            return {
-              value: manufacturer,
-              label: manufacturer,
-              children: list.map(board => ({
-                value: board.keyboard_folder,
-                label: board.keyboard_name,
-              }))
-            }
-          })
-          .value()
+        const keyboards = Object.entries(res).map(([key, layout]) => {
+          return {
+            value: key,
+            label: layout.name,
+            children: layout.keyboards.map(board => ({
+              value: board.keyboard_folder,
+              label: board.keyboard_name,
+            }))
+          }
+        })
 
         setKeyboardNames(keyboards)
       })
@@ -106,7 +103,7 @@ function App() {
         setCaseColor((res.colors && res.colors[0].color) || defaultCaseColor)
         setKeyboard(res)
 
-        const layout = Object.keys(res.layouts)[0]
+        const layout = keyboard_name[0]
         if (layout === 'default') {
           // make keyboards which still not change to new format working
           setKeymaps(res.layouts.default)
@@ -154,8 +151,8 @@ function App() {
           <Col md={5}>
             <Card className="keyboard-box" title="Options" size="small">
               <Form layout="vertical">
-                <Form.Item label="Keyboard">
-                  <Cascader showSearch options={keyboardNames} onChange={selectBoard} placeholder="Select Keyboard" />
+                <Form.Item label="Layout & Keyboard">
+                  <Cascader showSearch options={keyboardNames} onChange={selectBoard} placeholder="Select Layout & Keyboard" />
                 </Form.Item>
                 {
                   Array.isArray(keyboard.colors) && keyboard.colors.length && (
