@@ -1,0 +1,24 @@
+{
+    "keyboard_name": "DB60",
+    "keyboard_folder": "cannonkeys/db60",
+    "keymaps": [],
+    "layouts": {
+        "60_ansi": {}
+    },
+    "maintainer": "awkannan",
+    "readme": true,
+    "url": "https://cannonkeys.com",
+    "width": 15,
+    "height": 5,
+    "vendor_id": "0xCA04",
+    "product_id": "0xDB60",
+    "device_ver": "0x0001",
+    "manufacturer": "CannonKeys",
+    "description": "DB60 Keyboard",
+    "processor_type": "arm",
+    "bootloader": "stm32-dfu",
+    "processor": "STM32F072",
+    "protocol": "ChibiOS",
+    "platform": "STM32",
+    "identifier": "0xCA04:0xDB60:0x0001"
+}

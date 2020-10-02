@@ -1,0 +1,30 @@
+{
+    "keyboard_name": "TGR-910",
+    "keyboard_folder": "tgr/910",
+    "keymaps": [],
+    "layouts": {
+        "65_ansi": {
+            "override": {
+                "KC_PSCR": {
+                    "display": false
+                }
+            }
+        }
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 16,
+    "height": 5,
+    "vendor_id": "0x5447",
+    "product_id": "0x9100",
+    "device_ver": "0x0001",
+    "manufacturer": "Quadcube",
+    "description": "65% Keyboard",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x5447:0x9100:0x0001"
+}

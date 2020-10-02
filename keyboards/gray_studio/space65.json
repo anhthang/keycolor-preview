@@ -1,0 +1,53 @@
+{
+    "keyboard_name": "Gray Studio Space65",
+    "keyboard_folder": "gray_studio/space65",
+    "colors": [
+        {
+            "name": "Stormtrooper",
+            "color": "#e0e0e0"
+        },
+        {
+            "name": "Bruce Lee",
+            "color": "#c6aa2f"
+        },
+        {
+            "name": "Ocean",
+            "color": "#444961"
+        },
+        {
+            "name": "EVA-01",
+            "color": "#6f4fa4"
+        },
+        {
+            "name": "RoboCop",
+            "color": "#7d7d7d"
+        },
+        {
+            "name": "Deadpool",
+            "color": "#9a2827"
+        },
+        {
+            "name": "Terminal",
+            "color": "#525252"
+        }
+    ],
+    "layouts": {
+        "65_ansi": {}
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 16,
+    "height": 5,
+    "vendor_id": "0x4753",
+    "product_id": "0x3000",
+    "device_ver": "0x0001",
+    "manufacturer": "Graystudio",
+    "description": "Graystudio Space65",
+    "processor_type": "avr",
+    "bootloader": "atmel-dfu",
+    "platform": "unknown",
+    "processor": "atmega32u4",
+    "protocol": "LUFA",
+    "identifier": "0x4753:0x3000:0x0001"
+}

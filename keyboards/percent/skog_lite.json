@@ -1,0 +1,92 @@
+{
+    "keyboard_name": "Skog Lite",
+    "keyboard_folder": "percent/skog_lite",
+    "keymaps": [],
+    "layouts": {
+        "tkl": {
+            "override": {
+                "KC_ESC": {
+                    "y": 0.25
+                },
+                "KC_F1": {
+                    "y": 0.25
+                },
+                "KC_F2": {
+                    "y": 0.25
+                },
+                "KC_F3": {
+                    "y": 0.25
+                },
+                "KC_F4": {
+                    "y": 0.25
+                },
+                "KC_F5": {
+                    "y": 0.25
+                },
+                "KC_F6": {
+                    "y": 0.25
+                },
+                "KC_F7": {
+                    "y": 0.25
+                },
+                "KC_F8": {
+                    "y": 0.25
+                },
+                "KC_F9": {
+                    "y": 0.25
+                },
+                "KC_F10": {
+                    "y": 0.25
+                },
+                "KC_F11": {
+                    "y": 0.25
+                },
+                "KC_F12": {
+                    "y": 0.25
+                },
+                "KC_PSCR": {
+                    "y": 0.75
+                },
+                "KC_SLCK": {
+                    "y": 0.75
+                },
+                "KC_PAUS": {
+                    "y": 0.75
+                },
+                "KC_INS": {
+                    "y": 2
+                },
+                "KC_HOME": {
+                    "y": 2
+                },
+                "KC_PGUP": {
+                    "y": 2
+                },
+                "KC_DEL": {
+                    "y": 3
+                },
+                "KC_END": {
+                    "y": 3
+                },
+                "KC_PGDN": {
+                    "y": 3
+                }
+            }
+        }
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 18.25,
+    "height": 6.25,
+    "vendor_id": "0x5053 /* PS */",
+    "product_id": "0x422D",
+    "device_ver": "0x0200",
+    "manufacturer": "Percent Studio",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x5053 /* PS */:0x422D:0x0200"
+}

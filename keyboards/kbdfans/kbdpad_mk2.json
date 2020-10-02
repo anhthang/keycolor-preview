@@ -1,0 +1,148 @@
+{
+    "keyboard_name": "kbdpad_mk2",
+    "keyboard_folder": "kbdfans/kbdpad_mk2",
+    "keymaps": [],
+    "layouts": {
+        "default": {
+            "key_count": 24,
+            "layout": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "code": "KC_ESC"
+                },
+                {
+                    "x": 1,
+                    "y": 0,
+                    "code": "KC_LCTL"
+                },
+                {
+                    "x": 2,
+                    "y": 0,
+                    "code": "KC_LALT"
+                },
+                {
+                    "x": 3,
+                    "y": 0,
+                    "code": "KC_BSPC"
+                },
+                {
+                    "x": 0,
+                    "y": 1.25,
+                    "code": "KC_NLCK"
+                },
+                {
+                    "x": 1,
+                    "y": 1.25,
+                    "code": "KC_PSLS"
+                },
+                {
+                    "x": 2,
+                    "y": 1.25,
+                    "code": "KC_PAST"
+                },
+                {
+                    "x": 3,
+                    "y": 1.25,
+                    "code": "KC_PMNS"
+                },
+                {
+                    "x": 0,
+                    "y": 2.25,
+                    "code": "KC_P7"
+                },
+                {
+                    "x": 1,
+                    "y": 2.25,
+                    "code": "KC_P8"
+                },
+                {
+                    "x": 2,
+                    "y": 2.25,
+                    "code": "KC_P9"
+                },
+                {
+                    "x": 3,
+                    "y": 2.25,
+                    "code": "KC_PPLS"
+                },
+                {
+                    "x": 0,
+                    "y": 3.25,
+                    "code": "KC_P4"
+                },
+                {
+                    "x": 1,
+                    "y": 3.25,
+                    "code": "KC_P5"
+                },
+                {
+                    "x": 2,
+                    "y": 3.25,
+                    "code": "KC_P6"
+                },
+                {
+                    "x": 3,
+                    "y": 3.25,
+                    "code": "KC_PPLS"
+                },
+                {
+                    "x": 0,
+                    "y": 4.25,
+                    "code": "KC_P1"
+                },
+                {
+                    "x": 1,
+                    "y": 4.25,
+                    "code": "KC_P2"
+                },
+                {
+                    "x": 2,
+                    "y": 4.25,
+                    "code": "KC_P3"
+                },
+                {
+                    "x": 3,
+                    "y": 4.25,
+                    "code": "KC_PENT"
+                },
+                {
+                    "x": 0,
+                    "y": 5.25,
+                    "code": "KC_P0"
+                },
+                {
+                    "x": 1,
+                    "y": 5.25,
+                    "code": "KC_P0"
+                },
+                {
+                    "x": 2,
+                    "y": 5.25,
+                    "code": "KC_PDOT"
+                },
+                {
+                    "x": 3,
+                    "y": 5.25,
+                    "code": "KC_PENT"
+                }
+            ]
+        }
+    },
+    "maintainer": "ai03",
+    "readme": true,
+    "url": "https://kb.ai03.me/projects/kbdpad-mkii.html",
+    "width": 4,
+    "height": 6.25,
+    "vendor_id": "0xA103",
+    "product_id": "0x0006",
+    "device_ver": "0x0001",
+    "manufacturer": "KBDfans",
+    "description": "Numpad",
+    "processor_type": "avr",
+    "bootloader": "atmel-dfu",
+    "platform": "unknown",
+    "processor": "atmega32u2",
+    "protocol": "LUFA",
+    "identifier": "0xA103:0x0006:0x0001"
+}

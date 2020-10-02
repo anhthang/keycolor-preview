@@ -1,0 +1,52 @@
+{
+    "keyboard_name": "Canoe",
+    "keyboard_folder": "percent/canoe",
+    "colors": [
+        {
+            "name": "Classic",
+            "color": "#c1bfbf"
+        },
+        {
+            "name": "Industry",
+            "color": "#e0992d"
+        },
+        {
+            "name": "Panda",
+            "color": "#e7e1dc"
+        },
+        {
+            "name": "Svart",
+            "color": "#5f6268"
+        },
+        {
+            "name": "Homelander",
+            "color": "#1b3143"
+        },
+        {
+            "name": "Casio (Limited Edition)",
+            "color": "#dfe1e3"
+        },
+        {
+            "name": "EVA 01 (Limited Edition)",
+            "color": "#604b7b"
+        }
+    ],
+    "layouts": {
+        "65_ansi": {}
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 15,
+    "height": 6,
+    "vendor_id": "0x5053 /* PS */",
+    "product_id": "0x434E",
+    "device_ver": "0x0200",
+    "manufacturer": "Percent Studio",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x5053 /* PS */:0x434E:0x0200"
+}

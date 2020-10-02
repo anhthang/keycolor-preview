@@ -1,0 +1,64 @@
+{
+    "keyboard_name": "E6.5",
+    "keyboard_folder": "exclusive/e65",
+    "keymaps": [],
+    "layouts": {
+        "65_ansi": {
+            "key_count": 67,
+            "override": {
+                "KC_LCTL": {
+                    "x": 0,
+                    "y": 4,
+                    "w": 1.25,
+                    "code": "KC_LCTL"
+                },
+                "KC_LGUI": {
+                    "x": 1.25,
+                    "y": 4,
+                    "w": 1.25,
+                    "code": "KC_LGUI"
+                },
+                "KC_LALT": {
+                    "x": 2.5,
+                    "y": 4,
+                    "w": 1.25,
+                    "code": "KC_LALT"
+                },
+                "KC_SPC": {
+                    "x": 3.75,
+                    "y": 4,
+                    "w": 6.25,
+                    "code": "KC_SPC"
+                },
+                "KC_RALT": {
+                    "x": 10,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "KC_RALT"
+                },
+                "MO(1)": {
+                    "x": 11.5,
+                    "y": 4,
+                    "w": 1.5,
+                    "code": "MO(1)"
+                }
+            }
+        }
+    },
+    "maintainer": "masterzen",
+    "readme": true,
+    "url": "",
+    "width": 16,
+    "height": 5,
+    "vendor_id": "0xFEED",
+    "product_id": "0x6060",
+    "device_ver": "0x0001",
+    "manufacturer": "Exclusive / E-Team",
+    "description": "E6.5 QMK PCB(LED)",
+    "processor_type": "avr",
+    "bootloader": "atmel-dfu",
+    "platform": "unknown",
+    "processor": "atmega32u4",
+    "protocol": "LUFA",
+    "identifier": "0xFEED:0x6060:0x0001"
+}

@@ -1,0 +1,33 @@
+{
+    "keyboard_name": "THINK6.5",
+    "keyboard_folder": "gray_studio/think65",
+    "keymaps": [],
+    "layouts": {
+        "65_ansi": {
+            "override": {
+                "KC_PGUP": {
+                    "display": false
+                },
+                "KC_PGDN": {
+                    "display": false
+                }
+            }
+        }
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 16,
+    "height": 5,
+    "vendor_id": "0x4753",
+    "product_id": "0x4001",
+    "device_ver": "0x0001",
+    "manufacturer": "Graystudio",
+    "description": "Graystudio Think6.5",
+    "processor_type": "avr",
+    "bootloader": "atmel-dfu",
+    "platform": "unknown",
+    "processor": "atmega32u4",
+    "protocol": "LUFA",
+    "identifier": "0x4753:0x4001:0x0001"
+}

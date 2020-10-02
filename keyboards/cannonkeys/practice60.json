@@ -1,0 +1,24 @@
+{
+    "keyboard_name": "Practice 60",
+    "keyboard_folder": "cannonkeys/practice60",
+    "keymaps": [],
+    "layouts": {
+        "60_ansi": {}
+    },
+    "maintainer": "qmk",
+    "readme": true,
+    "url": "",
+    "width": 15,
+    "height": 5,
+    "vendor_id": "0xCA04",
+    "product_id": "0x6060",
+    "device_ver": "0x0001",
+    "manufacturer": "CannonKeys",
+    "description": "Practice 60",
+    "processor_type": "arm",
+    "bootloader": "stm32-dfu",
+    "processor": "STM32F103",
+    "protocol": "ChibiOS",
+    "platform": "STM32",
+    "identifier": "0xCA04:0x6060:0x0001"
+}

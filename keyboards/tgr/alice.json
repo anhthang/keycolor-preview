@@ -1,0 +1,23 @@
+{
+    "keyboard_name": "TGR Alice",
+    "keyboard_folder": "tgr/alice",
+    "keymaps": [],
+    "layouts": {
+        "alice": {}
+    },
+    "maintainer": "Felipe Coury",
+    "readme": true,
+    "url": "",
+    "width": 17.75,
+    "height": 5,
+    "vendor_id": "0x20A0",
+    "product_id": "0x422E",
+    "device_ver": "0x0200",
+    "manufacturer": "TGR",
+    "processor_type": "avr",
+    "bootloader": "bootloadHID",
+    "platform": "unknown",
+    "processor": "atmega32a",
+    "protocol": "V-USB",
+    "identifier": "0x20A0:0x422E:0x0200"
+}
