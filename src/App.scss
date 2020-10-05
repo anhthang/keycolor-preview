@@ -8,6 +8,11 @@
 @import './scss/color/ral';
 @import './scss/colorways';
 
+@import '~antd/dist/antd';
+@media (prefers-color-scheme: dark) {
+  @import '~antd/dist/antd.dark';
+}
+
 #root {
   height: 100%;
 }

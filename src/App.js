@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import './App.scss';
-import 'antd/dist/antd.css';
 
 import * as fetch from 'node-fetch';
 import _ from 'lodash';
